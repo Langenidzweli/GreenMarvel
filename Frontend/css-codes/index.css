@@ -385,16 +385,13 @@ body {
    Featured Products Section
 ========================================= */
 .products-section {
-    background-color: #f9f7f3; /* soft cream background */
     padding: 80px 0;
     text-align: center;
     font-family: 'Montserrat', sans-serif;
 }
 
 .products-section .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+    max-width: 1800px;
 }
 
 .products-section .section-title {
@@ -416,7 +413,7 @@ body {
 .products-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 40px;
+    gap: 100px;
     justify-content: center;
 }
 
@@ -426,18 +423,20 @@ body {
     flex-direction: column;
     align-items: center;
 }
-
-
-
+.product-card {
+ display: flex;
+      
+}
 .product-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 10px 20px (0, 0, 0, 0.12);
 }
 
 /* === IMAGE === */
 .product-image {
+     background-color: #f9f7f3; /* soft cream background */
     width: 100%;
-    height: 500px;
+    height: 600px;
     object-fit: contain;
     margin-bottom: 15px;
 }
