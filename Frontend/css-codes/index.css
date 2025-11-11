@@ -421,12 +421,17 @@ body {
 .product-container {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start; /* ✅ aligns everything (image + text) to the left */
 }
+
+/* === PRODUCT CARD === */
 .product-card {
- display: flex;
-      
+    display: flex;
+    width: 100%;
+    justify-content: flex-start; /* ✅ keeps image aligned left */
+    margin-bottom: 15px; /* adds small space between image and text */
 }
+
 .product-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 20px (0, 0, 0, 0.12);
@@ -446,22 +451,23 @@ body {
     background-color: #003300;
     color: white;
     border: none;
-    padding: 12px 20px;
+    padding: 12px 30px;
     border-radius: 6px;
     font-weight: 600;
     font-size: 0.9rem;
     cursor: pointer;
     transition: background-color 0.3s ease;
     width: 100%;
-}
 
+}
+  /*  background-color: #002200;*/
 .add-to-cart-btn:hover {
-    background-color: #002200;
+    background-color: #085208;
 }
 
-/* === PRODUCT DETAILS (Outside the card) === */
+/* === PRODUCT DETAILS (Left aligned) === */
 .product-details {
-    text-align: center;
+    text-align: left; /* ✅ left-aligns text */
     width: 100%;
     max-width: 280px;
 }
@@ -499,6 +505,33 @@ body {
     margin-bottom: 15px;
 }
 
+.product-details .product-price {
+  margin-bottom: 10px;
+}
+
+.product-details .add-to-cart-btn {
+  margin-top: 0; 
+}
+
+.product-actions {
+  display: flex;
+  align-items: center;
+  gap: 25px; /* space between button and icon */
+}
+
+.wishlist-icon {
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  border-color: #4e3d3d;
+  transition: transform 0.2s ease;
+}
+
+.wishlist-icon:hover {
+  transform: scale(1.1);
+}
+
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .products-grid {
@@ -515,6 +548,29 @@ body {
     }
 }
 
+.view-more-products {
+    text-align: center;   /* center the button */
+    margin-top: 80px;     /* space above button */
+}
+
+.view-more-btn {
+   
+    color: #085208;
+    border: none;
+    padding: 14px 30px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.view-more-btn:hover {
+    background-color: #085208;
+    transform: scale(1.05);
+    color:white
+}
+
 
 /* ========================================
    Authentic Products Section
@@ -522,7 +578,23 @@ body {
 .features-section {
   background-color: #fff;
   padding: 60px 0;
+  position: relative; /* needed for pseudo-element */
+  overflow: hidden;   /* optional: prevents horizontal scrollbar */
 }
+
+.features-section::before {
+  content: "";
+  position: absolute;
+  top: 0;              /* line at the top of section */
+  left: 0;             /* start at left edge of viewport */
+  width: 100vw;        /* full viewport width */
+  height: 2px;         /* thickness */
+  background-color: #e6e6e6;
+  z-index: 1;          /* optional: ensure it’s above background */
+}
+
+
+
 
 .features-container-wrapper {
   padding: 0 200px; /* aligns with your overall layout */
