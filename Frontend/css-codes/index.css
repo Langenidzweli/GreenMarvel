@@ -573,33 +573,25 @@ body {
 
 
 /* ========================================
-   Authentic Products Section
-======================================== */
+   AUTHENTIC PRODUCTS SECTION IMPROVEMENTS
+========================================= */
+
 .features-section {
   background-color: #fff;
   padding: 60px 0;
-  position: relative; /* needed for pseudo-element */
-  overflow: hidden;   /* optional: prevents horizontal scrollbar */
+  position: relative;
 }
 
+/* Full-width divider line similar to navigation */
 .features-section::before {
   content: "";
   position: absolute;
-  top: 0;              /* line at the top of section */
-  left: 0;             /* start at left edge of viewport */
-  width: 100vw;        /* full viewport width */
-  height: 2px;         /* thickness */
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  height: 1px;
   background-color: #e6e6e6;
-  z-index: 1;          /* optional: ensure it’s above background */
-}
-
-
-
-
-.features-container-wrapper {
-  padding: 0 200px; /* aligns with your overall layout */
-  margin: 0 auto;
-  max-width: 1400px;
 }
 
 .features-container {
@@ -618,24 +610,27 @@ body {
   min-width: 300px;
 }
 
+/* Professional icon styling */
 .feature-icon {
   width: 65px;
   height: 65px;
-  border: 2px solid #e74c3c;
+  border: 2px solid #46853c; /* Using brand green color */
   border-radius: 50%;
-  color: #e74c3c;
-  font-size: 28px;
+  color: #46853c; /* Using brand green color */
+  font-size: 24px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
   transition: all 0.3s ease;
+  background-color: rgba(70, 133, 60, 0.05); /* Subtle background */
 }
 
 .feature-icon:hover {
-  background-color: #e74c3c;
+  background-color: #46853c; /* Brand green color */
   color: #fff;
   transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(70, 133, 60, 0.3);
 }
 
 .feature-text {
@@ -680,7 +675,7 @@ body {
   .feature-icon {
     width: 55px;
     height: 55px;
-    font-size: 24px;
+    font-size: 20px;
   }
 }
 
