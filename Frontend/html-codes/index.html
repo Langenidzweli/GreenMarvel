@@ -82,13 +82,7 @@
         </div>
     </div>     
 </div>
-        <!-- ========================================
-             MOBILE MENU TOGGLE
-        ========================================= -->
-        <button id="menu-toggle" class="menu-toggle">
-            ☰
-        </button>
-
+ 
         <!-- ========================================
              MAIN NAVIGATION
         ========================================= -->
@@ -98,7 +92,6 @@
             <!-- Categories Dropdown -->
             <li class="categories-btn">
                 <a href="#">
-                    <span class="menu-icon">☰</span>
                     <span class="category-text">CATEGORIES</span>
                     <span class="arrow">▾</span>
                 </a>
@@ -137,7 +130,7 @@
             </li>
 
             <!-- Navigation Links -->
-            <li class="nav-item"><a href="shop.html">Shop ▾</a></li>
+            <li class="nav-item"><a href="shop.html">Shop </a></li>
             <li class="nav-item"><a href="about.html">About Us</a></li>
            <li class="nav-item"><a href="Frontend/faq.html">FAQ</a></li>
             <li class="nav-item"><a href="contact.html">Contact</a></li>
@@ -160,37 +153,26 @@
     </div>
 
     <div class="hero-content">
-        <div class="trust-badge">
-            <i class="fas fa-shield-check"></i>
-            <span>Trusted by 500+ customers</span>
-        </div>
+        
         <h1 class="hero-title">
-            <span class="title-line">Discover</span>
-            <span class="title-line">Premium</span>
-            <span class="title-line">Excellence</span>
+            <span class="title-line">Natural Beauty,</span>
+            <span class="title-line">Naturally You</span>
         </h1>
         <div class="hero-features">
-            <span class="feature-tag">
-                <i class="fas fa-leaf"></i>
-                100% Organic
-            </span>
-            <span class="feature-tag">
-                <i class="fas fa-flask"></i>
-                Scientifically Approved
-            </span>
-            <span class="feature-tag">
-                <i class="fas fa-prescription-bottle"></i>
-                Pharma-Formulated
-            </span>
+            <span class="feature-tag">100% Organic</span>
+            <span class="feature-slash">|</span>
+            <span class="feature-tag">Scientifically Approved</span>
+            <span class="feature-slash">|</span>
+            <span class="feature-tag">Pharma-Formulated</span>
         </div>
         <div class="hero-cta">
             <button class="cta-btn primary" onclick="window.location.href='shop.html'">
                 <i class="fas fa-shopping-bag"></i>
                 Shop Now
             </button>
-            <button class="cta-btn secondary" onclick="smoothScrollTo('.about-section')">
-                <i class="fas fa-play-circle"></i>
-                Watch Story
+            <button class="cta-btn secondary" onclick="window.location.href='about.html'">
+                <i class="fas fa-info-circle"></i>
+                Learn More
             </button>
         </div>
     </div>
@@ -250,6 +232,7 @@
         });
     </script>
 </section>
+
 
 <!-- ========================================
                 products SECTION
@@ -590,69 +573,114 @@
 </section>
         </main>
 
-        <!-- ========================================
-             FOOTER SECTION
-        ========================================= -->
-        <footer class="site-footer">
-            <div class="container footer-container">
-                <!-- About Company -->
-                <div class="footer-about">
-                    <h3>Green Marvel</h3>
-                    <p>Premium organic hair care products designed to nourish, strengthen, and enhance your natural beauty with scientifically-formulated ingredients.</p>
+<!-- ========================================
+     COMPACT PROFESSIONAL FOOTER
+========================================= -->
+<footer class="site-footer">
+    <div class="container footer-container">
+        <!-- Brand & Description -->
+        <div class="footer-brand">
+            <div class="footer-logo">
+                <img src="../img/logo.jpeg" alt="Green Marvel Logo" class="logo">
+                <h3>Green Marvel</h3>
+            </div>
+            <p class="brand-description">Premium organic hair care products designed to nourish your natural beauty.</p>
+            
+            <!-- Delivery Partners - Compact -->
+            <div class="delivery-partners">
+                <h4>Delivery Partners</h4>
+                <div class="partners-list">
+                    <span>Courier Guy</span>
+                    <span>RAM</span>
+                    <span>PAXI</span>
                 </div>
+            </div>
+        </div>
 
-                <!-- Quick Links -->
-                <div class="footer-links">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="shop.html">Collections</a></li>
-                        <li><a href="new-arrivals.html">New Arrivals</a></li>
-                        <li><a href="specials.html">Sale</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                    </ul>
+        <!-- Quick Links -->
+        <div class="footer-column">
+            <h4 class="footer-title">Quick Links</h4>
+            <ul class="footer-links">
+                <li><a href="shop.html" class="footer-link">Collections</a></li>
+                <li><a href="new-arrivals.html" class="footer-link">New Arrivals</a></li>
+                <li><a href="specials.html" class="footer-link">Sale</a></li>
+                <li><a href="about.html" class="footer-link">About Us</a></li>
+            </ul>
+        </div>
+
+        <!-- Customer Service -->
+        <div class="footer-column">
+            <h4 class="footer-title">Support</h4>
+            <ul class="footer-links">
+                <li><a href="contact.html" class="footer-link">Contact Us</a></li>
+                <li><a href="shipping.html" class="footer-link">Shipping</a></li>
+                <li><a href="returns.html" class="footer-link">Returns</a></li>
+                <li><a href="faq.html" class="footer-link">FAQ</a></li>
+            </ul>
+        </div>
+
+        <!-- Contact & Social -->
+        <div class="footer-column">
+            <h4 class="footer-title">Get in Touch</h4>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:admin@greenmarvel.co.za">admin@greenmarvel.co.za</a>
                 </div>
-
-                <!-- Customer Service Links -->
-                <div class="footer-customer-care">
-                    <h4>Customer Service</h4>
-                    <ul>
-                        <li><a href="contact.html">Contact Us</a></li>
-                        <li><a href="shipping.html">Shipping Info</a></li>
-                        <li><a href="returns.html">Returns & Exchanges</a></li>
-                        <li><a href="faq.html">FAQ</a></li>
-                    </ul>
-                </div>
-
-                <!-- Contact Information -->
-                <div class="footer-contact">
-                    <h4>Get in Touch</h4>
-                    <p>admin@greenmarvel.co.za</p>
-                    <p>081 752 3336</p>
-                    <p></p>
-                </div>
-
-                <!-- Newsletter Subscription -->
-                <div class="footer-newsletter">
-                    <h4>Stay Connected</h4>
-                    <p>Subscribe to get updates on new products and exclusive offers.</p>
-                    <form class="subscribe-form">
-                        <input type="email" placeholder="Enter your email" required>
-                        <button type="submit">Subscribe</button>
-                    </form>
-                </div>
-
-                <!-- Delivery Partners -->
-                <div class="footer-delivery">
-                    <h4>Delivery Partners</h4>
-                    <p>Courier Guy • RAM • PAXI (Pep)</p>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <a href="tel:0817523336">081 752 3336</a>
                 </div>
             </div>
 
-            <!-- Footer Bottom -->
-            <div class="footer-bottom">
-                <p>© 2025 Green Marvel. All rights reserved. | Premium Organic Hair Care</p>
+            <!-- Social Media Icons -->
+            <div class="social-section">
+                <h4 class="footer-title">Follow Us</h4>
+                <div class="social-links">
+                    <a href="https://wa.me/27817523336" class="social-link whatsapp" target="_blank" aria-label="WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="mailto:admin@greenmarvel.co.za" class="social-link email" aria-label="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    <a href="https://facebook.com/greenmarvel" class="social-link facebook" target="_blank" aria-label="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://instagram.com/greenmarvel" class="social-link instagram" target="_blank" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
             </div>
-        </footer>
+
+            <!-- Newsletter - Compact -->
+            <div class="newsletter-section">
+                <h4 class="footer-title">Newsletter</h4>
+                <form class="subscribe-form" id="newsletterForm">
+                    <div class="input-group">
+                        <input type="email" placeholder="Your email" required class="newsletter-input" id="newsletterEmail">
+                        <button type="submit" class="newsletter-btn" id="newsletterSubmit">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+        <div class="container">
+            <div class="footer-bottom-content">
+                <p class="copyright">© 2025 Green Marvel. All rights reserved.</p>
+                <div class="legal-links">
+                    <a href="privacy.html">Privacy</a>
+                    <a href="terms.html">Terms</a>
+                    <a href="cookies.html">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
     </div>
 
     <!-- ========================================

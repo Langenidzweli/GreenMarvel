@@ -1,4 +1,8 @@
-/* Base Styles */
+/* =============================================
+   BASE STYLES & RESET
+   ============================================= */
+
+/* Reset and box-sizing */
 * {
     margin: 0;
     padding: 0;
@@ -6,62 +10,546 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: Arial, sans-serif;
     line-height: 1.6;
     color: #333;
-    background: linear-gradient(135deg, #f8fff8 0%, #ffffff 100%);
+    background-color: white;
+    padding: 0 200px; 
 }
 
+/* Container for consistent layout */
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
+
+/* =============================================
+   NAVIGATION BAR - UPDATED
+   ============================================= */
+
+/* Remove body padding for navbar only */
+.navbar {
+    background: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    margin: 0 -200px; /* Counteract the body padding */
+    padding: 0 200px; /* Add the padding back to maintain layout */
+    margin-bottom: 20px;
+}
+
+/* Full width border using pseudo-element */
+.navbar::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: #ccc;
+}
+
+/* Navigation layout container */
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0;
+    position: relative;
+}
+
+/* Logo styling */
+.about-logo {
+    flex: 0 0 auto;
+}
+
+.about-logo img {
+    height: 35px; /* Slightly smaller logo */
+    width: auto;
+    transition: transform 0.3s ease;
+}
+
+.about-logo img:hover {
+    transform: scale(1.05);
+}
+
+/* Center navigation menu */
+.nav-menu {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    gap: 1.5rem; /* Fixed negative gap - using positive value */
+    flex: 1;
+    justify-content: center;
+    margin: 0 1rem;
+    /* Removed margin-bottom: 20px - this was causing extra space */
+}
+
+.nav-item a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    padding: 0.4rem 0.8rem; /* Reduced padding */
+    border-radius: 5px;
+    display: block;
+}
+
+.nav-item a:hover {
+    color: #46853c;
+    background: #f8fff8;
+}
+
+.nav-item a.active {
+    color: #46853c;
+    background: #f8fff8;
+}
+
+/* Right section icons */
+.right-section {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem; /* Reduced gap */
+    flex: 0 0 auto;
+}
+
+.icon {
+    width: 22px; /* Slightly smaller icons */
+    height: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.icon:hover img {
+    transform: scale(1.1);
+}
+
+.icon:hover {
+    transform: translateY(-2px);
+}
+
+/* Shopping cart icon with badge */
+.icon:first-child {
+    position: relative;
+}
+
+.cart-count {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: #46853c;
+    color: white;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    font-size: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+}
+
+/* Mobile hamburger menu */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 4px;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: #333;
+    transition: 0.3s;
+    border-radius: 2px;
+}
+
+/* Hamburger animation when active */
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* =============================================
+   RESPONSIVE DESIGN - NAVIGATION
+   ============================================= */
+
+@media (max-width: 1024px) {
+    .nav-menu {
+        gap: 1rem;
+        margin: 0 1rem;
+    }
+    
+    .nav-item a {
+        padding: 0.4rem 0.7rem; /* Reduced padding */
+        font-size: 0.9rem;
+    }
+    
+    .right-section {
+        gap: 0.7rem; /* Reduced gap */
+    }
+    
+    .icon {
+        width: 20px; /* Smaller icons */
+        height: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+    
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 60px; /* Adjusted to match reduced height */
+        flex-direction: column;
+        background-color: white;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+        padding: 1.5rem 0; /* Reduced padding */
+        gap: 0;
+        z-index: 999;
+        border-top: 1px solid #ccc; /* Add border to mobile menu */
+    }
+    
+    .nav-menu.active {
+        left: 0;
+    }
+    
+    .nav-item {
+        margin: 12px 0; /* Reduced margin */
+    }
+    
+    .nav-item a {
+        padding: 0.8rem 1.5rem; /* Slightly reduced padding */
+        font-size: 1rem;
+    }
+    
+    .right-section {
+        display: none;
+    }
+    
+    /* Show only essential icons in mobile */
+    .mobile-icons {
+        display: flex;
+        gap: 0.8rem;
+        margin-left: auto;
+        margin-right: 1rem;
+    }
+    
+    .mobile-icons .icon {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-logo img {
+        height: 30px; /* Smaller logo for mobile */
+    }
+    
+    .nav-container {
+        padding: 0.4rem 0; /* Further reduced padding */
+    }
+    
+    .nav-item a {
+        padding: 0.7rem 1.2rem; /* Reduced padding */
+        font-size: 0.95rem;
+    }
+    
+    .nav-menu {
+        top: 55px; /* Adjusted for smaller navbar */
+    }
+}
+
+/* =============================================
+   HERO SECTION WITH OVERLAY
+   ============================================= */
+
 /* Header Section */
 .about-header {
-    text-align: center;
-    padding: 100px 0 80px;
-    background: linear-gradient(135deg, #46853c 0%, #3a6f32 100%);
-    color: white;
     position: relative;
+    width: 100%;
+    height: 80vh;
+    min-height: 500px;
+    max-height: 800px;
     overflow: hidden;
 }
 
-.about-header::before {
-    content: '';
+/* Hero farm container */
+.hero-farm {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/* Hero image */
+.hero-farm img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+/* Overlay */
+.hero-overlay {
     position: absolute;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="white" opacity="0.3"/><circle cx="80" cy="40" r="1.5" fill="white" opacity="0.3"/><circle cx="40" cy="80" r="1" fill="white" opacity="0.3"/><circle cx="70" cy="70" r="1.5" fill="white" opacity="0.3"/><circle cx="10" cy="60" r="1" fill="white" opacity="0.3"/></svg>');
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        135deg,
+        rgba(70, 133, 60, 0.7) 0%,
+        rgba(58, 111, 50, 0.8) 100%
+    );
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.about-header h1 {
-    font-size: 2.8rem;
-    margin-bottom: 15px;
+/* Hero content */
+.hero-content {
+    text-align: center;
+    color: white;
+    max-width: 900px;
+    padding: 0 2rem;
+    z-index: 2;
+}
+
+/* Main heading - "We Grow, Manufacture & Formulate" */
+.hero-content h1 {
+    font-size: 4rem;
     font-weight: 700;
-    position: relative;
-    max-width: 800px;
+    margin-bottom: 0.5rem;
+    line-height: 1.1;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    letter-spacing: -0.5px;
+}
+
+/* Sub heading - "Organic Hair Products" */
+.hero-content h2 {
+    font-size: 3.2rem;
+    font-weight: 300;
+    margin-bottom: 2rem;
+    line-height: 1.2;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    font-style: italic;
+    opacity: 0.95;
+}
+
+/* Description text */
+.hero-content p {
+    font-size: 1.3rem;
+    margin-bottom: 3rem;
+    opacity: 0.9;
+    line-height: 1.5;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    font-weight: 400;
+    max-width: 600px;
     margin-left: auto;
     margin-right: auto;
 }
 
-.about-header p {
-    font-size: 1.3rem;
-    max-width: 600px;
-    margin: 0 auto;
-    opacity: 0.9;
-    position: relative;
+/* Hero buttons */
+.hero-buttons {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
-/* Process Section */
+/* Button styles */
+.hero-buttons .btn {
+    padding: 16px 35px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    border: 2px solid transparent;
+    font-size: 1.1rem;
+}
+
+.hero-buttons .btn.primary {
+    background: white;
+    color: #46853c;
+}
+
+.hero-buttons .btn.primary:hover {
+    background: #f8f8f8;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.2);
+}
+
+.hero-buttons .btn.secondary {
+    background: transparent;
+    color: white;
+    border-color: white;
+}
+
+.hero-buttons .btn.secondary:hover {
+    background: white;
+    color: #46853c;
+    transform: translateY(-2px);
+}
+
+/* =============================================
+   RESPONSIVE DESIGN - HERO SECTION
+   ============================================= */
+
+@media (max-width: 1024px) {
+    .about-header {
+        height: 70vh;
+        min-height: 400px;
+    }
+    
+    .hero-content h1 {
+        font-size: 3.2rem;
+    }
+    
+    .hero-content h2 {
+        font-size: 2.5rem;
+    }
+    
+    .hero-content p {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-header {
+        height: 60vh;
+        min-height: 350px;
+    }
+    
+    .hero-content h1 {
+        font-size: 2.5rem;
+        margin-bottom: 0.3rem;
+    }
+    
+    .hero-content h2 {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .hero-content p {
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+    
+    .hero-buttons .btn {
+        width: 250px;
+        justify-content: center;
+        padding: 14px 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-header {
+        height: 50vh;
+        min-height: 300px;
+    }
+    
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    
+    .hero-content h2 {
+        font-size: 1.6rem;
+    }
+    
+    .hero-content p {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .hero-content {
+        padding: 0 1rem;
+    }
+    
+    .hero-buttons .btn {
+        padding: 12px 20px;
+        font-size: 1rem;
+    }
+}
+
+/* Optional: Add animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-content h1,
+.hero-content h2,
+.hero-content p,
+.hero-buttons {
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.hero-content h2 {
+    animation-delay: 0.1s;
+}
+
+.hero-content p {
+    animation-delay: 0.2s;
+}
+
+.hero-buttons {
+    animation-delay: 0.3s;
+}
+
+/* =============================================
+   PROCESS SECTION
+   ============================================= */
+
+/* Main process section container */
 .process-section {
     padding: 80px 0;
     background: white;
 }
 
+/* Process cards grid layout */
 .process-grid {
     display: flex;
     flex-direction: column;
@@ -70,6 +558,7 @@ body {
     margin: 0 auto;
 }
 
+/* Individual process card */
 .process-card {
     display: flex;
     align-items: flex-start;
@@ -88,6 +577,7 @@ body {
     box-shadow: 0 15px 30px rgba(70, 133, 60, 0.15);
 }
 
+/* Process icon styling */
 .process-icon {
     width: 80px;
     height: 80px;
@@ -106,6 +596,7 @@ body {
     transform: scale(1.1) rotate(5deg);
 }
 
+/* Process content area */
 .process-content {
     flex: 1;
 }
@@ -123,6 +614,7 @@ body {
     font-size: 1.1rem;
 }
 
+/* Process features list */
 .process-features {
     list-style: none;
     display: grid;
@@ -142,6 +634,7 @@ body {
     font-size: 0.9rem;
 }
 
+/* Process step number */
 .process-number {
     position: absolute;
     top: 20px;
@@ -152,12 +645,17 @@ body {
     line-height: 1;
 }
 
-/* Story Cards Section */
+/* =============================================
+   STORY CARDS SECTION
+   ============================================= */
+
+/* Story timeline section */
 .story-cards {
     padding: 80px 0;
     background: #f8f8f8;
 }
 
+/* Section header styling */
 .section-header {
     text-align: center;
     margin-bottom: 50px;
@@ -174,12 +672,14 @@ body {
     font-size: 1.1rem;
 }
 
+/* Story cards grid layout */
 .cards-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
 }
 
+/* Individual story card */
 .story-card {
     background: white;
     padding: 40px 30px;
@@ -198,6 +698,7 @@ body {
     border-color: #46853c;
 }
 
+/* Story card icon */
 .card-icon {
     width: 80px;
     height: 80px;
@@ -216,6 +717,7 @@ body {
     transform: scale(1.1) rotate(5deg);
 }
 
+/* Year badge */
 .card-year {
     display: inline-block;
     background: #ffeaa7;
@@ -227,6 +729,7 @@ body {
     font-size: 0.9rem;
 }
 
+/* Story card typography */
 .story-card h3 {
     color: #1a1a1a;
     margin-bottom: 15px;
@@ -238,12 +741,17 @@ body {
     line-height: 1.6;
 }
 
-/* Values Section */
+/* =============================================
+   VALUES SECTION
+   ============================================= */
+
+/* Company values section */
 .values-section {
     padding: 80px 0;
     background: white;
 }
 
+/* Values header */
 .values-header {
     text-align: center;
     margin-bottom: 50px;
@@ -260,17 +768,20 @@ body {
     font-size: 1.1rem;
 }
 
+/* Values grid layout */
 .values-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 30px;
 }
 
+/* Individual value item */
 .value-item {
     text-align: center;
     padding: 30px;
 }
 
+/* Value icon shape */
 .value-shape {
     width: 100px;
     height: 100px;
@@ -300,6 +811,7 @@ body {
     color: white;
 }
 
+/* Value item typography */
 .value-item h4 {
     color: #1a1a1a;
     margin-bottom: 10px;
@@ -311,7 +823,72 @@ body {
     line-height: 1.5;
 }
 
-/* CTA Section */
+/* =============================================
+   TEAM SECTION
+   ============================================= */
+
+/* Team members section */
+.team-section {
+    padding: 80px 0;
+    background: #f8f8f8;
+}
+
+/* Team grid layout */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+/* Individual team member card */
+.team-card {
+    background: white;
+    padding: 40px 30px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(70, 133, 60, 0.1);
+    transition: all 0.3s ease;
+}
+
+.team-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(70, 133, 60, 0.2);
+}
+
+/* Team member image placeholder */
+.team-img {
+    width: 120px;
+    height: 120px;
+    background: #f8fff8;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    border: 3px solid #46853c;
+}
+
+.team-img i {
+    font-size: 3rem;
+    color: #46853c;
+}
+
+/* Team member info */
+.team-card h3 {
+    color: #1a1a1a;
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+}
+
+.team-card p {
+    color: #666;
+}
+
+/* =============================================
+   CALL TO ACTION SECTION
+   ============================================= */
+
+/* CTA section */
 .cta-section {
     padding: 80px 0;
     background: linear-gradient(135deg, #46853c 0%, #3a6f32 100%);
@@ -319,6 +896,7 @@ body {
     text-align: center;
 }
 
+/* CTA content */
 .cta-content h2 {
     font-size: 2.2rem;
     margin-bottom: 15px;
@@ -330,6 +908,7 @@ body {
     opacity: 0.9;
 }
 
+/* CTA buttons container */
 .cta-buttons {
     display: flex;
     justify-content: center;
@@ -337,6 +916,7 @@ body {
     flex-wrap: wrap;
 }
 
+/* Button base styles */
 .btn {
     padding: 15px 30px;
     border-radius: 50px;
@@ -349,6 +929,7 @@ body {
     border: 2px solid transparent;
 }
 
+/* Primary button */
 .btn.primary {
     background: white;
     color: #46853c;
@@ -360,6 +941,7 @@ body {
     box-shadow: 0 10px 20px rgba(255, 255, 255, 0.2);
 }
 
+/* Secondary button */
 .btn.secondary {
     background: transparent;
     color: white;
@@ -372,8 +954,174 @@ body {
     transform: translateY(-2px);
 }
 
-/* Responsive Design */
+/* =============================================
+   FOOTER SECTION
+   ============================================= */
+
+/* Main footer */
+.footer {
+    background: #1a1a1a;
+    color: white;
+    padding: 60px 0 20px;
+}
+
+/* Footer content grid */
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+/* Footer section headings */
+.footer-section h3,
+.footer-section h4 {
+    margin-bottom: 20px;
+    color: #46853c;
+}
+
+.footer-section h3 i {
+    margin-right: 10px;
+}
+
+/* Footer text */
+.footer-section p {
+    color: #ccc;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+/* Footer links */
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: #46853c;
+}
+
+/* Social media links */
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: #333;
+    border-radius: 50%;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    background: #46853c;
+    transform: translateY(-3px);
+}
+
+/* Contact information */
+.contact-info p {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.contact-info i {
+    color: #46853c;
+    width: 20px;
+}
+
+/* Newsletter form */
+.newsletter-form {
+    display: flex;
+    gap: 10px;
+}
+
+.newsletter-form input {
+    flex: 1;
+    padding: 12px 15px;
+    border: none;
+    border-radius: 5px;
+    background: #333;
+    color: white;
+}
+
+.newsletter-form input::placeholder {
+    color: #999;
+}
+
+.newsletter-form button {
+    padding: 12px 20px;
+    background: #46853c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.newsletter-form button:hover {
+    background: #3a6f32;
+}
+
+/* Footer bottom section */
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #333;
+    color: #999;
+}
+
+/* =============================================
+   RESPONSIVE DESIGN
+   ============================================= */
+
+/* Tablet and mobile styles */
 @media (max-width: 768px) {
+    /* Mobile navigation */
+    .hamburger {
+        display: flex;
+    }
+    
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        flex-direction: column;
+        background-color: white;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+        padding: 2rem 0;
+        gap: 0;
+    }
+    
+    .nav-menu.active {
+        left: 0;
+    }
+    
+    .nav-menu li {
+        margin: 15px 0;
+    }
+    
+    /* Header adjustments */
     .about-header {
         padding: 60px 0 40px;
     }
@@ -382,6 +1130,7 @@ body {
         font-size: 2rem;
     }
     
+    /* Process card adjustments */
     .process-card {
         flex-direction: column;
         text-align: center;
@@ -392,6 +1141,7 @@ body {
         grid-template-columns: 1fr;
     }
     
+    /* Grid layout adjustments */
     .cards-grid {
         grid-template-columns: 1fr;
         gap: 20px;
@@ -401,6 +1151,7 @@ body {
         grid-template-columns: repeat(2, 1fr);
     }
     
+    /* Button adjustments */
     .cta-buttons {
         flex-direction: column;
         align-items: center;
@@ -410,9 +1161,16 @@ body {
         width: 250px;
         justify-content: center;
     }
+    
+    /* Form adjustments */
+    .newsletter-form {
+        flex-direction: column;
+    }
 }
 
+/* Mobile-specific styles */
 @media (max-width: 480px) {
+    /* Typography adjustments */
     .about-header h1 {
         font-size: 1.7rem;
     }
@@ -421,15 +1179,22 @@ body {
         font-size: 1rem;
     }
     
+    /* Card padding adjustments */
     .process-card {
         padding: 30px 20px;
     }
     
+    /* Grid adjustments */
     .values-grid {
         grid-template-columns: 1fr;
     }
     
     .section-header h2 {
         font-size: 2rem;
+    }
+    
+    /* Footer adjustments */
+    .footer-content {
+        grid-template-columns: 1fr;
     }
 }
