@@ -145,23 +145,111 @@
     </nav>
 </header>
 
-        <main>
-            <!-- ========================================
-                 HERO SECTION
-            ========================================= -->
-            <section class="hero">
-                <div class="hero-img-wrapper">
-                    <img src="../img/hero.png" alt="Hero Blurred" class="hero-bg">
-                    <div class="overlay"></div>
-                </div>
+<!-- ========================================
+     HERO SECTION WITH VIDEO BACKGROUND - LEFT ALIGNED
+========================================= -->
+<section class="hero">
+    <div class="video-background">
+        <video class="video-bg" autoplay muted loop playsinline onloadeddata="this.classList.remove('loading')" onerror="document.querySelector('.hero').classList.add('no-video')">
+            <source src="../img/greenVid.mp4" type="video/mp4">
+            <!-- Fallback image if video doesn't load -->
+            <img src="../img/hero-fallback.jpg" alt="Green Marvel Background">
+        </video>
+        <div class="video-overlay"></div>
+        <div class="video-gradient"></div>
+    </div>
 
-                <div class="hero-content">
-                    <h2> Trusted by 500+ customers</h2>
-                    <h1>Discover<br> Premium<br>Excellence</h1>
-                    <p><strong>100% Organic</strong> | <strong>Scientifically Approved</strong> | <strong>Pharma-Formulated</strong></p>
-                </div>
-            </section>
+    <div class="hero-content">
+        <div class="trust-badge">
+            <i class="fas fa-shield-check"></i>
+            <span>Trusted by 500+ customers</span>
+        </div>
+        <h1 class="hero-title">
+            <span class="title-line">Discover</span>
+            <span class="title-line">Premium</span>
+            <span class="title-line">Excellence</span>
+        </h1>
+        <div class="hero-features">
+            <span class="feature-tag">
+                <i class="fas fa-leaf"></i>
+                100% Organic
+            </span>
+            <span class="feature-tag">
+                <i class="fas fa-flask"></i>
+                Scientifically Approved
+            </span>
+            <span class="feature-tag">
+                <i class="fas fa-prescription-bottle"></i>
+                Pharma-Formulated
+            </span>
+        </div>
+        <div class="hero-cta">
+            <button class="cta-btn primary" onclick="window.location.href='shop.html'">
+                <i class="fas fa-shopping-bag"></i>
+                Shop Now
+            </button>
+            <button class="cta-btn secondary" onclick="smoothScrollTo('.about-section')">
+                <i class="fas fa-play-circle"></i>
+                Watch Story
+            </button>
+        </div>
+    </div>
 
+    <!-- Scroll indicator -->
+    <div class="scroll-indicator" onclick="smoothScrollTo('.products-section')">
+        <div class="scroll-arrow"></div>
+    </div>
+
+    <script>
+        // Video autoplay handler
+        function initializeVideo() {
+            const video = document.querySelector('.video-bg');
+            if (video) {
+                video.play().catch(function(error) {
+                    console.log('Video autoplay failed, trying muted:', error);
+                    video.muted = true;
+                    video.play().catch(e => {
+                        console.log('Muted autoplay also failed:', e);
+                        document.querySelector('.hero').classList.add('no-video');
+                    });
+                });
+            }
+        }
+
+        // Smooth scroll function
+        function smoothScrollTo(selector) {
+            const element = document.querySelector(selector);
+            if (element) {
+                element.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            } else {
+                // Fallback to products section
+                document.querySelector('.products-section')?.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        }
+
+        // Initialize when DOM is loaded
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', function() {
+                initializeVideo();
+            });
+        } else {
+            initializeVideo();
+        }
+
+        // Add keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'ArrowDown') {
+                smoothScrollTo('.products-section');
+            }
+        });
+    </script>
+</section>
 
 <!-- ========================================
                 products SECTION
