@@ -31,22 +31,13 @@ body {
     align-items: center;
     background-color: white;
     color: black;
-    padding: 10px 0;
+    padding: 15px 0; /* Increased padding for more space */
     font-size: 13px;
     position: relative;
-    margin-bottom: 15px;
+    
 }
 
-.top-header::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100vw;
-    height: 1px;
-    background-color: #e6e6e6;
-}
+
 
 .top-left a {
     color: black;
@@ -74,20 +65,10 @@ body {
     justify-content: space-between;
     align-items: center;
     background-color: white;
-    padding: 10px 0;
+    padding: 15px 0; /* Increased padding */
     position: relative;
 }
 
-.Semi-top-bar::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100vw;
-    height: 1px;
-    background-color: #e6e6e6;
-}
 
 .left-section {
     display: flex;
@@ -124,28 +105,21 @@ body {
     transform: scale(1.2);
 }
 
-/* ===== Search Bar Components ===== */
+/* ========================================
+   PROFESSIONAL SEARCH CATEGORY DROPDOWN
+========================================= */
+
 .search-container {
     display: flex;
     align-items: center;
     flex-grow: 1;
     height: 50px;
-    border-radius: 100px;
     margin-left: 250px;
     width: 800px;
     max-width: 700px;
-    border: 1px solid #ccc; /* Add border to entire container */
-    border-radius: 4px; /* Rounded corners for entire container */
-}
-
-.search-input {
-    flex: 1;
-    padding: 8px 12px;
-    font-size: 14px;
-    border: none; /* Remove individual border */
-    outline: none;
-    height: 100%;
-    border-radius: 4px 0 0 4px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    position: relative;
 }
 
 .category-dropdown {
@@ -158,30 +132,117 @@ body {
     height: 100%;
     transition: background-color 0.3s;
     white-space: nowrap;
-    border-left: 1px solid #ccc; /* Left separator */
-    border-right: 1px solid #ccc; /* Right separator */
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    position: relative;
+    min-width: 80px;
+    justify-content: center;
 }
 
 .category-dropdown:hover {
     background: #f8f8f8;
+    display: flex;
+    border-right: 1000;
 }
 
 .category-dropdown p {
     margin: 0;
     font-size: 14px;
     color: #333;
+    font-weight: 500;
 }
 
-.arrow {
+.category-dropdown .arrow {
     font-size: 12px;
     color: #666;
+    transition: transform 0.3s ease;
+}
+
+.category-dropdown:hover .arrow {
+    transform: rotate(180deg);
+}
+
+
+/* Search Category Dropdown Menu */
+.search-category-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: -1px; /* Align with border */
+  background: white;
+  list-style: none;
+  margin: 0;
+  width: max-content; min-width: calc(100% + 2px); /* Fit content professionally */
+  z-index: 1001;
+  border: 1px solid #e6e6e6;
+  border-top: none;
+  border-radius: 0 0 4px 4px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+}
+
+.category-dropdown:hover .search-category-menu {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.search-category-menu li {
+    border-bottom: 1px solid #f5f5f5;
+}
+
+.search-category-menu li:last-child {
+    border-bottom: none;
+}
+
+.search-category-menu li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+    display: block;
+    padding: 12px 15px;
+    transition: all 0.3s ease;
+    background: white;
+    position: relative;
+}
+
+/* Hover effect with brand color */
+.search-category-menu li a:hover {
+    background: #f8fff8; /* Very light green background */
+    color: #46853c; /* Brand green text */
+    padding-left: 20px; /* Indent on hover */
+}
+
+/* Add a subtle left border on hover */
+.search-category-menu li a:hover::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 3px;
+    background: #46853c;
+}
+
+/* ========================================
+   FIXED SEARCH BUTTON STYLES
+========================================= */
+.search-input {
+    flex: 1;
+    padding: 8px 12px;
+    font-size: 14px;
+    border: none;
+    outline: none;
+    height: 100%;
+    border-radius: 4px 0 0 4px;
 }
 
 .search-button {
-    padding: 8px 12px;
-    font-size: 16px;
-    border: none; /* Remove individual border */
-    background-color: #ffffff;
+    padding: 8px 16px;
+    border: none;
+    background-color: #46853c;
     color: white;
     cursor: pointer;
     border-radius: 0 4px 4px 0;
@@ -190,15 +251,24 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.search-icon {
-    width: 20px;
-    height: 20px;
+    min-width: 50px;
 }
 
 .search-button:hover {
-    background-color: #effff2;
+    background-color: #3a6f32;
+}
+
+/* Use Font Awesome search icon instead of image */
+.search-button .search-icon {
+    font-size: 16px;
+    color: white;
+}
+
+/* Alternative: If you want to use SVG, ensure proper path */
+.search-icon {
+    width: 18px;
+    height: 18px;
+    filter: brightness(0) invert(1); /* Makes SVG white */
 }
 
 /* ===== Main Navigation ===== */
@@ -210,23 +280,11 @@ body {
     justify-content: flex-start;
     padding: 0 0;
     box-sizing: border-box;
-    margin-bottom: 15px;
-     /*margin-top: 15px;  /* issues */
+    margin-bottom: 20px; /* Increased margin */
     position: relative;
-  
+
 }
 
-.navbar::after {
-    content: "";
-    position: absolute;
-    bottom: -0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100vw;
-    height: 1px;
-    background-color: #e6e6e6;
-    top: 100%;
-}
 
 .nav-list {
     list-style: none;
@@ -235,6 +293,10 @@ body {
     padding: 0;
     align-items: center;
 }
+
+/* ========================================
+   PROFESSIONAL CATEGORIES DROPDOWN WITH ICONS
+========================================= */
 
 .categories-btn {
     position: relative;
@@ -247,19 +309,40 @@ body {
     padding: 15px 20px;
     height: 50px;
     width: 230px;
-    background-color: #46853c;
+    background-color: #46853c; /* Brand green */
     text-decoration: none;
     color: white;
+    font-weight: 600;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    border-radius: 4px 4px 0 0;
+}
+
+.categories-btn > a:hover {
+    background-color: #3a6f32; /* Darker green on hover */
 }
 
 .menu-icon {
     margin-right: 8px;
+    font-size: 16px;
 }
 
 .category-text {
     margin-right: 8px;
+    flex-grow: 1;
 }
 
+.arrow {
+    font-size: 12px;
+    color: white;
+    transition: transform 0.3s ease;
+}
+
+.categories-btn:hover .arrow {
+    transform: rotate(180deg);
+}
+
+/* Professional Dropdown Menu */
 .dropdown-menu {
     display: none;
     position: absolute;
@@ -269,26 +352,82 @@ body {
     list-style: none;
     margin: 0;
     width: 230px;
-    height: 50px;
     z-index: 1000;
-    border-bottom: 1px solid #e6e6e6;
+    border: 1px solid #e6e6e6;
+    border-top: none;
+    border-radius: 0 0 4px 4px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
 }
 
 .categories-btn:hover .dropdown-menu {
     display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.dropdown-menu li {
+    border-bottom: 1px solid #f5f5f5;
+}
+
+.dropdown-menu li:last-child {
+    border-bottom: none;
 }
 
 .dropdown-menu li a {
     text-decoration: none;
-    color: black;
+    color: #333;
     font-size: 14px;
-    display: block;
-    padding: 12px 15px;
-    border-bottom: 1px solid #e6e6e6;
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    transition: all 0.3s ease;
+    background: white;
+    position: relative;
 }
 
+/* Hover effect with brand color */
 .dropdown-menu li a:hover {
-    background: #f3f3f3;
+    background: #f8fff8; /* Very light green background */
+    color: #46853c; /* Brand green text */
+    padding-left: 25px; /* Indent on hover */
+}
+
+/* Add a subtle left border on hover */
+.dropdown-menu li a:hover::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 4px;
+    background: #46853c;
+}
+
+/* Icon styling */
+.dropdown-menu li a i {
+    width: 20px;
+    margin-right: 12px;
+    font-size: 16px;
+    color: #46853c;
+    transition: all 0.3s ease;
+}
+
+.dropdown-menu li a:hover i {
+    color: #3a6f32; /* Darker green on hover */
+    transform: scale(1.1);
+}
+
+/* Text transition */
+.dropdown-menu li a span {
+    transition: transform 0.3s ease;
+    flex-grow: 1;
+}
+
+.dropdown-menu li a:hover span {
+    transform: translateX(3px);
 }
 
 .nav-list li.nav-item {
@@ -315,6 +454,21 @@ body {
     cursor: pointer;
     color: #333;
 }
+
+/* Remove the individual ::after pseudo-elements and create equal spacing */
+.top-header::after,
+.Semi-top-bar::after,
+.navbar::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100vw;
+    height: 1px;
+    background-color: #e6e6e6;
+}
+
 
 /* ========================================
    HERO SECTION STYLES
@@ -571,6 +725,388 @@ body {
     color:white
 }
 
+/* ========================================
+   PROFESSIONAL REVIEWS SLIDESHOW
+========================================= */
+.reviews-section {
+    padding: 80px 0;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f8f8f8;
+    position: relative;
+    margin-bottom: 50px;
+}
+
+.reviews-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.reviews-section .section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 10px;
+    letter-spacing: 0.5px;
+}
+
+.reviews-section p {
+    color: #5a5a5a;
+    font-size: 1rem;
+    margin-bottom: 50px;
+    line-height: 1.6;
+}
+
+/* Reviews Slider Container */
+.reviews-slider {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.reviews-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.review-slide {
+    flex: 0 0 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+/* Review Card */
+.review-card {
+    background: white;
+    border-radius: 12px;
+    padding: 40px;
+    text-align: center;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e6e6e6;
+    transition: all 0.3s ease;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.review-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Review Content */
+.review-stars {
+    color: #ffc107;
+    font-size: 1.3rem;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+
+.review-description {
+    font-size: 1.1rem;
+    color: #333;
+    line-height: 1.7;
+    margin-bottom: 25px;
+    font-style: italic;
+    position: relative;
+}
+
+.review-description::before,
+.review-description::after {
+    content: "“";
+    font-size: 2rem;
+    color: #46853c;
+    position: absolute;
+}
+
+.review-description::before {
+    top: -10px;
+    left: -25px;
+}
+
+.review-description::after {
+    bottom: -20px;
+    right: -25px;
+}
+
+.reviewer-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.reviewer-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #46853c, #3a6f32);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.reviewer-details {
+    text-align: left;
+}
+
+.reviewer-name {
+    font-size: 1rem;
+    color: #46853c;
+    font-weight: 600;
+    margin-bottom: 2px;
+}
+
+.reviewer-location {
+    font-size: 0.85rem;
+    color: #777;
+}
+
+/* Slider Navigation */
+.slider-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.slider-btn {
+    background: #46853c;
+    color: white;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+}
+
+.slider-btn:hover {
+    background: #3a6f32;
+    transform: scale(1.1);
+}
+
+.slider-dots {
+    display: flex;
+    gap: 10px;
+}
+
+.slider-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #ddd;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.slider-dot.active {
+    background: #46853c;
+    transform: scale(1.2);
+}
+
+/* Review Stats */
+.review-stats {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    margin-top: 50px;
+    padding-top: 40px;
+    border-top: 1px solid #e6e6e6;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #46853c;
+    display: block;
+    line-height: 1;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 8px;
+    font-weight: 500;
+}
+
+/* Auto-slide animation */
+@keyframes slide {
+    0%, 20% { transform: translateX(0%); }
+    25%, 45% { transform: translateX(-100%); }
+    50%, 70% { transform: translateX(-200%); }
+    75%, 95% { transform: translateX(-300%); }
+    100% { transform: translateX(-400%); }
+}
+
+.reviews-track.auto-slide {
+    animation: slide 13s infinite;
+}
+
+/* Pause on hover */
+.reviews-slider:hover .reviews-track.auto-slide {
+    animation-play-state: paused;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .reviews-section {
+        padding: 50px 0;
+    }
+    
+    .review-card {
+        padding: 30px 20px;
+    }
+    
+    .review-description {
+        font-size: 1rem;
+    }
+    
+    .review-description::before {
+        left: -15px;
+    }
+    
+    .review-description::after {
+        right: -15px;
+    }
+    
+    .slider-nav {
+        gap: 20px;
+    }
+    
+    .slider-btn {
+        width: 45px;
+        height: 45px;
+    }
+    
+    .review-stats {
+        gap: 30px;
+        flex-wrap: wrap;
+    }
+    
+    .stat-item {
+        flex: 1 1 100px;
+    }
+}
+
+@media (max-width: 480px) {
+    .reviewer-info {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .reviewer-details {
+        text-align: center;
+    }
+    
+    .slider-nav {
+        gap: 15px;
+    }
+}
+
+/* View More Reviews Button */
+.view-more-reviews {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.view-more-reviews-btn {
+    background: transparent;
+    color: #46853c;
+    border: 2px solid #46853c;
+    padding: 14px 35px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.view-more-reviews-btn:hover {
+    background: #46853c;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(70, 133, 60, 0.3);
+}
+
+.view-more-reviews-btn i {
+    font-size: 1.1rem;
+    transition: transform 0.3s ease;
+}
+
+.view-more-reviews-btn:hover i {
+    transform: translateX(3px);
+}
+
+/* Additional Reviews Section (hidden by default) */
+.additional-reviews {
+    display: none;
+    margin-top: 50px;
+    padding-top: 50px;
+    border-top: 1px solid #e6e6e6;
+}
+
+/* Checkbox hack to show/hide additional reviews */
+#show-more-reviews {
+    display: none;
+}
+
+#show-more-reviews:checked ~ .additional-reviews {
+    display: block;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+#show-more-reviews:checked ~ .view-more-reviews .view-more-text {
+    display: none;
+}
+
+#show-more-reviews:checked ~ .view-more-reviews .show-less-text {
+    display: inline-flex;
+}
+
+.view-more-text {
+    display: inline-flex;
+}
+
+.show-less-text {
+    display: none;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.additional-reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+
+
+
+
+
+
 
 /* ========================================
    AUTHENTIC PRODUCTS SECTION IMPROVEMENTS
@@ -626,12 +1162,8 @@ body {
   background-color: rgba(70, 133, 60, 0.05); /* Subtle background */
 }
 
-.feature-icon:hover {
-  background-color: #46853c; /* Brand green color */
-  color: #fff;
-  transform: scale(1.05);
-  box-shadow: 0 4px 8px rgba(70, 133, 60, 0.3);
-}
+
+
 
 .feature-text {
   text-align: left;

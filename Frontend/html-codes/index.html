@@ -32,49 +32,56 @@
             </div>
         </div>
 
-        <!-- ========================================
-             SEMI-TOP BAR SECTION
-        ========================================= -->
-        <div class="Semi-top-bar">
-            <div class="left-section">
-                <!-- Logo -->
-                <div class="semi-top-image">
-                    <a href="index.html"><img src="../img/logo.jpeg" alt="Green Marvel Logo"></a>
-                </div>
-                
-                <!-- Search Container -->
-                  <div class="search-container">
-                      <input type="text" placeholder="Search products" class="search-input">
-                      <div class="category-dropdown">
-                          <p>ALL</p>
-                          <span class="arrow">▾</span>
-                      </div>
-                      <button type="submit" class="search-button">
-                          <img src="../img/search icon-svgrepo-.svg" alt="Search" class="search-icon">
-                      </button>
-                  </div>
-            </div>
-
-            <!-- Right Section Icons -->
-            <div class="right-section">
-                <div class="cart-icon">
-                    <img src="../img/shopping-bag-svgrepo-com.svg" alt="shopping bag">
-                </div>
-                <div class="Account icon">
-                    <img src="../img/compare-svgrepo-com.svg" alt="account">
-                </div>
-                <div class="whishlist icon">
-                    <img src="../img/whichlist-svgrepo-com.svg" alt="whishlist">
-                </div>
-                <div class="Account icon">
-                    <img src="../img/account-svgrepo-com.svg" alt="account">
-                </div>
-                <div class="notification icon">
-                    <img src="../img/Notifications-svgrepo-com.svg" alt="notification">
-                </div>
-            </div>     
+     <!-- ========================================
+     SEMI-TOP BAR SECTION
+========================================= -->
+<div class="Semi-top-bar">
+    <div class="left-section">
+        <!-- Logo -->
+        <div class="semi-top-image">
+            <a href="index.html"><img src="../img/logo.jpeg" alt="Green Marvel Logo"></a>
         </div>
+        
+        <!-- Search Container -->
+        <div class="search-container">
+            <input type="text" placeholder="Search products" class="search-input">
+            <div class="category-dropdown">
+                <p>ALL</p>
+                <span class="arrow">▾</span>
+                <ul class="search-category-menu">
+                    <li><a href="#">Hair Spray</a></li>
+                    <li><a href="#">Growth Oil</a></li>
+                    <li><a href="#">Hair Food</a></li>
+                    <li><a href="#">Combo Deals</a></li>
+                    <li><a href="#">Specials</a></li>
+                    <li><a href="#">All Categories</a></li>
+                </ul>
+            </div>
+            <button type="submit" class="search-button">
+                <i class="fas fa-search search-icon"></i>
+            </button>
+        </div>
+    </div>
 
+    <!-- Right Section Icons -->
+    <div class="right-section">
+        <div class="cart-icon">
+            <img src="../img/shopping-bag-svgrepo-com.svg" alt="shopping bag">
+        </div>
+        <div class="Account icon">
+            <img src="../img/compare-svgrepo-com.svg" alt="account">
+        </div>
+        <div class="whishlist icon">
+            <img src="../img/whichlist-svgrepo-com.svg" alt="whishlist">
+        </div>
+        <div class="Account icon">
+            <img src="../img/account-svgrepo-com.svg" alt="account">
+        </div>
+        <div class="notification icon">
+            <img src="../img/Notifications-svgrepo-com.svg" alt="notification">
+        </div>
+    </div>     
+</div>
         <!-- ========================================
              MOBILE MENU TOGGLE
         ========================================= -->
@@ -85,33 +92,58 @@
         <!-- ========================================
              MAIN NAVIGATION
         ========================================= -->
-        <header>
-            <nav class="navbar">
-                <ul class="nav-list">
-                    <!-- Categories Dropdown -->
-                    <li class="categories-btn">
+    <header>
+    <nav class="navbar">
+        <ul class="nav-list">
+            <!-- Categories Dropdown -->
+            <li class="categories-btn">
+                <a href="#">
+                    <span class="menu-icon">☰</span>
+                    <span class="category-text">CATEGORIES</span>
+                    <span class="arrow">▾</span>
+                </a>
+                <ul class="dropdown-menu">
+                    <li>
                         <a href="#">
-                            <span class="menu-icon">☰</span>
-                            <span class="category-text">CATEGORIES</span>
-                            <span class="arrow">▾</span>
+                            <i class="fas fa-spray-can"></i>
+                            <span>Hair Spray</span>
                         </a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">Hair Spray</a></li>
-                            <li><a href="#">Growth Oil</a></li>
-                            <li><a href="#">Hair Food</a></li>
-                            <li><a href="#">Combo Deals</a></li>
-                            <li><a href="#">Specials</a></li>
-                        </ul>
                     </li>
-
-                    <!-- Navigation Links -->
-                    <li class="nav-item"><a href="shop.html">Shop ▾</a></li>
-                    <li class="nav-item"><a href="about.html">About Us</a></li>
-                    <li class="nav-item"><a href="faq.html">FAQ</a></li>
-                    <li class="nav-item"><a href="contact.html">Contact</a></li>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-oil-can"></i>
+                            <span>Growth Oil</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-leaf"></i>
+                            <span>Hair Food</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-gift"></i>
+                            <span>Combo Deals</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-star"></i>
+                            <span>Specials</span>
+                        </a>
+                    </li>
                 </ul>
-            </nav>
-        </header>
+            </li>
+
+            <!-- Navigation Links -->
+            <li class="nav-item"><a href="shop.html">Shop ▾</a></li>
+            <li class="nav-item"><a href="about.html">About Us</a></li>
+            <li class="nav-item"><a href="faq.html">FAQ</a></li>
+            <li class="nav-item"><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
 
         <main>
             <!-- ========================================
@@ -131,9 +163,6 @@
             </section>
 
 
-    <!-- ========================================
-                products SECTION
-    ========================================= -->
 <!-- ========================================
                 products SECTION
     ========================================= -->
@@ -150,10 +179,11 @@
                         
                     </div>
                     <div class="product-details">
-                        <h3 class="product-name">Jamaican Black Castor Oil Leave-In Conditioner</h3>
+                        <h3 class="product-name">Growth Oil</h3>
                         <div class="product-rating">★★★★★</div>
-                        <div class="product-size">400ml</div>
-                        <p class="product-price">R 325.00</p>
+                         <div class="product-description">Essential for all hair types for everyone</div>
+                        <div class="product-size">100ml</div>
+                        <p class="product-price">R 130.00</p>
                          <div class="product-actions">
                             <button class="add-to-cart-btn">Add to bag</button>
                             <img src="../img/whichlist-svgrepo-com.svg" alt="wishlist" class="wishlist-icon">
@@ -167,11 +197,11 @@
                         <img src="../img/Vitality-Spray.png" alt="Banana Shampoo" class="product-image">  
                     </div>
                     <div class="product-details">
-                        <h3 class="product-name">Banana Shampoo</h3>
+                        <h3 class="product-name">Vitality Hair Spray</h3>
                         <div class="product-rating">★★★★★</div>
-                        <div class="product-description">For dry hair prone to frizz. Vegan</div>
-                        <div class="product-size">400 ml (13.5 US fl oz)</div>
-                        <p class="product-price">R 255.00</p>
+                        <div class="product-description">Penetrates into the scalp for maximal results</div>
+                        <div class="product-size">100 ml </div>
+                        <p class="product-price">R 130.00</p>
 
                          <div class="product-actions">
                             <button class="add-to-cart-btn">Add to bag</button>
@@ -186,10 +216,11 @@
                         <img src="../img/hairfood.png" alt="Jamaican Black Castor Oil Curl Activator" class="product-image">
                     </div>
                     <div class="product-details">
-                        <h3 class="product-name">Jamaican Black Castor Oil Curl Activator</h3>
+                        <h3 class="product-name">Hair Food</h3>
                         <div class="product-rating">★★★★★</div>
-                        <div class="product-size">200ml</div>
-                        <p class="product-price">R 245.00</p>
+                        <div class="product-description">Protect your scalp and nurture your hair</div>
+                        <div class="product-size">100ml</div>
+                        <p class="product-price">R 120.00</p>
                          <div class="product-actions">
                             <button class="add-to-cart-btn">Add to bag</button>
                             <img src="../img/whichlist-svgrepo-com.svg" alt="wishlist" class="wishlist-icon">
@@ -203,6 +234,224 @@
 
         </div>
     </section>
+
+<!-- ========================================
+     PROFESSIONAL REVIEWS SLIDESHOW
+========================================= -->
+<section class="reviews-section">
+    <div class="container">
+        <h2 class="section-title">What Our Customers Say</h2>
+        <p>Join 500+ satisfied customers who transformed their hair with our premium products</p>
+        
+        <div class="reviews-slider">
+            <div class="reviews-track auto-slide">
+                <!-- Review 1 -->
+                <div class="review-slide">
+                    <div class="review-card">
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-description">After just 3 weeks of using the Growth Oil, my hair has never been thicker or healthier. The results are incredible!</p>
+                        <div class="reviewer-info">
+                            <div class="reviewer-avatar">TJ</div>
+                            <div class="reviewer-details">
+                                <div class="reviewer-name">Thabo Johnson</div>
+                                <div class="reviewer-location">Johannesburg</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="review-slide">
+                    <div class="review-card">
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-description">The Hair Food completely revived my damaged curls. They're now shiny, defined, and so manageable!</p>
+                        <div class="reviewer-info">
+                            <div class="reviewer-avatar">NM</div>
+                            <div class="reviewer-details">
+                                <div class="reviewer-name">Nomsa Mbeki</div>
+                                <div class="reviewer-location">Cape Town</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="review-slide">
+                    <div class="review-card">
+                        <div class="review-stars">★★★★☆</div>
+                        <p class="review-description">I was skeptical at first, but the Hair Spray holds my style all day without any sticky residue. Love it!</p>
+                        <div class="reviewer-info">
+                            <div class="reviewer-avatar">LS</div>
+                            <div class="reviewer-details">
+                                <div class="reviewer-name">Lerato Smith</div>
+                                <div class="reviewer-location">Durban</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 4 -->
+                <div class="review-slide">
+                    <div class="review-card">
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-description">The combo deal saved me so much money! All three products work perfectly together for amazing results.</p>
+                        <div class="reviewer-info">
+                            <div class="reviewer-avatar">PK</div>
+                            <div class="reviewer-details">
+                                <div class="reviewer-name">Peter Khumalo</div>
+                                <div class="reviewer-location">Pretoria</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 5 -->
+                <div class="review-slide">
+                    <div class="review-card">
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-description">My hair growth has doubled since using these products. Friends keep asking what my secret is!</p>
+                        <div class="reviewer-info">
+                            <div class="reviewer-avatar">AB</div>
+                            <div class="reviewer-details">
+                                <div class="reviewer-name">Amina Bello</div>
+                                <div class="reviewer-location">Port Elizabeth</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Review Statistics -->
+        <div class="review-stats">
+            <div class="stat-item">
+                <span class="stat-number">4.8/5</span>
+                <span class="stat-label">Average Rating</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">500+</span>
+                <span class="stat-label">Happy Customers</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">98%</span>
+                <span class="stat-label">Would Recommend</span>
+            </div>
+        </div>
+
+        <!-- Hidden checkbox for CSS toggle -->
+        <input type="checkbox" id="show-more-reviews" style="display: none;">
+
+        <!-- View More Reviews Button -->
+        <div class="view-more-reviews">
+            <label for="show-more-reviews" class="view-more-reviews-btn">
+                <span class="view-more-text">
+                    View More Reviews 
+                    <i class="fas fa-chevron-down"></i>
+                </span>
+                <span class="show-less-text">
+                    Show Less Reviews
+                    <i class="fas fa-chevron-up"></i>
+                </span>
+            </label>
+        </div>
+
+        <!-- Additional Reviews (Hidden by default) -->
+        <div class="additional-reviews">
+            <div class="additional-reviews-grid">
+                <!-- Review 6 -->
+                <div class="review-card">
+                    <div class="review-stars">★★★★☆</div>
+                    <p class="review-description">The organic ingredients make all the difference. No more scalp irritation or chemical smells!</p>
+                    <div class="reviewer-info">
+                        <div class="reviewer-avatar">DM</div>
+                        <div class="reviewer-details">
+                            <div class="reviewer-name">David Moyo</div>
+                            <div class="reviewer-location">Bloemfontein</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 7 -->
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-description">Worth every rand! My hair has never looked better. The shine and volume are unbelievable.</p>
+                    <div class="reviewer-info">
+                        <div class="reviewer-avatar">SN</div>
+                        <div class="reviewer-details">
+                            <div class="reviewer-name">Sipho Ndlovu</div>
+                            <div class="reviewer-location">Soweto</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 8 -->
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-description">The customer service is as excellent as the products. Quick delivery and genuine care for customers.</p>
+                    <div class="reviewer-info">
+                        <div class="reviewer-avatar">RM</div>
+                        <div class="reviewer-details">
+                            <div class="reviewer-name">Rebecca Moloi</div>
+                            <div class="reviewer-location">East London</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 9 -->
+                <div class="review-card">
+                    <div class="review-stars">★★★★☆</div>
+                    <p class="review-description">Perfect for African hair types! Finally found products that understand our hair's unique needs.</p>
+                    <div class="reviewer-info">
+                        <div class="reviewer-avatar">CT</div>
+                        <div class="reviewer-details">
+                            <div class="reviewer-name">Chloe Tshabalala</div>
+                            <div class="reviewer-location">Polokwane</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 10 -->
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-description">I've tried everything on the market, but Green Marvel is the only brand that delivered real results.</p>
+                    <div class="reviewer-info">
+                        <div class="reviewer-avatar">VK</div>
+                        <div class="reviewer-details">
+                            <div class="reviewer-name">Vusi Khoza</div>
+                            <div class="reviewer-location">Nelspruit</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 11 -->
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-description">The growth oil helped restore my edges in just 2 months. I'm beyond grateful for this product!</p>
+                    <div class="reviewer-info">
+                        <div class="reviewer-avatar">ZM</div>
+                        <div class="reviewer-details">
+                            <div class="reviewer-name">Zanele Mthembu</div>
+                            <div class="reviewer-location">Rustenburg</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 12 -->
+                <div class="review-card">
+                    <div class="review-stars">★★★★☆</div>
+                    <p class="review-description">Great value for money. The products last long and a little goes a long way. Highly recommended!</p>
+                    <div class="reviewer-info">
+                        <div class="reviewer-avatar">BT</div>
+                        <div class="reviewer-details">
+                            <div class="reviewer-name">Bongani Twala</div>
+                            <div class="reviewer-location">Kimberley</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 <!-- ========================================
      AUTHENTIC PRODUCTS SECTION
 ========================================= -->

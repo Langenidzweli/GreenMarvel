@@ -1,0 +1,435 @@
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: linear-gradient(135deg, #f8fff8 0%, #ffffff 100%);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header Section */
+.about-header {
+    text-align: center;
+    padding: 100px 0 80px;
+    background: linear-gradient(135deg, #46853c 0%, #3a6f32 100%);
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.about-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="white" opacity="0.3"/><circle cx="80" cy="40" r="1.5" fill="white" opacity="0.3"/><circle cx="40" cy="80" r="1" fill="white" opacity="0.3"/><circle cx="70" cy="70" r="1.5" fill="white" opacity="0.3"/><circle cx="10" cy="60" r="1" fill="white" opacity="0.3"/></svg>');
+}
+
+.about-header h1 {
+    font-size: 2.8rem;
+    margin-bottom: 15px;
+    font-weight: 700;
+    position: relative;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.about-header p {
+    font-size: 1.3rem;
+    max-width: 600px;
+    margin: 0 auto;
+    opacity: 0.9;
+    position: relative;
+}
+
+/* Process Section */
+.process-section {
+    padding: 80px 0;
+    background: white;
+}
+
+.process-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.process-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+    padding: 40px;
+    background: #f8fff8;
+    border-radius: 20px;
+    border-left: 5px solid #46853c;
+    position: relative;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 20px rgba(70, 133, 60, 0.1);
+}
+
+.process-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(70, 133, 60, 0.15);
+}
+
+.process-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #46853c, #3a6f32);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 2rem;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+.process-card:hover .process-icon {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.process-content {
+    flex: 1;
+}
+
+.process-content h3 {
+    color: #1a1a1a;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+.process-content p {
+    color: #666;
+    margin-bottom: 20px;
+    line-height: 1.6;
+    font-size: 1.1rem;
+}
+
+.process-features {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+}
+
+.process-features li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #46853c;
+    font-weight: 500;
+}
+
+.process-features i {
+    font-size: 0.9rem;
+}
+
+.process-number {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 3rem;
+    font-weight: 700;
+    color: rgba(70, 133, 60, 0.1);
+    line-height: 1;
+}
+
+/* Story Cards Section */
+.story-cards {
+    padding: 80px 0;
+    background: #f8f8f8;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-header h2 {
+    font-size: 2.5rem;
+    color: #1a1a1a;
+    margin-bottom: 10px;
+}
+
+.section-header p {
+    color: #666;
+    font-size: 1.1rem;
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.story-card {
+    background: white;
+    padding: 40px 30px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(70, 133, 60, 0.1);
+    border: 2px solid #f0f0f0;
+    position: relative;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.story-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(70, 133, 60, 0.2);
+    border-color: #46853c;
+}
+
+.card-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #46853c, #3a6f32);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 2rem;
+    margin: 0 auto 20px;
+    transition: transform 0.3s ease;
+}
+
+.story-card:hover .card-icon {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.card-year {
+    display: inline-block;
+    background: #ffeaa7;
+    color: #2d3436;
+    padding: 8px 20px;
+    border-radius: 25px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+}
+
+.story-card h3 {
+    color: #1a1a1a;
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+}
+
+.story-card p {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Values Section */
+.values-section {
+    padding: 80px 0;
+    background: white;
+}
+
+.values-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.values-header h2 {
+    font-size: 2.5rem;
+    color: #1a1a1a;
+    margin-bottom: 10px;
+}
+
+.values-header p {
+    color: #666;
+    font-size: 1.1rem;
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.value-item {
+    text-align: center;
+    padding: 30px;
+}
+
+.value-shape {
+    width: 100px;
+    height: 100px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border: 2px solid #46853c;
+    transition: all 0.3s ease;
+}
+
+.value-item:hover .value-shape {
+    transform: scale(1.1);
+    background: #46853c;
+}
+
+.value-shape i {
+    font-size: 2.5rem;
+    color: #46853c;
+    transition: all 0.3s ease;
+}
+
+.value-item:hover .value-shape i {
+    color: white;
+}
+
+.value-item h4 {
+    color: #1a1a1a;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.value-item p {
+    color: #666;
+    line-height: 1.5;
+}
+
+/* CTA Section */
+.cta-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #46853c 0%, #3a6f32 100%);
+    color: white;
+    text-align: center;
+}
+
+.cta-content h2 {
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+}
+
+.cta-content p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 15px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    border: 2px solid transparent;
+}
+
+.btn.primary {
+    background: white;
+    color: #46853c;
+}
+
+.btn.primary:hover {
+    background: #f8f8f8;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.2);
+}
+
+.btn.secondary {
+    background: transparent;
+    color: white;
+    border-color: white;
+}
+
+.btn.secondary:hover {
+    background: white;
+    color: #46853c;
+    transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .about-header {
+        padding: 60px 0 40px;
+    }
+    
+    .about-header h1 {
+        font-size: 2rem;
+    }
+    
+    .process-card {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+    
+    .process-features {
+        grid-template-columns: 1fr;
+    }
+    
+    .cards-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .values-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .btn {
+        width: 250px;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-header h1 {
+        font-size: 1.7rem;
+    }
+    
+    .about-header p {
+        font-size: 1rem;
+    }
+    
+    .process-card {
+        padding: 30px 20px;
+    }
+    
+    .values-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .section-header h2 {
+        font-size: 2rem;
+    }
+}
