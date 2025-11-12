@@ -65,10 +65,9 @@ body {
     justify-content: space-between;
     align-items: center;
     background-color: white;
-    padding: 15px 0; /* Increased padding */
+    padding: 15px 0;
     position: relative;
 }
-
 
 .left-section {
     display: flex;
@@ -78,11 +77,14 @@ body {
 
 .semi-top-image img {
     height: 50px;
+    width: auto;
+    border-radius: 6px;
     object-fit: contain;
 }
 
 .right-section {
     display: flex;
+   
     justify-content: flex-end;
     align-items: center;
     gap: 25px;
@@ -223,7 +225,7 @@ body {
     top: 0;
     height: 100%;
     width: 3px;
-    background: #46853c;
+    background: #1c4b15;
 }
 
 /* ========================================
@@ -479,7 +481,7 @@ body {
 .hero {
     position: relative;
     width: 100%;
-    height: 85vh;
+    height: 75vh;
     min-height: 700px;
     display: flex;
     align-items: center;
@@ -551,49 +553,23 @@ body {
     text-align: left;
     color: white;
     max-width: 600px;
-    padding: 0 0 0 10%;
+    padding: 0 0 0 5%;
     animation: fadeInLeft 1s ease-out 0.5s both;
     margin-right: auto;
 }
 
-/* Trust Badge - Left Aligned */
-.trust-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    padding: 12px 24px;
-    border-radius: 50px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    margin-bottom: 30px;
-    animation: slideInLeft 0.8s ease-out 0.7s both;
-    cursor: default;
-    font-size: 0;
-}
-
-.trust-badge i {
-    color: #46853c;
-    font-size: 1.1rem;
-}
-
-.trust-badge span {
-    font-size: 0.95rem;
-    font-weight: 500;
-    letter-spacing: 0.5px;
-}
 
 /* Hero Title - Left Aligned */
 .hero-title {
     margin-bottom: 20px;
     line-height: 1.1;
     font-weight: 700;
+    
 }
 
 .title-line {
     display: block;
-    font-size: clamp(3rem, 8vw, 5rem);
+    font-size: clamp(1rem, 5vw, 4rem);
     font-weight: 700;
     margin-bottom: 5px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
@@ -610,45 +586,27 @@ body {
     color: #46853c;
 }
 
-.title-line:nth-child(3) {
-    animation-delay: 1.3s;
-}
-
-/* Hero Features - Left Aligned */
+/* Hero Features - Horizontal with Slashes */
 .hero-features {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 15px;
+    align-items: center;
+    gap: 10px;
     margin-bottom: 40px;
     animation: fadeInLeft 0.8s ease-out 1.5s both;
+    flex-wrap: wrap;
 }
 
-.feature-tag {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: rgba(70, 133, 60, 0.2);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    padding: 10px 20px;
-    border-radius: 25px;
-    border: 1px solid rgba(70, 133, 60, 0.3);
-    font-size: 0.9rem;
-    font-weight: 500;
-    transition: all 0.3s ease;
-    cursor: default;
-    white-space: nowrap;
-}
 
 .feature-tag:hover {
-    background: rgba(70, 133, 60, 0.3);
-    transform: translateX(5px);
+    
+    transform: translateY(-2px);
 }
 
-.feature-tag i {
-    font-size: 0.8rem;
+.feature-slash {
     color: #46853c;
+    font-size: 1.2rem;
+    font-weight: 300;
+    opacity: 0.7;
 }
 
 /* Hero CTA Buttons - Left Aligned */
@@ -848,14 +806,17 @@ body {
     }
     
     .hero-features {
-        gap: 10px;
+        gap: 8px;
         margin-bottom: 30px;
     }
     
     .feature-tag {
         padding: 8px 15px;
         font-size: 0.8rem;
-        white-space: nowrap;
+    }
+    
+    .feature-slash {
+        font-size: 1rem;
     }
     
     .cta-btn {
@@ -890,6 +851,16 @@ body {
         
         .cta-btn {
             width: 200px;
+        }
+        
+        .hero-features {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 5px;
+        }
+        
+        .feature-slash {
+            display: none;
         }
     }
 }
@@ -1016,6 +987,8 @@ body {
     backface-visibility: hidden;
     perspective: 1000px;
 }
+
+
 /* ========================================
    Featured Products Section
 ========================================= */
@@ -1694,320 +1667,399 @@ body {
 
 
 /* ========================================
-   FOOTER STYLES
-======================================== */
+   COMPACT PROFESSIONAL FOOTER STYLES
+========================================= */
+
 .site-footer {
-    background: #111;
-    color: #fff;
-    padding: 50px 0 20px;
-    font-family: 'Roboto', sans-serif;
+    background: #000000;
+    color: white;
+    padding: 40px 0 0;
+    margin-top: auto;
     width: 100vw;
     position: relative;
     left: 50%;
     right: 50%;
     margin-left: -50vw;
     margin-right: -50vw;
-    margin-bottom: 10px;
-     
-  }
+}
+
 .footer-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-    width: 100%;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1.2fr;
+    gap: 100px;
     max-width: 1200px;
     margin-left: 200px;
-    
+    padding: 0 20px;
 }
 
-.footer-about,
-.footer-links,
-.footer-customer-care,
-.footer-contact,
-.footer-newsletter,
-.footer-delivery {
-    flex: 1 1 250px;
+/* Footer Brand Section */
+.footer-brand {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
-.footer-about h3,
-.footer-links h4,
-.footer-customer-care h4,
-.footer-contact h4,
-.footer-newsletter h4,
-.footer-delivery h4 {
-    margin-bottom: 15px;
-    font-size: 1.2rem;
-    color: #fff;
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 5px;
 }
 
-.footer-about p,
-.footer-contact p,
-.footer-newsletter p,
-.footer-delivery p {
-    font-size: 0.95rem;
+.footer-logo .logo {
+    height: 40px;
+    width: auto;
+    border-radius: 6px;
+}
+
+.footer-logo h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #46853c;
+    margin: 0;
+}
+
+.brand-description {
+    color: #b8b8b8;
     line-height: 1.5;
-    color: #ccc;
+    font-size: 0.9rem;
+    margin: 0;
 }
 
-.footer-links ul,
-.footer-customer-care ul {
+/* Delivery Partners - Compact with dots */
+.delivery-partners {
+    margin-top: 15px;
+}
+
+.delivery-partners h4 {
+    font-size: 0.9rem;
+    color: #46853c;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.partners-list {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.partners-list span {
+    color: #888;
+    font-size: 0.8rem;
+}
+
+.partners-list span:not(:last-child)::after {
+    content: "•";
+    margin-left: 10px;
+    color: #555;
+}
+
+/* Footer Bottom - Full Width */
+.footer-bottom {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px 0;  
+    margin-top: 40px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+}
+
+.footer-bottom-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+
+/* Footer Columns */
+.footer-column {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.footer-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #46853c;
+    margin-bottom: 12px;
+    position: relative;
+}
+
+/* Footer Links */
+.footer-links {
     list-style: none;
     padding: 0;
-}
-
-.footer-links ul li,
-.footer-customer-care ul li {
-    margin-bottom: 8px;
-}
-
-.footer-links ul li a,
-.footer-customer-care ul li a {
-    color: #ccc;
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-.footer-links ul li a:hover,
-.footer-customer-care ul li a:hover {
-    color: #3498db;
-}
-
-.footer-newsletter .subscribe-form {
+    margin: 0;
     display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.footer-link {
+    color: #b8b8b8;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-size: 0.85rem;
+}
+
+.footer-link:hover {
+    color: #46853c;
+}
+
+/* Contact Info */
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #b8b8b8;
+    font-size: 0.85rem;
+}
+
+.contact-item i {
+    color: #46853c;
+    width: 14px;
+    text-align: center;
+    font-size: 0.8rem;
+}
+
+.contact-item a {
+    color: #b8b8b8;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-size: 0.85rem;
+}
+
+.contact-item a:hover {
+    color: white;
+}
+
+/* Social Section */
+.social-section {
     margin-top: 10px;
 }
 
-.footer-newsletter input[type="email"] {
-    flex: 1;
-    padding: 8px 12px;
-    border: none;
-    border-radius: 4px 0 0 4px;
-    outline: none;
+.social-links {
+    display: flex;
+    gap: 10px;
 }
 
-.footer-newsletter button {
-    padding: 8px 16px;
-    background: #3498db;
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.social-link:hover {
+    transform: translateY(-2px);
+}
+
+.social-link.whatsapp:hover {
+    background: #25D366;
+}
+
+.social-link.email:hover {
+    background: #EA4335;
+}
+
+.social-link.facebook:hover {
+    background: #1877F2;
+}
+
+.social-link.instagram:hover {
+    background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
+}
+
+/* Newsletter Section */
+.newsletter-section {
+    margin-top: 15px;
+}
+
+.subscribe-form {
+    margin-top: 8px;
+}
+
+.input-group {
+    display: flex;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.input-group:focus-within {
+    border-color: #46853c;
+}
+
+.newsletter-input {
+    flex: 1;
+    padding: 8px 12px;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 0.85rem;
+    outline: none;
+    min-width: 0;
+}
+
+.newsletter-input::placeholder {
+    color: #888;
+    font-size: 0.8rem;
+}
+
+.newsletter-btn {
+    padding: 8px 12px;
+    background: #46853c;
     border: none;
     color: white;
     cursor: pointer;
-    border-radius: 0 4px 4px 0;
-    transition: background 0.3s;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 40px;
 }
 
-.footer-newsletter button:hover {
-    background: #2a7ab8;
+.newsletter-btn:hover {
+    background: #3a6f32;
 }
 
+/* Footer Bottom */
 .footer-bottom {
-    border-top: 1px solid #333;
-    padding-top: 15px;
-    margin-top: 30px;
-    text-align: center;
-    font-size: 0.9rem;
-    color: #aaa;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px 0;
+    margin-top: 40px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+.footer-bottom-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.copyright {
+    color: #888;
+    font-size: 0.8rem;
+    margin: 0;
+}
+
+.legal-links {
+    display: flex;
+    gap: 15px;
+}
+
+.legal-links a {
+    color: #888;
+    text-decoration: none;
+    font-size: 0.8rem;
+    transition: color 0.3s ease;
+}
+
+.legal-links a:hover {
+    color: #46853c;
+}
 
 /* ========================================
-   RESPONSIVE DESIGN - TABLET (1024px and below)
-======================================== */
+   RESPONSIVE DESIGN
+========================================= */
+
 @media (max-width: 1024px) {
-    body {
-        padding: 0 40px;
-    }
-
-    .search-container {
-        margin-left: 50px;
-        width: 100%;
-        max-width: 500px;
-    }
-
-    .semi-top-image img {
-        height: 40px;
-    }
-
-    .hero-content h1 {
-        font-size: 2.3rem;
-    }
-
-    .hero-content h2 {
-        font-size: 1rem;
-    }
-
     .footer-container {
-        flex-wrap: wrap;
-        gap: 20px;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
     }
-
-    .footer-about, 
-    .footer-links,
-    .footer-customer-care,
-    .footer-contact,
-    .footer-newsletter,
-    .footer-delivery {
-        flex: 1 1 45%;
-    }
-
-    .page-wrapper {
-        transform: scale(0.85);
+    
+    .footer-brand {
+        grid-column: 1 / -1;
     }
 }
 
-
-/* ========================================
-   RESPONSIVE DESIGN - MOBILE (768px and below)
-======================================== */
 @media (max-width: 768px) {
-    body {
-        padding: 0 20px;
+    .site-footer {
+        padding: 30px 0 0;
     }
-
-    /* Header & Navigation */
-    .top-header {
-        flex-direction: column;
-        text-align: center;
-        font-size: 12px;
-        gap: 5px;
-    }
-
-    .Semi-top-bar {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        gap: 10px;
-    }
-
-    .left-section {
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-    }
-
-    .search-container {
-        margin-left: 0;
-        width: 100%;
-        max-width: 100%;
-        justify-content: center;
-    }
-
-    .search-input {
-        font-size: 12px;
-        padding: 8px;
-    }
-
-    .search-button {
-        padding: 8px;
-    }
-
-    .navbar {
-        flex-wrap: wrap;
-        height: auto;
-        justify-content: center;
-        padding: 10px 0;
-        display: none;
-    }
-
-    .nav-list {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .nav-item, .categories-btn {
-        margin: 5px 10px;
-    }
-
-    .menu-toggle {
-        display: block;
-        position: absolute;
-        right: 20px;
-        top: 15px;
-        z-index: 2000;
-    }
-
-    .navbar.active {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        background: #fff;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        width: 100%;
-        border-top: 1px solid #e6e6e6;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-
-    .navbar a {
-        padding: 10px 0;
-        width: 100%;
-        text-align: center;
-    }
-
-    /* Hero Section */
-    .hero {
-        height: 60vh;
-    }
-
-    .hero-content {
-        top: 50%;
-        left: 10%;
-    }
-
-    .hero-content h1 {
-        font-size: 1.8rem;
-    }
-
-    .hero-content h2 {
-        font-size: 0.9rem;
-    }
-
-    .hero-content p {
-        font-size: 0.9rem;
-    }
-
-    /* Footer */
+    
     .footer-container {
-        flex-direction: column;
-        text-align: center;
-        padding: 0 20px;
+        grid-template-columns: 1fr;
         gap: 25px;
+        text-align: center;
     }
-
-    .footer-about, 
-    .footer-links,
-    .footer-customer-care,
-    .footer-contact,
-    .footer-newsletter,
-    .footer-delivery {
-        flex: 1 1 100%;
+    
+    .footer-logo {
+        justify-content: center;
     }
-
-    .footer-newsletter .subscribe-form {
+    
+    .partners-list {
+        justify-content: center;
+    }
+    
+    .social-links {
+        justify-content: center;
+    }
+    
+    .footer-bottom-content {
         flex-direction: column;
+        gap: 10px;
+        text-align: center;
     }
-
-    .footer-newsletter input[type="email"],
-    .footer-newsletter button {
-        width: 100%;
-        border-radius: 4px;
-    }
-
-    .footer-newsletter button {
-        margin-top: 8px;
-    }
-
-    .footer-bottom {
-        font-size: 0.8rem;
-        padding: 10px 0;
-    }
-
-    .page-wrapper {
-        transform: scale(0.7);
+    
+    .legal-links {
+        justify-content: center;
     }
 }
 
-
+@media (max-width: 480px) {
+    .footer-container {
+        padding: 0 15px;
+    }
+    
+    .footer-logo {
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .legal-links {
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .partners-list {
+        gap: 6px;
+    }
+    
+    .partners-list span {
+        font-size: 0.75rem;
+        padding: 3px 6px;
+    }
+}
 /* ========================================
    RESPONSIVE DESIGN - SMALL MOBILE (480px and below)
 ======================================== */
