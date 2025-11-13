@@ -2089,3 +2089,171 @@ body {
         transform: scale(0.6);
     }
 }
+
+/* ========================================
+            REVIEWS COMPONENT STYLES
+========================================= */
+
+.reviews-component {
+    padding: 80px 0;
+    background: white;
+    border-top: 1px solid #e0e0e0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.reviews-slider-component {
+    overflow: hidden;
+    margin: 50px 0;
+    position: relative;
+}
+
+.reviews-track-component {
+    display: flex;
+    gap: 30px;
+    animation: slideComponent 30s linear infinite;
+}
+
+.review-card-component {
+    background: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 30px;
+    min-width: 300px;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.review-card-component:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border-color: #46853c;
+}
+
+.review-stars {
+    color: #ffc107;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+}
+
+.review-text {
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+.reviewer {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.reviewer-avatar {
+    width: 50px;
+    height: 50px;
+    background: #46853c;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.reviewer-name {
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 5px;
+}
+
+.reviewer-location {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.review-stats-component {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.stat-item-component {
+    text-align: center;
+    padding: 25px 15px;
+    background: #f8f8f8;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+}
+
+.stat-number {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #46853c;
+    margin-bottom: 8px;
+}
+
+.stat-label {
+    color: #666;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* Animation for sliding reviews */
+@keyframes slideComponent {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-300px * 4 - 30px * 3));
+    }
+}
+
+/* Pause animation on hover */
+.reviews-slider-component:hover .reviews-track-component {
+    animation-play-state: paused;
+}
+
+/* ========================================
+            RESPONSIVE DESIGN
+========================================= */
+
+@media (max-width: 768px) {
+    .reviews-component {
+        padding: 60px 0;
+    }
+    
+    .review-card-component {
+        min-width: 280px;
+        padding: 25px 20px;
+    }
+    
+    .reviews-track-component {
+        gap: 20px;
+    }
+    
+    .review-stats-component {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+    
+    .stat-item-component {
+        padding: 20px 10px;
+    }
+    
+    .stat-number {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .review-card-component {
+        min-width: 250px;
+    }
+    
+    .review-stats-component {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+}

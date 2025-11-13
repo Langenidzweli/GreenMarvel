@@ -372,3 +372,24 @@ document.addEventListener('DOMContentLoaded', function() {
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = ComponentLoader;
 }
+
+// Load reviews component
+function loadReviewsComponent() {
+    const placeholders = document.querySelectorAll('.reviews-component-placeholder');
+    placeholders.forEach(placeholder => {
+        fetch('../components/reviews-component.html')
+            .then(response => response.text())
+            .then(data => {
+                placeholder.innerHTML = data;
+            })
+            .catch(error => {
+                console.error('Error loading reviews component:', error);
+                placeholder.innerHTML = '<p>Reviews component failed to load.</p>';
+            });
+    });
+}
+
+// Call this function when the page loads
+document.addEventListener('DOMContentLoaded', function() {
+    loadReviewsComponent();
+});
