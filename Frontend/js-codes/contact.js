@@ -5,6 +5,9 @@ class ContactPage {
         this.form = document.getElementById('contactForm');
         this.submitBtn = this.form?.querySelector('.submit-btn');
         this.faqItems = document.querySelectorAll('.faq-item');
+        this.subjectSelect = document.getElementById('subject');
+        this.customSubjectContainer = document.getElementById('customSubjectContainer');
+        this.customSubjectInput = document.getElementById('customSubject');
         
         this.init();
     }
@@ -14,6 +17,7 @@ class ContactPage {
         this.initFAQAccordion();
         this.initInputAnimations();
         this.initFormValidation();
+        this.initCustomSubject();
     }
 
     // Form submission with validation
@@ -34,9 +38,10 @@ class ContactPage {
         let isValid = true;
         const inputs = this.form.querySelectorAll('input[required], select[required], textarea[required]');
         
+        // Clear previous errors
+        this.clearErrors();
+
         inputs.forEach(input => {
-            input.classList.remove('error');
-            
             if (!input.value.trim()) {
                 input.classList.add('error');
                 this.showError(input, 'This field is required');
@@ -48,7 +53,22 @@ class ContactPage {
             }
         });
 
+        // Validate custom subject if "Other" is selected
+        if (this.subjectSelect.value === 'other' && (!this.customSubjectInput.value.trim())) {
+            this.customSubjectInput.classList.add('error');
+            this.showError(this.customSubjectInput, 'Please specify your subject');
+            isValid = false;
+        }
+
         return isValid;
+    }
+
+    clearErrors() {
+        const errors = this.form.querySelectorAll('.error-message');
+        errors.forEach(error => error.remove());
+        
+        const errorInputs = this.form.querySelectorAll('.error');
+        errorInputs.forEach(input => input.classList.remove('error'));
     }
 
     isValidEmail(email) {
@@ -66,12 +86,6 @@ class ContactPage {
         // Create error message
         const errorDiv = document.createElement('div');
         errorDiv.className = 'error-message';
-        errorDiv.style.cssText = `
-            color: #e74c3c;
-            font-size: 0.85rem;
-            margin-top: 5px;
-            animation: fadeInUp 0.3s ease;
-        `;
         errorDiv.textContent = message;
         
         input.parentNode.appendChild(errorDiv);
@@ -81,6 +95,22 @@ class ContactPage {
             input.classList.remove('error');
             errorDiv.remove();
         }, { once: true });
+    }
+
+    // Custom subject functionality
+    initCustomSubject() {
+        if (!this.subjectSelect || !this.customSubjectContainer) return;
+
+        this.subjectSelect.addEventListener('change', () => {
+            if (this.subjectSelect.value === 'other') {
+                this.customSubjectContainer.classList.add('show');
+                this.customSubjectInput.setAttribute('required', 'required');
+            } else {
+                this.customSubjectContainer.classList.remove('show');
+                this.customSubjectInput.removeAttribute('required');
+                this.customSubjectInput.value = '';
+            }
+        });
     }
 
     // Form submission simulation
@@ -99,6 +129,7 @@ class ContactPage {
             
             // Reset form
             this.form.reset();
+            this.customSubjectContainer.classList.remove('show');
             
         } catch (error) {
             this.showErrorMessage();
@@ -132,9 +163,9 @@ class ContactPage {
         const successDiv = document.createElement('div');
         successDiv.className = 'form-success show';
         successDiv.innerHTML = `
-            <i class="fas fa-check-circle" style="font-size: 2rem; margin-bottom: 10px;"></i>
-            <h3 style="margin: 10px 0 5px; color: #155724;">Message Sent Successfully!</h3>
-            <p style="margin: 0; opacity: 0.8;">We'll get back to you within 2 hours. Thank you for contacting us.</p>
+            <i class="fas fa-check-circle"></i>
+            <h3>Message Sent Successfully!</h3>
+            <p>We'll get back to you within 2 hours. Thank you for contacting us.</p>
         `;
 
         this.form.parentNode.insertBefore(successDiv, this.form);
@@ -218,35 +249,3 @@ class ContactPage {
 document.addEventListener('DOMContentLoaded', () => {
     new ContactPage();
 });
-
-// Add CSS for error states
-const style = document.createElement('style');
-style.textContent = `
-    .form-group input.error,
-    .form-group select.error,
-    .form-group textarea.error {
-        border-color: #e74c3c !important;
-        box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.1) !important;
-    }
-    
-    .form-group.focused .input-icon {
-        color: #3a6f32;
-        transform: scale(1.1);
-    }
-    
-    @keyframes fadeInUp {
-        from {
-            opacity: 0;
-            transform: translateY(10px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-    
-    .faq-item .faq-answer {
-        animation: fadeInUp 0.3s ease;
-    }
-`;
-document.head.appendChild(style);
