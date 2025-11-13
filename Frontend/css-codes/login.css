@@ -33,6 +33,7 @@ body {
     height: 50px;
     width: auto;
     margin-bottom: 15px;
+    border-radius: 6px;
 }
 
 .login-header h1 {
@@ -228,7 +229,7 @@ body {
 }
 
 .social-btn {
-    width: 45px;
+    width: 80px;
     height: 45px;
     border: 2px solid #e6e6e6;
     border-radius: 8px;
@@ -246,15 +247,63 @@ body {
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
 }
 
-.social-btn:nth-child(1):hover {
-    border-color: #db4437;
-    color: #db4437;
+.social-btn {
+    position: relative;
+    border: 2px solid #e0e0e0;
+    background: white;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1;
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    overflow: hidden;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
 }
 
-.social-btn:nth-child(2):hover {
-    border-color: #4267B2;
-    color: #4267B2;
+/* Default state - Black G */
+.social-btn .fab.fa-google {
+    color: #000000;
+    font-size: 1.3rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
 }
+
+/* Hover state - Expand and show black border */
+.social-btn:hover {
+    width: 215px;
+    background: white;
+    border-color: #000000;
+}
+
+.social-btn:hover .fab.fa-google {
+    position: absolute;
+    left: 15px;
+    color: #056510;
+}
+
+.social-btn:hover .btn-text {
+    opacity: 1;
+    transform: translateX(0);
+    color: #056510;
+}
+
+/* Text that appears on hover */
+.btn-text {
+    position: absolute;
+    left: 45px;
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    color: #000000;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
 
 /* Responsive */
 @media (max-width: 480px) {
