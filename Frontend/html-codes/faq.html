@@ -3,316 +3,318 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Green Marvel - Your go-to store for quality products">
     <title>FAQ - Green Marvel</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/jpeg" href="../img/logo.jpeg">
+    <link rel="stylesheet" href="../css-codes/index.css">
     <link rel="stylesheet" href="../css-codes/faq.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
 <body>
-    <!-- FAQ Hero Section -->
-    <section class="faq-hero">
-        <div class="container">
-            <div class="faq-hero-content">
-                <h1>Frequently Asked Questions</h1>
-                <p>Find answers to common questions about our products, ordering, shipping, and more</p>
-            </div>
-        </div>
-    </section>
+    <div class="page-wrapper">
+        <!-- Component Placeholders -->
+        <div class="top-header-placeholder"></div>
+        <div class="semi-top-bar-placeholder"></div>
+        <div class="main-nav-placeholder"></div>
 
-    <!-- FAQ Content Section -->
-    <div class="container">
-        <div class="faq-container">
-            <!-- FAQ Categories -->
-            <div class="faq-categories">
-                <button class="faq-category-btn active" data-category="all">All Questions</button>
-                <button class="faq-category-btn" data-category="products">Products</button>
-                <button class="faq-category-btn" data-category="ordering">Ordering</button>
-                <button class="faq-category-btn" data-category="shipping">Shipping & Returns</button>
-                <button class="faq-category-btn" data-category="ingredients">Ingredients</button>
-            </div>
-
-            <!-- Products FAQ Section -->
-            <section class="faq-section" id="products">
-                <h2>Product Questions</h2>
-                
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>What is the difference between your Hair Spray, Growth Oil, and Hair Food?</span>
-                        <i class="fas fa-chevron-down"></i>
+        <!-- FAQ Page Content -->
+        <main>
+            <!-- FAQ Hero Section -->
+            <section class="faq-hero">
+                <div class="container">
+                    <div class="faq-hero-content">
+                        <h1>Frequently Asked Questions</h1>
+                        <p>Find answers to common questions about our products, ordering, shipping, and more</p>
+                        <div class="search-faq">
+                            <input type="text" placeholder="Search questions..." class="search-input">
+                            <button class="search-btn">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
                     </div>
-                    <div class="faq-answer">
-                        <p>Our three main products serve different but complementary purposes:</p>
-                        
-                        <div class="product-highlight">
-                            <p><strong>Vitality Hair Spray</strong> - Penetrates the scalp for maximal results, provides light hold, and fights dryness and frizz.</p>
+                </div>
+            </section>
+
+            <!-- FAQ Content Section -->
+            <div class="container">
+                <div class="faq-container">
+                    <!-- FAQ Categories -->
+                    <div class="faq-categories">
+                        <button class="faq-category-btn active" data-category="all">
+                            <i class="fas fa-th-list"></i>
+                            All Questions
+                        </button>
+                        <button class="faq-category-btn" data-category="products">
+                            <i class="fas fa-spray-can"></i>
+                            Products
+                        </button>
+                        <button class="faq-category-btn" data-category="ordering">
+                            <i class="fas fa-shopping-cart"></i>
+                            Ordering
+                        </button>
+                        <button class="faq-category-btn" data-category="shipping">
+                            <i class="fas fa-shipping-fast"></i>
+                            Shipping & Returns
+                        </button>
+                        <button class="faq-category-btn" data-category="ingredients">
+                            <i class="fas fa-leaf"></i>
+                            Ingredients
+                        </button>
+                    </div>
+
+                    <!-- FAQ Stats -->
+                    <div class="faq-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">50+</div>
+                            <div class="stat-label">Questions Answered</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">24/7</div>
+                            <div class="stat-label">Support Available</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">98%</div>
+                            <div class="stat-label">Satisfaction Rate</div>
+                        </div>
+                    </div>
+
+                    <!-- Products FAQ Section -->
+                    <section class="faq-section" id="products">
+                        <div class="section-header">
+                            <i class="fas fa-spray-can"></i>
+                            <h2>Product Questions</h2>
                         </div>
                         
-                        <div class="product-highlight">
-                            <p><strong>Growth Oil</strong> - A concentrated blend that stimulates growth, strengthens roots, and deeply nourishes hair and beard.</p>
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <div class="question-content">
+                                    <span class="question-text">What is the difference between your Hair Spray, Growth Oil, and Hair Food?</span>
+                                    <span class="question-badge">Popular</span>
+                                </div>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Our three main products serve different but complementary purposes:</p>
+                                
+                                <div class="product-comparison">
+                                    <div class="product-card">
+                                        <div class="product-icon">
+                                            <i class="fas fa-spray-can"></i>
+                                        </div>
+                                        <h4>Vitality Hair Spray</h4>
+                                        <p>Penetrates the scalp for maximal results, provides light hold, and fights dryness and frizz.</p>
+                                    </div>
+                                    <div class="product-card">
+                                        <div class="product-icon">
+                                            <i class="fas fa-oil-can"></i>
+                                        </div>
+                                        <h4>Growth Oil</h4>
+                                        <p>A concentrated blend that stimulates growth, strengthens roots, and deeply nourishes hair and beard.</p>
+                                    </div>
+                                    <div class="product-card">
+                                        <div class="product-icon">
+                                            <i class="fas fa-leaf"></i>
+                                        </div>
+                                        <h4>Hair Food</h4>
+                                        <p>Protects your scalp and nurtures your hair with deep conditioning and intense hydration.</p>
+                                    </div>
+                                </div>
+                                
+                                <p class="tip">💡 <strong>Pro Tip:</strong> Many customers use them together for optimal results, which is why we offer combo deals.</p>
+                            </div>
                         </div>
-                        
-                        <div class="product-highlight">
-                            <p><strong>Hair Food</strong> - Protects your scalp and nurtures your hair with deep conditioning and intense hydration.</p>
+
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <div class="question-content">
+                                    <span class="question-text">Which product is best for my hair type?</span>
+                                </div>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>All our products are designed to work with all hair types, but here are some recommendations:</p>
+                                
+                                <div class="recommendation-grid">
+                                    <div class="recommendation">
+                                        <i class="fas fa-fire"></i>
+                                        <div>
+                                            <strong>For dry, frizzy hair:</strong>
+                                            <span>Hair Food provides intense moisture and frizz control</span>
+                                        </div>
+                                    </div>
+                                    <div class="recommendation">
+                                        <i class="fas fa-seedling"></i>
+                                        <div>
+                                            <strong>For promoting growth:</strong>
+                                            <span>Growth Oil stimulates follicles and reduces breakage</span>
+                                        </div>
+                                    </div>
+                                    <div class="recommendation">
+                                        <i class="fas fa-wind"></i>
+                                        <div>
+                                            <strong>For daily styling:</strong>
+                                            <span>Hair Spray offers light hold while nourishing</span>
+                                        </div>
+                                    </div>
+                                    <div class="recommendation">
+                                        <i class="fas fa-star"></i>
+                                        <div>
+                                            <strong>For comprehensive care:</strong>
+                                            <span>Our combo deals provide complete hair care solutions</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        
-                        <p>Many customers use them together for optimal results, which is why we offer combo deals.</p>
+
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <div class="question-content">
+                                    <span class="question-text">How often should I use these products?</span>
+                                </div>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Usage frequency depends on your hair needs:</p>
+                                
+                                <div class="usage-guide">
+                                    <div class="usage-item">
+                                        <div class="usage-frequency">Daily</div>
+                                        <div class="usage-product">Vitality Hair Spray</div>
+                                        <div class="usage-desc">As needed for hold and nourishment</div>
+                                    </div>
+                                    <div class="usage-item">
+                                        <div class="usage-frequency">Daily</div>
+                                        <div class="usage-product">Growth Oil</div>
+                                        <div class="usage-desc">Preferably before bed for best results</div>
+                                    </div>
+                                    <div class="usage-item">
+                                        <div class="usage-frequency">3-4x/week</div>
+                                        <div class="usage-product">Hair Food</div>
+                                        <div class="usage-desc">Or as a deep treatment overnight</div>
+                                    </div>
+                                    <div class="usage-item">
+                                        <div class="usage-frequency">3-5x/week</div>
+                                        <div class="usage-product">Combo Products</div>
+                                        <div class="usage-desc">As part of your routine</div>
+                                    </div>
+                                </div>
+                                
+                                <p class="tip">💡 All products can be adjusted based on your hair's response and needs.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <div class="question-content">
+                                    <span class="question-text">Are your products safe for colored or chemically treated hair?</span>
+                                    <span class="question-badge new">New</span>
+                                </div>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Yes! All Green Marvel products are specially formulated to be gentle and effective:</p>
+                                
+                                <div class="safety-features">
+                                    <div class="feature">
+                                        <i class="fas fa-check-circle"></i>
+                                        <span>100% natural and synthetic chemicals-free</span>
+                                    </div>
+                                    <div class="feature">
+                                        <i class="fas fa-check-circle"></i>
+                                        <span>Gentle on scalp and hair</span>
+                                    </div>
+                                    <div class="feature">
+                                        <i class="fas fa-check-circle"></i>
+                                        <span>Safe for sensitive skin and scalps</span>
+                                    </div>
+                                    <div class="feature">
+                                        <i class="fas fa-check-circle"></i>
+                                        <span>Free from harsh ingredients that could strip color</span>
+                                    </div>
+                                </div>
+                                
+                                <p>In fact, our products help repair damage caused by heat styling, coloring, and environmental stressors.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <div class="question-content">
+                                    <span class="question-text">Can I use these products on my beard?</span>
+                                </div>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Absolutely! Our Growth Oil is specifically formulated for both hair and beard care. Here's how it helps:</p>
+                                
+                                <div class="benefits-grid">
+                                    <div class="benefit">
+                                        <i class="fas fa-arrows-alt-h"></i>
+                                        <h4>Promotes Growth</h4>
+                                        <p>Fuller, more defined beards</p>
+                                    </div>
+                                    <div class="benefit">
+                                        <i class="fas fa-sun"></i>
+                                        <h4>Conditions Skin</h4>
+                                        <p>Nourishes the skin underneath</p>
+                                    </div>
+                                    <div class="benefit">
+                                        <i class="fas fa-hand-sparkles"></i>
+                                        <h4>Reduces Irritation</h4>
+                                        <p>Less itchiness and flakes</p>
+                                    </div>
+                                    <div class="benefit">
+                                        <i class="fas fa-comb"></i>
+                                        <h4>Softens Hair</h4>
+                                        <p>Easier grooming and styling</p>
+                                    </div>
+                                </div>
+                                
+                                <p>Many of our customers use our products for comprehensive hair and beard care.</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- More FAQ sections would continue here... -->
+
+                    <!-- Contact Support Section -->
+                    <div class="contact-support">
+                        <div class="support-content">
+                            <div class="support-icon">
+                                <i class="fas fa-headset"></i>
+                            </div>
+                            <div class="support-text">
+                                <h3>Still Have Questions?</h3>
+                                <p>Our customer service team is here to help you with any additional questions or concerns. We're available 24/7 to assist you.</p>
+                            </div>
+                            <div class="support-actions">
+                                <button class="contact-btn primary" onclick="window.location.href='contact.html'">
+                                    <i class="fas fa-comments"></i>
+                                    Contact Support
+                                </button>
+                                <button class="contact-btn secondary" onclick="window.location.href='shop.html'">
+                                    <i class="fas fa-shopping-bag"></i>
+                                    Shop Products
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>Which product is best for my hair type?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>All our products are designed to work with all hair types, but here are some recommendations:</p>
-                        
-                        <ul>
-                            <li><strong>For dry, frizzy hair:</strong> Hair Food provides intense moisture and frizz control</li>
-                            <li><strong>For promoting growth:</strong> Growth Oil stimulates follicles and reduces breakage</li>
-                            <li><strong>For daily styling and scalp health:</strong> Hair Spray offers light hold while nourishing</li>
-                            <li><strong>For comprehensive care:</strong> Our combo deals provide complete hair care solutions</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>How often should I use these products?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Usage frequency depends on your hair needs:</p>
-                        
-                        <ul>
-                            <li><strong>Vitality Hair Spray:</strong> Use daily or as needed for hold and nourishment</li>
-                            <li><strong>Growth Oil:</strong> Use daily for best results, preferably before bed</li>
-                            <li><strong>Hair Food:</strong> Use 3-4 times a week or as a deep treatment overnight</li>
-                            <li><strong>Combo products:</strong> Use 3-5 times per week as part of your routine</li>
-                        </ul>
-                        
-                        <p>All products can be adjusted based on your hair's response and needs.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>Are your products safe for colored or chemically treated hair?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Yes! All Green Marvel products are:</p>
-                        
-                        <ul>
-                            <li>100% natural and synthetic chemicals-free</li>
-                            <li>Gentle on scalp and hair</li>
-                            <li>Safe for sensitive skin and scalps</li>
-                            <li>Free from harsh ingredients that could strip color</li>
-                        </ul>
-                        
-                        <p>In fact, our products help repair damage caused by heat styling, coloring, and environmental stressors.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>Can I use these products on my beard?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Absolutely! Our Growth Oil is specifically formulated for both hair and beard care. It:</p>
-                        
-                        <ul>
-                            <li>Promotes fuller, more defined beards</li>
-                            <li>Conditions the skin underneath</li>
-                            <li>Reduces itchiness and flakes</li>
-                            <li>Softens beard hair for easier grooming</li>
-                        </ul>
-                        
-                        <p>Many of our customers use our products for comprehensive hair and beard care.</p>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Ingredients FAQ Section -->
-            <section class="faq-section" id="ingredients">
-                <h2>Ingredients & Safety</h2>
-                
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>Are your products truly 100% natural?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Yes! All Green Marvel products are:</p>
-                        
-                        <ul>
-                            <li>100% natural and free from synthetic chemicals</li>
-                            <li>Made with carefully selected botanical extracts and essential oils</li>
-                            <li>Preserved with denatured organic alcohol (a natural preservative)</li>
-                            <li>Eco-friendly and safe for you and the environment</li>
-                        </ul>
-                        
-                        <p>We're committed to providing pure, effective hair care without harsh ingredients.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>What are the key ingredients in your products?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Our products feature a powerful blend of natural ingredients:</p>
-                        
-                        <ul>
-                            <li><strong>Essential Oils:</strong> Rosemary, Vitamin E, Grapeseed Oil, Cedarwood Oil, Lavender Oil, Castor Oil</li>
-                            <li><strong>Nutrient-rich Butters:</strong> Shea Butter, Sweet Almond Oil</li>
-                            <li><strong>Herbal Extracts:</strong> Carefully selected for hair-loving properties</li>
-                            <li><strong>Preservative:</strong> Denatured Organic Alcohol (natural and safe)</li>
-                        </ul>
-                        
-                        <p>Each ingredient is chosen for its specific benefits to hair and scalp health.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>Do your products contain any allergens?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Our products contain natural essential oils and botanical extracts. While rare, some individuals may be sensitive to certain natural ingredients. We recommend:</p>
-                        
-                        <ul>
-                            <li>Performing a patch test before first use</li>
-                            <li>Checking the ingredient list if you have known allergies</li>
-                            <li>Consulting with a dermatologist if you have sensitive skin</li>
-                        </ul>
-                        
-                        <p>All ingredients are clearly listed on our product pages for your reference.</p>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Ordering FAQ Section -->
-            <section class="faq-section" id="ordering">
-                <h2>Ordering & Payment</h2>
-                
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>How do I place an order?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Ordering from Green Marvel is simple:</p>
-                        
-                        <ol>
-                            <li>Browse our products and select the items you want</li>
-                            <li>Add them to your cart</li>
-                            <li>Proceed to checkout</li>
-                            <li>Enter your shipping information</li>
-                            <li>Choose your payment method</li>
-                            <li>Review and confirm your order</li>
-                        </ol>
-                        
-                        <p>You'll receive an order confirmation email once your purchase is complete.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>What payment methods do you accept?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>We accept various payment methods for your convenience:</p>
-                        
-                        <ul>
-                            <li>Credit/Debit Cards (Visa, MasterCard, American Express)</li>
-                            <li>PayPal</li>
-                            <li>Bank Transfer</li>
-                            <li>Cash on Delivery (available in select areas)</li>
-                        </ul>
-                        
-                        <p>All payments are processed securely through encrypted channels.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>Can I modify or cancel my order after placing it?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>We can only modify or cancel orders that haven't been processed for shipping yet. Please contact us immediately if you need to change your order.</p>
-                        
-                        <p>Once an order has been shipped, we cannot cancel it, but you can return it following our return policy.</p>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Shipping FAQ Section -->
-            <section class="faq-section" id="shipping">
-                <h2>Shipping & Returns</h2>
-                
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>What are your shipping options and costs?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>We offer several shipping options:</p>
-                        
-                        <ul>
-                            <li><strong>Standard Shipping:</strong> 3-5 business days - R50</li>
-                            <li><strong>Express Shipping:</strong> 1-2 business days - R100</li>
-                            <li><strong>Free Shipping:</strong> On orders over R300</li>
-                        </ul>
-                        
-                        <p>Orders are processed within 1-2 business days. You'll receive tracking information once your order ships.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>What is your return policy?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>We offer a 30-day money-back guarantee on all our products. If you're not satisfied with your purchase:</p>
-                        
-                        <ul>
-                            <li>Contact our customer service within 30 days of receipt</li>
-                            <li>Return the product in its original condition</li>
-                            <li>Once we receive the return, we'll process your refund</li>
-                        </ul>
-                        
-                        <p>Shipping costs are non-refundable unless the return is due to our error.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>Do you ship internationally?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Currently, we primarily ship within South Africa. However, we're working on expanding our international shipping options.</p>
-                        
-                        <p>For international orders, please contact our customer service team for availability and shipping costs to your location.</p>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Contact Support Section -->
-            <div class="contact-support">
-                <h3>Still Have Questions?</h3>
-                <p>Our customer service team is here to help you with any additional questions or concerns.</p>
-                <button class="contact-btn" onclick="window.location.href='contact.html'">Contact Support</button>
             </div>
-        </div>
+        </main>
+
+        <div class="features-section-placeholder"></div>
+        <div class="footer-placeholder"></div>
     </div>
 
+    <!-- Component Loader -->
+    <script src="../js-codes/components.js"></script>
+    
+    <!-- FAQ JavaScript -->
     <script>
         // FAQ Accordion Functionality
         document.addEventListener('DOMContentLoaded', function() {
@@ -324,7 +326,7 @@
                 question.addEventListener('click', () => {
                     // Close all other items
                     faqItems.forEach(otherItem => {
-                        if (otherItem !== item) {
+                        if (otherItem !== item && otherItem.classList.contains('active')) {
                             otherItem.classList.remove('active');
                         }
                     });
@@ -362,6 +364,26 @@
                     }
                 });
             });
+
+            // FAQ Search Functionality
+            const searchInput = document.querySelector('.search-faq input');
+            if (searchInput) {
+                searchInput.addEventListener('input', function() {
+                    const searchTerm = this.value.toLowerCase();
+                    const questions = document.querySelectorAll('.faq-question');
+                    
+                    questions.forEach(question => {
+                        const questionText = question.querySelector('.question-text').textContent.toLowerCase();
+                        const faqItem = question.closest('.faq-item');
+                        
+                        if (questionText.includes(searchTerm)) {
+                            faqItem.style.display = 'block';
+                        } else {
+                            faqItem.style.display = 'none';
+                        }
+                    });
+                });
+            }
         });
     </script>
 </body>

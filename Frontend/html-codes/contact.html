@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Green Marvel - Your go-to store for quality products">
+    <title>Contact Us - Green Marvel</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/jpeg" href="../img/logo.jpeg">
+    <link rel="stylesheet" href="../css-codes/index.css">
+    <link rel="stylesheet" href="../css-codes/contact.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="page-wrapper">
+        <!-- Component Placeholders -->
+        <div class="top-header-placeholder"></div>
+        <div class="semi-top-bar-placeholder"></div>
+        <div class="main-nav-placeholder"></div>
+
+        <!-- Contact Page Content -->
+        <main>
+            <!-- Contact Hero Section -->
+            <section class="contact-hero">
+                <div class="container">
+                    <div class="contact-hero-content">
+                        <h1>Get in Touch</h1>
+                        <p>We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>
+                        <div class="contact-stats">
+                            <div class="stat">
+                                <div class="stat-number">24/7</div>
+                                <div class="stat-label">Support</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-number">2h</div>
+                                <div class="stat-label">Avg. Response</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-number">98%</div>
+                                <div class="stat-label">Satisfaction</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Main Section -->
+            <section class="contact-main">
+                <div class="container">
+                    <div class="contact-grid">
+                        <!-- Contact Form -->
+                        <div class="contact-form-section">
+                            <div class="form-header">
+                                <h2>Send us a Message</h2>
+                                <p>Fill out the form below and we'll get back to you within 2 hours</p>
+                            </div>
+                            
+                            <form class="contact-form" id="contactForm">
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="firstName">First Name</label>
+                                        <input type="text" id="firstName" name="firstName" required>
+                                        <i class="fas fa-user input-icon"></i>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="lastName">Last Name</label>
+                                        <input type="text" id="lastName" name="lastName" required>
+                                        <i class="fas fa-user input-icon"></i>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="email">Email Address</label>
+                                    <input type="email" id="email" name="email" required>
+                                    <i class="fas fa-envelope input-icon"></i>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="phone">Phone Number (Optional)</label>
+                                    <input type="tel" id="phone" name="phone">
+                                    <i class="fas fa-phone input-icon"></i>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="subject">Subject</label>
+                                    <select id="subject" name="subject" required>
+                                        <option value="">Select a subject</option>
+                                        <option value="general">General Inquiry</option>
+                                        <option value="product">Product Question</option>
+                                        <option value="order">Order Support</option>
+                                        <option value="shipping">Shipping & Delivery</option>
+                                        <option value="returns">Returns & Refunds</option>
+                                        <option value="wholesale">Wholesale Inquiry</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                    <i class="fas fa-chevron-down input-icon"></i>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="message">Your Message</label>
+                                    <textarea id="message" name="message" rows="6" placeholder="Tell us how we can help you..." required></textarea>
+                                    <i class="fas fa-comment input-icon textarea-icon"></i>
+                                </div>
+                                
+                                <div class="form-actions">
+                                    <button type="submit" class="submit-btn">
+                                        <span class="btn-text">Send Message</span>
+                                        <span class="btn-loading">
+                                            <i class="fas fa-spinner fa-spin"></i>
+                                            Sending...
+                                        </span>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+
+                        <!-- Contact Info & FAQ -->
+                        <div class="contact-sidebar">
+                            <!-- Contact Information -->
+                            <div class="contact-info-card">
+                                <div class="card-header">
+                                    <i class="fas fa-headset"></i>
+                                    <h3>Contact Information</h3>
+                                </div>
+                                <div class="contact-details">
+                                    <div class="contact-item">
+                                        <div class="contact-icon">
+                                            <i class="fas fa-envelope"></i>
+                                        </div>
+                                        <div class="contact-text">
+                                            <h4>Email Us</h4>
+                                            <p>admin@greenmarvel.co.za</p>
+                                            <span>We'll respond within 2 hours</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="contact-item">
+                                        <div class="contact-icon">
+                                            <i class="fas fa-phone"></i>
+                                        </div>
+                                        <div class="contact-text">
+                                            <h4>Call Us</h4>
+                                            <p>081 752 3336</p>
+                                            <span>Mon-Fri from 8am to 5pm</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="contact-item">
+                                        <div class="contact-icon">
+                                            <i class="fas fa-comments"></i>
+                                        </div>
+                                        <div class="contact-text">
+                                            <h4>WhatsApp</h4>
+                                            <p>081 752 3336</p>
+                                            <span>Quick responses</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="contact-item">
+                                        <div class="contact-icon">
+                                            <i class="fas fa-map-marker-alt"></i>
+                                        </div>
+                                        <div class="contact-text">
+                                            <h4>Based in</h4>
+                                            <p>South Africa</p>
+                                            <span>Serving nationwide</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="social-links">
+                                    <h4>Follow Us</h4>
+                                    <div class="social-icons">
+                                        <a href="https://facebook.com/greenmarvel" class="social-link">
+                                            <i class="fab fa-facebook-f"></i>
+                                        </a>
+                                        <a href="https://instagram.com/greenmarvel" class="social-link">
+                                            <i class="fab fa-instagram"></i>
+                                        </a>
+                                        <a href="https://wa.me/27817523336" class="social-link">
+                                            <i class="fab fa-whatsapp"></i>
+                                        </a>
+                                        <a href="mailto:admin@greenmarvel.co.za" class="social-link">
+                                            <i class="fas fa-envelope"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Quick FAQ Section -->
+                            <div class="faq-card">
+                                <div class="card-header">
+                                    <i class="fas fa-question-circle"></i>
+                                    <h3>Quick Questions</h3>
+                                </div>
+                                <div class="faq-items">
+                                    <div class="faq-item">
+                                        <div class="faq-question">
+                                            <span>How long will delivery take?</span>
+                                            <i class="fas fa-chevron-down"></i>
+                                        </div>
+                                        <div class="faq-answer">
+                                            <p>Standard delivery takes 3-5 business days. Express delivery is 1-2 business days. Free shipping on orders over R300.</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="faq-item">
+                                        <div class="faq-question">
+                                            <span>What happens after ordering?</span>
+                                            <i class="fas fa-chevron-down"></i>
+                                        </div>
+                                        <div class="faq-answer">
+                                            <p>You'll receive an order confirmation email immediately. We process orders within 24 hours and send tracking information once shipped.</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="faq-item">
+                                        <div class="faq-question">
+                                            <span>Do I receive an invoice?</span>
+                                            <i class="fas fa-chevron-down"></i>
+                                        </div>
+                                        <div class="faq-answer">
+                                            <p>Yes, you'll receive a detailed invoice via email immediately after your order is confirmed.</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="faq-item">
+                                        <div class="faq-question">
+                                            <span>Is refund possible?</span>
+                                            <i class="fas fa-chevron-down"></i>
+                                        </div>
+                                        <div class="faq-answer">
+                                            <p>Yes, we offer a 30-day money-back guarantee. Products must be returned in original condition.</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="faq-item">
+                                        <div class="faq-question">
+                                            <span>Delivery charges?</span>
+                                            <i class="fas fa-chevron-down"></i>
+                                        </div>
+                                        <div class="faq-answer">
+                                            <p>Standard: R50 (3-5 days), Express: R100 (1-2 days), Free shipping on orders over R300.</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="faq-item">
+                                        <div class="faq-question">
+                                            <span>What is package tracking?</span>
+                                            <i class="fas fa-chevron-down"></i>
+                                        </div>
+                                        <div class="faq-answer">
+                                            <p>Track your order in real-time with the tracking number we provide once your order ships.</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="faq-item">
+                                        <div class="faq-question">
+                                            <span>Can I change or cancel my order?</span>
+                                            <i class="fas fa-chevron-down"></i>
+                                        </div>
+                                        <div class="faq-answer">
+                                            <p>Orders can be modified or cancelled within 1 hour of placement. Contact us immediately.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="faq-footer">
+                                    <a href="faq.html" class="view-all-faq">
+                                        View All FAQs
+                                        <i class="fas fa-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Map Section -->
+            <section class="map-section">
+                <div class="container">
+                    <div class="map-header">
+                        <h2>Nationwide Service</h2>
+                        <p>We deliver across South Africa with trusted shipping partners</p>
+                    </div>
+                    <div class="map-placeholder">
+                        <div class="map-content">
+                            <i class="fas fa-map-marked-alt"></i>
+                            <h3>Service Across South Africa</h3>
+                            <p>We partner with Courier Guy, RAM, and PAXI to ensure reliable delivery to your doorstep</p>
+                            <div class="delivery-partners">
+                                <span class="partner">Courier Guy</span>
+                                <span class="partner">RAM</span>
+                                <span class="partner">PAXI</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <div class="features-section-placeholder"></div>
+        <div class="footer-placeholder"></div>
+    </div>
+
+    <!-- Component Loader -->
+    <script src="../js-codes/components.js"></script>
+    <!-- Contact Page JavaScript -->
+    <script src="../js-codes/contact.js"></script>
+</body>
+</html>
