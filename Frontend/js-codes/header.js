@@ -1,0 +1,157 @@
+// Sticky Navigation Functionality - Best Version
+class StickyNavigation {
+    constructor() {
+        this.stickyNav = document.getElementById('stickyNav');
+        this.scrollThreshold = 100; // Show nav when scrolled past 100px
+        this.isVisible = false;
+        
+        this.init();
+    }
+
+    init() {
+        // Add scroll event listener
+        window.addEventListener('scroll', this.handleScroll.bind(this));
+        
+        // Add resize event listener
+        window.addEventListener('resize', this.handleResize.bind(this));
+        
+        // Initialize nav state
+        this.updateNavState();
+        
+        console.log('Sticky Navigation initialized');
+    }
+
+    handleScroll() {
+        this.updateNavState();
+    }
+
+    showNav() {
+        if (!this.isVisible) {
+            this.stickyNav.classList.add('active');
+            document.body.classList.add('sticky-nav-active');
+            this.isVisible = true;
+        }
+    }
+
+    hideNav() {
+        if (this.isVisible) {
+            this.stickyNav.classList.remove('active');
+            document.body.classList.remove('sticky-nav-active');
+            this.isVisible = false;
+        }
+    }
+
+    updateNavState() {
+        if (window.scrollY > this.scrollThreshold) {
+            this.showNav();
+        } else {
+            this.hideNav();
+        }
+    }
+
+    handleResize() {
+        // Adjust threshold for mobile if needed
+        if (window.innerWidth < 768) {
+            this.scrollThreshold = 80;
+        } else {
+            this.scrollThreshold = 100;
+        }
+        
+        // Update state after resize
+        this.updateNavState();
+    }
+}
+
+// Initialize when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    new StickyNavigation();
+});
+
+// Add click handlers for all icons
+document.addEventListener('DOMContentLoaded', function() {
+    // Cart icon functionality
+    document.querySelectorAll('.cart-icon').forEach(icon => {
+        icon.addEventListener('click', function() {
+            console.log('Cart clicked');
+            // Redirect to cart page
+            window.location.href = 'cart.html';
+        });
+    });
+
+    // Wishlist icon functionality
+    document.querySelectorAll('.whishlist-icon').forEach(icon => {
+        icon.addEventListener('click', function() {
+            console.log('Wishlist clicked');
+            // Redirect to wishlist page
+            window.location.href = 'wishlist.html';
+        });
+    });
+
+    // Account icon functionality
+    document.querySelectorAll('.account-icon').forEach(icon => {
+        icon.addEventListener('click', function() {
+            console.log('Account clicked');
+            // Redirect to account page or show login modal
+            window.location.href = 'login.html';
+        });
+    });
+
+    // Notification icon functionality
+    document.querySelectorAll('.notification-icon').forEach(icon => {
+        icon.addEventListener('click', function() {
+            console.log('Notification clicked');
+            // Show notifications dropdown or page
+            window.location.href = 'notifications.html';
+        });
+    });
+
+    // Compare icon functionality (the second account icon)
+    document.querySelectorAll('.account-icon').forEach((icon, index) => {
+        if (index === 1) { // Second account icon is for compare
+            icon.addEventListener('click', function() {
+                console.log('Compare clicked');
+                // Redirect to compare page
+                window.location.href = 'compare.html';
+            });
+        }
+    });
+});
+
+// Add smooth scrolling for navigation links
+document.addEventListener('DOMContentLoaded', function() {
+    const navLinks = document.querySelectorAll('.sticky-nav-menu a');
+    
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            
+            // Only handle internal links that aren't external pages
+            if (href.startsWith('#')) {
+                e.preventDefault();
+                const target = document.querySelector(href);
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            }
+        });
+    });
+});
+
+// Add keyboard navigation support
+document.addEventListener('keydown', function(e) {
+    // ESC key to hide navigation (if needed)
+    if (e.key === 'Escape') {
+        document.body.classList.remove('sticky-nav-active');
+    }
+});
+
+// Handle page load with existing scroll position
+window.addEventListener('load', function() {
+    if (window.scrollY > 100) {
+        document.getElementById('stickyNav')?.classList.add('active');
+        document.body.classList.add('sticky-nav-active');
+    }
+});

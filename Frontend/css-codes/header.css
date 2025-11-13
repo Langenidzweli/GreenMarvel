@@ -1,0 +1,355 @@
+/* ========================================
+   STICKY NAVIGATION STYLES
+======================================== */
+.sticky-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #e0e0e0;
+    z-index: 1000;
+    transform: translateY(-100%);
+    transition: transform 0.3s ease, background 0.3s ease;
+    padding: 10px 0;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+}
+
+.sticky-nav.active {
+    transform: translateY(0);
+}
+
+.sticky-nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 200px; /* Match body padding */
+}
+
+/* Logo Styling - Matches index.css */
+.sticky-nav-logo {
+    flex-shrink: 0;
+}
+
+.sticky-nav-logo img {
+    height: 50px; /* Match semi-top-image logo height */
+    width: auto;
+    border-radius: 6px; /* Match the nice rounded edges from index.css */
+    object-fit: contain; /* Ensure proper image scaling */
+    transition: transform 0.3s ease;
+}
+
+.sticky-nav-logo:hover img {
+    transform: scale(1.05);
+}
+
+/* Navigation Menu */
+.sticky-nav-menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 30px;
+}
+
+.sticky-nav-menu .nav-item a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    font-size: 14px;
+    transition: color 0.3s ease;
+    font-family: 'Montserrat', sans-serif;
+    padding: 8px 0;
+    position: relative;
+}
+
+.sticky-nav-menu .nav-item a:hover {
+    color: #46853c; /* Match your brand green */
+}
+
+.sticky-nav-menu .nav-item a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #46853c;
+    transition: width 0.3s ease;
+}
+
+.sticky-nav-menu .nav-item a:hover::after {
+    width: 100%;
+}
+
+/* Right Section Icons */
+.sticky-nav-icons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.sticky-nav-icons .icon {
+    cursor: pointer;
+    padding: 8px;
+    transition: all 0.3s ease;
+    border-radius: 4px;
+}
+
+.sticky-nav-icons .icon:hover {
+    transform: scale(1.1);
+    background: rgba(70, 133, 60, 0.1); /* Light green background on hover */
+}
+
+.sticky-nav-icons img {
+    height: 22px;
+    width: 22px;
+    transition: filter 0.3s ease;
+}
+
+.sticky-nav-icons .icon:hover img {
+    filter: brightness(0.8);
+}
+
+/* Cart icon specific styling */
+.sticky-nav-icons .cart-icon {
+    position: relative;
+}
+
+.sticky-nav-icons .cart-icon::after {
+    content: '';
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 8px;
+    height: 8px;
+    background: #46853c;
+    border-radius: 50%;
+    border: 2px solid white;
+}
+
+/* Hide original navbar when sticky nav is active */
+body.sticky-nav-active .navbar {
+    margin-top: 70px; /* Adjust based on sticky nav height */
+}
+
+/* Smooth transition for body padding */
+body {
+    transition: padding-top 0.3s ease;
+}
+
+body.sticky-nav-active {
+    padding-top: 70px; /* Height of sticky nav */
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+======================================== */
+
+/* Large desktop screens (1440px and above) */
+@media (min-width: 1440px) {
+    .sticky-nav-container {
+        padding: 0 200px;
+    }
+}
+
+/* Standard desktop screens (1200px to 1439px) */
+@media (max-width: 1439px) and (min-width: 1200px) {
+    .sticky-nav-container {
+        padding: 0 150px;
+    }
+}
+
+/* Small desktop screens (1024px to 1199px) */
+@media (max-width: 1199px) and (min-width: 1024px) {
+    .sticky-nav-container {
+        padding: 0 100px;
+    }
+}
+
+/* Tablet screens (768px to 1023px) */
+@media (max-width: 1023px) and (min-width: 769px) {
+    .sticky-nav-container {
+        padding: 0 50px;
+    }
+    
+    .sticky-nav-menu {
+        gap: 20px;
+    }
+    
+    .sticky-nav-menu .nav-item a {
+        font-size: 13px;
+    }
+    
+    .sticky-nav-icons {
+        gap: 12px;
+    }
+    
+    .sticky-nav-icons img {
+        height: 20px;
+        width: 20px;
+    }
+}
+
+/* Mobile screens (768px and below) */
+@media (max-width: 768px) {
+    .sticky-nav-container {
+        padding: 0 20px;
+    }
+    
+    .sticky-nav-logo img {
+        height: 40px; /* Slightly smaller logo for mobile */
+    }
+    
+    .sticky-nav-menu {
+        gap: 15px;
+    }
+    
+    .sticky-nav-menu .nav-item a {
+        font-size: 12px;
+        padding: 6px 0;
+    }
+    
+    .sticky-nav-icons {
+        gap: 10px;
+    }
+    
+    .sticky-nav-icons img {
+        height: 18px;
+        width: 18px;
+    }
+    
+    .sticky-nav-icons .icon {
+        padding: 6px;
+    }
+}
+
+/* Small mobile screens (480px and below) */
+@media (max-width: 480px) {
+    .sticky-nav-container {
+        padding: 0 15px;
+    }
+    
+    .sticky-nav {
+        padding: 8px 0;
+    }
+    
+    .sticky-nav-logo img {
+        height: 35px;
+    }
+    
+    .sticky-nav-menu {
+        gap: 12px;
+    }
+    
+    .sticky-nav-menu .nav-item a {
+        font-size: 11px;
+    }
+    
+    .sticky-nav-icons {
+        gap: 8px;
+    }
+    
+    .sticky-nav-icons img {
+        height: 16px;
+        width: 16px;
+    }
+    
+    body.sticky-nav-active .navbar {
+        margin-top: 60px;
+    }
+    
+    body.sticky-nav-active {
+        padding-top: 60px;
+    }
+}
+
+/* Extra small mobile screens (360px and below) */
+@media (max-width: 360px) {
+    .sticky-nav-container {
+        padding: 0 10px;
+    }
+    
+    .sticky-nav-menu {
+        gap: 10px;
+    }
+    
+    .sticky-nav-menu .nav-item a {
+        font-size: 10px;
+    }
+    
+    .sticky-nav-icons {
+        gap: 6px;
+    }
+}
+
+/* ========================================
+   ACCESSIBILITY & PERFORMANCE
+======================================== */
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .sticky-nav {
+        background: white;
+        border-bottom: 2px solid #000;
+    }
+    
+    .sticky-nav-menu .nav-item a {
+        font-weight: 600;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    .sticky-nav {
+        transition: none;
+    }
+    
+    .sticky-nav-menu .nav-item a::after {
+        transition: none;
+    }
+    
+    .sticky-nav-icons .icon:hover {
+        transform: none;
+    }
+    
+    .sticky-nav-logo:hover img {
+        transform: none;
+    }
+}
+
+/* Focus styles for keyboard navigation */
+.sticky-nav-menu .nav-item a:focus-visible,
+.sticky-nav-icons .icon:focus-visible {
+    outline: 2px solid #46853c;
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
+/* Print styles */
+@media print {
+    .sticky-nav {
+        display: none;
+    }
+}
+
+/* ========================================
+   SMOOTH SCROLL BEHAVIOR
+======================================== */
+html {
+    scroll-behavior: smooth;
+}
+
+/* ========================================
+   LOADING STATES
+======================================== */
+.sticky-nav.loading {
+    opacity: 0;
+}
+
+.sticky-nav.loaded {
+    opacity: 1;
+}
