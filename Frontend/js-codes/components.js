@@ -1,4 +1,4 @@
-// components.js - Dynamic component loader
+// components.js - Dynamic component loader with active navigation
 class ComponentLoader {
     constructor() {
         this.components = {
@@ -11,6 +11,10 @@ class ComponentLoader {
         };
         this.initialized = false;
     }
+
+    // ========================================
+    // MAIN COMPONENT LOADING METHODS
+    // ========================================
 
     async loadComponent(componentName, targetSelector) {
         try {
@@ -51,6 +55,10 @@ class ComponentLoader {
         // Initialize global functionality after all components are loaded
         this.initializeGlobalFunctionality();
     }
+
+    // ========================================
+    // COMPONENT-SPECIFIC INITIALIZERS
+    // ========================================
 
     initializeComponent(componentName) {
         switch(componentName) {
@@ -209,6 +217,10 @@ class ComponentLoader {
         }
     }
 
+    // ========================================
+    // GLOBAL FUNCTIONALITY & ACTIVE NAVIGATION
+    // ========================================
+
     initializeGlobalFunctionality() {
         // Icon click handlers
         this.initializeIconHandlers();
@@ -218,6 +230,41 @@ class ComponentLoader {
         
         // Mobile menu toggle (if needed)
         this.initializeMobileMenu();
+        
+        // ACTIVE NAVIGATION - Initialize after all components loaded
+        this.initializeActiveNavigation();
+    }
+
+    initializeActiveNavigation() {
+        // Set active navigation link based on current page
+        const currentPage = window.location.pathname.split('/').pop();
+        
+        // Get all navigation links from both main nav and sticky nav
+        const navLinks = document.querySelectorAll('.nav-link');
+        const stickyNavLinks = document.querySelectorAll('.sticky-nav-menu .nav-item a');
+        
+        // Function to set active link
+        function setActiveLink(links) {
+            links.forEach(link => {
+                // Remove active class from all links first
+                link.classList.remove('active');
+                
+                // Get the href attribute and extract just the filename
+                const linkHref = link.getAttribute('href');
+                const linkPage = linkHref.split('/').pop();
+                
+                // Check if this link matches current page
+                if (linkPage === currentPage) {
+                    link.classList.add('active');
+                }
+            });
+        }
+        
+        // Set active state for both main nav and sticky nav
+        setActiveLink(navLinks);
+        setActiveLink(stickyNavLinks);
+        
+        console.log('✅ Active navigation initialized for:', currentPage);
     }
 
     initializeIconHandlers() {
@@ -282,6 +329,10 @@ class ComponentLoader {
         }
     }
 
+    // ========================================
+    // UTILITY METHODS
+    // ========================================
+
     performSearch(query) {
         if (query.trim()) {
             console.log('Searching for:', query);
@@ -306,6 +357,10 @@ class ComponentLoader {
         return re.test(email);
     }
 }
+
+// ========================================
+// INITIALIZATION
+// ========================================
 
 // Initialize and load components when DOM is ready
 document.addEventListener('DOMContentLoaded', function() {

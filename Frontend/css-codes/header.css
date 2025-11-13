@@ -353,3 +353,92 @@ html {
 .sticky-nav.loaded {
     opacity: 1;
 }
+
+/* ========================================
+   ACTIVE NAVIGATION INDICATOR
+========================================= */
+
+/* Main Navigation Links */
+.nav-list .nav-item a {
+    position: relative;
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+    padding: 15px 10px;
+    display: block;
+    transition: color 0.3s ease;
+}
+
+.nav-list .nav-item a:hover {
+    color: #183611;
+}
+
+/* Active state underline - STAYS VISIBLE */
+.nav-list .nav-item a.active {
+    color: #46853c;
+    font-weight: 600;
+}
+
+.nav-list .nav-item a.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 10px;
+    right: 10px;
+    height: 3px;
+    background-color: #46853c;
+    border-radius: 2px;
+    animation: slideIn 0.3s ease-out;
+}
+
+/* Sticky Navigation Active State */
+.sticky-nav-menu .nav-item a {
+    position: relative;
+    padding: 10px 15px;
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.sticky-nav-menu .nav-item a.active {
+    color: #46853c;
+    font-weight: 600;
+}
+
+.sticky-nav-menu .nav-item a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 15px;
+    right: 15px;
+    height: 2px;
+    background-color: #46853c;
+    border-radius: 1px;
+}
+
+/* Hover effect for non-active links */
+.nav-list .nav-item a:not(.active)::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 10px;
+    right: 10px;
+    height: 2px;
+    background-color: #46853c;
+    border-radius: 2px;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.nav-list .nav-item a:not(.active):hover::after {
+    transform: scaleX(1);
+}
+
+@keyframes slideIn {
+    from {
+        transform: scaleX(0);
+    }
+    to {
+        transform: scaleX(1);
+    }
+}

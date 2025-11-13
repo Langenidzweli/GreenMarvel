@@ -155,3 +155,57 @@ window.addEventListener('load', function() {
         document.body.classList.add('sticky-nav-active');
     }
 });
+
+// ========================================
+// ACTIVE NAVIGATION INDICATOR
+// ========================================
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Get current page filename
+    const currentPage = window.location.pathname.split('/').pop();
+    
+    // Get all navigation links
+    const navLinks = document.querySelectorAll('.nav-link');
+    const stickyNavLinks = document.querySelectorAll('.sticky-nav-menu .nav-item a');
+    
+    // Function to set active link
+    function setActiveLink(links) {
+        links.forEach(link => {
+            // Remove active class from all links first
+            link.classList.remove('active');
+            
+            // Get the href attribute and extract just the filename
+            const linkHref = link.getAttribute('href');
+            const linkPage = linkHref.split('/').pop();
+            
+            // Check if this link matches current page
+            if (linkPage === currentPage) {
+                link.classList.add('active');
+            }
+        });
+    }
+    
+    // Set active state for both main nav and sticky nav
+    setActiveLink(navLinks);
+    setActiveLink(stickyNavLinks);
+    
+    // Also update when navigating (optional - for single page apps)
+    navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            // Remove active class from all links
+            navLinks.forEach(l => l.classList.remove('active'));
+            stickyNavLinks.forEach(l => l.classList.remove('active'));
+            
+            // Add active class to clicked link
+            this.classList.add('active');
+            
+            // Also update corresponding link in sticky nav
+            const href = this.getAttribute('href');
+            stickyNavLinks.forEach(stickyLink => {
+                if (stickyLink.getAttribute('href') === href) {
+                    stickyLink.classList.add('active');
+                }
+            });
+        });
+    });
+});
