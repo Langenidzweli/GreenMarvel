@@ -52,7 +52,7 @@
 .order-tracking-form input { width: 100%; box-sizing: border-box; }
 .order-card { background: #fff; padding: 22px; border-radius: 12px; box-shadow: 0 8px 30px rgba(15,20,10,0.04); border: 1px solid #eef6ee; }
 .order-breadcrumb { font-size: 0.9rem; color: #5b6b58; margin-bottom: 10px; }
-.order-breadcrumb a { color: #3b6f32; text-decoration: none; }
+.order-breadcrumb a { color: #151615; text-decoration: none; }
 .order-breadcrumb .sep { margin: 0 8px; color: #9aa79a; }
 
 .order-card h1 { margin-top: 0; }
@@ -99,7 +99,7 @@
 .order-tracking-form .btn:hover {
     background: #46853c;
     color: #fff;
-    border-color: #46853c;
+    border-color: #bec7bd;
 }
 
 .tracking-result {
@@ -186,7 +186,7 @@
 .order-tracking-section .form-group { flex: 1 1 240px; display: flex; flex-direction: column; }
 .form-actions { display: flex; gap: 10px; justify-content: center; margin-top: 12px; }
 .btn { padding: 10px 14px; border-radius: 8px; border: 1px solid transparent; cursor: pointer; font-weight: 600; }
-.btn.primary { background: #46853c; color: #fff; border-color: #3f7a34; }
+.btn.primary { background: transparent; color: #46853c; border-color: #cfe7d0; }
 .btn.outline { background: transparent; color: #46853c; border-color: #cfe7d0; }
 .btn i { margin-right: 6px; }
 
