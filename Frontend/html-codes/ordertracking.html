@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Tracking - Green Marvel</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/jpeg" href="../img/logo.jpeg">
+  <link rel="stylesheet" href="../css-codes/index.css">
+  <link rel="stylesheet" href="../css-codes/header.css">
+  <link rel="stylesheet" href="../css-codes/ordertracking.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+  <div class="sticky-nav-placeholder"></div>
+  <div class="page-wrapper">
+    <div class="top-header-placeholder"></div>
+    <div class="semi-top-bar-placeholder"></div>
+    <div class="main-nav-placeholder"></div>
+
+    <main>
+      <section class="order-tracking-section">
+        <div class="container">
+          <div class="order-tracking-inner">
+
+            <nav class="order-breadcrumb" aria-label="Breadcrumb">
+              <a href="index.html">Home</a>
+              <span class="sep">/</span>
+              <span>Order Tracking</span>
+            </nav>
+
+            <div class="order-card">
+              <h1>Track Your Order</h1>
+              <p class="lead">Enter your Order ID and billing email to view real-time status, delivery timeline and package details.</p>
+
+            <!-- ====================== FORM ====================== -->
+            <form class="order-tracking-form" aria-label="Order tracking form">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="order-id">Order ID</label>
+                  <input type="text" id="order-id" name="order-id" placeholder="e.g. GM-12345" required>
+                </div>
+
+                <div class="form-group">
+                  <label for="email">Billing Email</label>
+                  <input type="email" id="email" name="email" placeholder="you@example.com" required>
+                </div>
+              </div>
+
+              <div class="form-actions">
+                <button type="submit" class="btn primary">Track</button>
+                <button type="button" id="saveTracking" class="btn outline">Save</button>
+                <button type="button" id="copyLink" class="btn outline"><i class="fas fa-link"></i> Copy Link</button>
+              </div>
+            </form>
+
+            </div> <!-- .order-card -->
+
+            <!-- ====================== TRACKING RESULT ====================== -->
+            <div class="tracking-result" id="tracking-result" aria-live="polite">
+
+              <!-- Placeholder -->
+              <div class="tracking-placeholder">No tracking performed yet.</div>
+              <div class="spinner" id="tracking-spinner" hidden aria-hidden="true">
+                <i class="fas fa-spinner fa-spin"></i>
+              </div>
+
+              <!-- Tracking Steps -->
+              <div class="tracking-steps" id="tracking-steps" hidden aria-hidden="true"></div>
+
+              <!-- Estimated Delivery -->
+              <div class="estimated-delivery" id="estimated-delivery" hidden>
+                <h3><i class="fa-solid fa-truck-fast"></i> Estimated Delivery</h3>
+                <p id="estimated-date">—</p>
+              </div>
+
+              <!-- Package Summary -->
+              <div class="package-summary" id="package-summary" hidden>
+                <h3><i class="fa-solid fa-box"></i> Package Summary</h3>
+                <ul>
+                  <li><strong>Weight:</strong> <span id="pkg-weight">—</span></li>
+                  <li><strong>Courier:</strong> <span id="pkg-courier">—</span></li>
+                  <li><strong>Current Location:</strong> <span id="pkg-location">—</span></li>
+                </ul>
+              </div>
+
+              <!-- Item Preview -->
+              <div class="item-preview" id="item-preview" hidden>
+                <h3><i class="fa-solid fa-bag-shopping"></i> Items in Your Order</h3>
+                <div class="item-cards" id="item-cards">
+                  <!-- Items injected via JS -->
+                </div>
+              </div>
+
+              <!-- Timeline -->
+              <div class="shipment-timeline" id="shipment-timeline" hidden>
+                <h3><i class="fa-solid fa-clock"></i> Shipment Timeline</h3>
+                <ul id="timeline-list">
+                  <!-- Timeline steps injected -->
+                </ul>
+              </div>
+
+            </div>
+
+            <!-- ====================== ADDITIONAL ACTIONS ====================== -->
+            <div class="tracking-actions" id="tracking-actions" hidden>
+              <button id="shareStatus" class="btn"><i class="fa-solid fa-share"></i> Share Status</button>
+              <button id="contactSupport" class="btn outline"><i class="fa-solid fa-headset"></i> Contact Support</button>
+            </div>
+
+            <!-- ====================== FAQ ====================== -->
+            <div class="tracking-faq" id="tracking-faq">
+              <h3>Need Help?</h3>
+              <details>
+                <summary>My order says “Pending”, what does that mean?</summary>
+                <p>This means your order is being prepared and has not been shipped yet.</p>
+              </details>
+
+              <details>
+                <summary>Can I change my delivery address?</summary>
+                <p>You can request an address change if the order has not been shipped yet.</p>
+              </details>
+
+              <details>
+                <summary>Where do I find my Order ID?</summary>
+                <p>Your Order ID is located in your order confirmation email.</p>
+              </details>
+
+              <details>
+                <summary>What if I didn’t receive my tracking email?</summary>
+                <p>Contact customer support, and they will resend the tracking info.</p>
+              </details>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <div class="reviews-component-placeholder"></div>
+    </main>
+
+    <div class="features-section-placeholder"></div>
+    <div class="footer-placeholder"></div>
+  </div>
+
+  <script src="../js-codes/components.js"></script>
+  <script src="../js-codes/ordertracking.js"></script>
+</body>
+</html>
