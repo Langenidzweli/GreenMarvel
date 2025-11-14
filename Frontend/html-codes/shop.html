@@ -3,32 +3,667 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Green Marvel - Your go-to store for quality products">
-    <title>Page Title - Green Marvel</title>
+    <meta name="description" content="Shop premium organic hair care products at Green Marvel">
+    <title>Shop - Green Marvel</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/jpeg" href="../img/logo.jpeg">
     <link rel="stylesheet" href="../css-codes/index.css">
+    <link rel="stylesheet" href="../css-codes/shop.css">
+    <link rel="stylesheet" href="../css-codes/header.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
+    <!-- ========================================
+     STICKY NAVIGATION (HIDDEN BY DEFAULT)
+    ========================================= -->
+    <nav class="sticky-nav" id="stickyNav">
+        <div class="sticky-nav-container">
+            <!-- Logo -->
+            <div class="sticky-nav-logo">
+                <a href="index.html">
+                    <img src="../img/logo.jpeg" alt="Green Marvel Logo">
+                </a>
+            </div>
+
+            <!-- Navigation Menu -->
+            <ul class="sticky-nav-menu">
+                <li class="nav-item"><a href="shop.html" class="active">Shop</a></li>
+                <li class="nav-item"><a href="about.html">About Us</a></li>
+                <li class="nav-item"><a href="faq.html">FAQ</a></li>
+                <li class="nav-item"><a href="contact.html">Contact</a></li>
+            </ul>
+
+            <!-- Right Section Icons -->
+            <div class="sticky-nav-icons">
+                <div class="cart-icon icon">
+                    <img src="../img/shopping-bag-svgrepo-com.svg" alt="shopping bag">
+                </div>
+                <div class="account-icon icon">
+                    <img src="../img/compare-svgrepo-com.svg" alt="account">
+                </div>
+                <div class="whishlist-icon icon">
+                    <img src="../img/whichlist-svgrepo-com.svg" alt="wishlist">
+                </div>
+                <div class="account-icon icon">
+                    <img src="../img/account-svgrepo-com.svg" alt="account">
+                </div>
+                <div class="notification-icon icon">
+                    <img src="../img/Notifications-svgrepo-com.svg" alt="notification">
+                </div>
+            </div>
+        </div>
+    </nav>
+
     <div class="page-wrapper">
-        <!-- Component Placeholders -->
-        <div class="top-header-placeholder"></div>
-        <div class="semi-top-bar-placeholder"></div>
-        <div class="main-nav-placeholder"></div>
+        <!-- ========================================
+             TOP HEADER SECTION
+        ========================================= -->
+        <div class="top-header">
+            <div class="top-left">
+                <a href="order-tracking.html">Order Tracking</a>
+                <a href="find-us.html">Find Us</a>
+                <a href="register.html">Register</a>
+                <a href="login.html">Login</a>
+            </div>
+            <div class="top-center">
+                FREE SHIPPING ON ALL ORDERS OVER R600
+            </div>
+        </div>
 
-        <!-- YOUR PAGE CONTENT GOES HERE -->
-        <main>
-            <!-- Your unique page content -->
-        </main>
+        <!-- ========================================
+             SEMI-TOP BAR SECTION
+        ========================================= -->
+        <div class="Semi-top-bar">
+            <div class="left-section">
+                <!-- Logo -->
+                <div class="semi-top-image">
+                    <a href="index.html"><img src="../img/logo.jpeg" alt="Green Marvel Logo"></a>
+                </div>
+                
+                <!-- Search Container -->
+                <div class="search-container">
+                    <input type="text" placeholder="Search products" class="search-input">
+                    <div class="category-dropdown">
+                        <p>ALL</p>
+                        <span class="arrow">▾</span>
+                        <ul class="search-category-menu">
+                            <li><a href="#">Hair Spray</a></li>
+                            <li><a href="#">Growth Oil</a></li>
+                            <li><a href="#">Hair Food</a></li>
+                            <li><a href="#">Combo Deals</a></li>
+                            <li><a href="#">Specials</a></li>
+                            <li><a href="#">All Categories</a></li>
+                        </ul>
+                    </div>
+                    <button type="submit" class="search-button">
+                        <i class="fas fa-search search-icon"></i>
+                    </button>
+                </div>
+            </div>
 
+            <!-- Right Section Icons -->
+            <div class="right-section">
+                <div class="cart-icon">
+                    <img src="../img/shopping-bag-svgrepo-com.svg" alt="shopping bag">
+                </div>
+                <div class="Account icon">
+                    <img src="../img/compare-svgrepo-com.svg" alt="account">
+                </div>
+                <div class="whishlist icon">
+                    <img src="../img/whichlist-svgrepo-com.svg" alt="whishlist">
+                </div>
+                <div class="Account icon">
+                    <img src="../img/account-svgrepo-com.svg" alt="account">
+                </div>
+                <div class="notification icon">
+                    <img src="../img/Notifications-svgrepo-com.svg" alt="notification">
+                </div>
+            </div>     
+        </div>
+
+        <!-- ========================================
+             MAIN NAVIGATION
+        ========================================= -->
+        <header>
+            <nav class="navbar">
+                <ul class="nav-list">
+                    <!-- Categories Dropdown -->
+                    <li class="categories-btn">
+                        <a href="#">
+                            <span class="category-text">CATEGORIES</span>
+                            <span class="arrow">▾</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="#">
+                                    <i class="fas fa-spray-can"></i>
+                                    <span>Hair Spray</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fas fa-oil-can"></i>
+                                    <span>Growth Oil</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fas fa-leaf"></i>
+                                    <span>Hair Food</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fas fa-gift"></i>
+                                    <span>Combo Deals</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fas fa-star"></i>
+                                    <span>Specials</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <!-- Navigation Links -->
+                    <li class="nav-item"><a href="shop.html" class="active">Shop</a></li>
+                    <li class="nav-item"><a href="about.html">About Us</a></li>
+                    <li class="nav-item"><a href="faq.html">FAQ</a></li>
+                    <li class="nav-item"><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Shop Filters & Sorting -->
+        <section class="shop-controls">
+            <div class="container">
+                <div class="controls-grid">
+                    <div class="filter-section">
+                        <button class="filter-toggle">
+                            <i class="fas fa-filter"></i>
+                            Filter Products
+                        </button>
+                        
+                        <div class="filter-options">
+                            <div class="filter-group">
+                                <h4>Category</h4>
+                                <div class="filter-checkboxes">
+                                    <label class="filter-checkbox">
+                                        <input type="checkbox" checked data-category="all">
+                                        <span class="checkmark"></span>
+                                        All Products
+                                    </label>
+                                    <label class="filter-checkbox">
+                                        <input type="checkbox" data-category="growth-oil">
+                                        <span class="checkmark"></span>
+                                        Growth Oil
+                                    </label>
+                                    <label class="filter-checkbox">
+                                        <input type="checkbox" data-category="hair-spray">
+                                        <span class="checkmark"></span>
+                                        Hair Spray
+                                    </label>
+                                    <label class="filter-checkbox">
+                                        <input type="checkbox" data-category="hair-food">
+                                        <span class="checkmark"></span>
+                                        Hair Food
+                                    </label>
+                                    <label class="filter-checkbox">
+                                        <input type="checkbox" data-category="combo">
+                                        <span class="checkmark"></span>
+                                        Combo Deals
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <div class="filter-group">
+                                <h4>Price Range</h4>
+                                <div class="price-range">
+                                    <input type="range" min="0" max="300" value="300" class="price-slider">
+                                    <div class="price-values">
+                                        <span>R0</span>
+                                        <span>R300</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="filter-group">
+                                <h4>Size</h4>
+                                <div class="size-options">
+                                    <button class="size-option active" data-size="all">All Sizes</button>
+                                    <button class="size-option" data-size="50ml">50ml</button>
+                                    <button class="size-option" data-size="100ml">100ml</button>
+                                    <button class="size-option" data-size="200ml">200ml</button>
+                                </div>
+                            </div>
+                            
+                            <button class="apply-filters">
+                                Apply Filters
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="sort-section">
+                        <div class="sort-by">
+                            <label for="sort">Sort by:</label>
+                            <select id="sort">
+                                <option value="featured">Featured</option>
+                                <option value="newest">Newest</option>
+                                <option value="price-low">Price: Low to High</option>
+                                <option value="price-high">Price: High to Low</option>
+                                <option value="rating">Highest Rated</option>
+                            </select>
+                        </div>
+                        
+                        <div class="view-options">
+                            <button class="view-option active" data-view="grid">
+                                <i class="fas fa-th"></i>
+                            </button>
+                            <button class="view-option" data-view="list">
+                                <i class="fas fa-list"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Products Grid Section -->
+        <section class="shop-products">
+            <div class="container">
+                <div class="products-header">
+                    <h2>All Products</h2>
+                    <p class="products-count">Showing 6 products</p>
+                </div>
+                
+                <div class="products-grid" id="productsGrid">
+                    <!-- Product 1 -->
+                    <div class="product-container" data-category="growth-oil" data-price="130" data-rating="5" data-size="100ml">
+                        <div class="product-card">
+                            <div class="product-badge">BEST SELLER</div>
+                            <img src="../img/Growth-Oil.png" alt="Growth Oil" class="product-image">
+                            <div class="product-overlay">
+                                <button class="quick-view" data-product="1">
+                                    <i class="fas fa-eye"></i>
+                                    Quick View
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-details">
+                            <h3 class="product-name">Growth Oil</h3>
+                            <div class="product-rating">
+                                <div class="stars">★★★★★</div>
+                                <span class="rating-count">(128)</span>
+                            </div>
+                            <div class="product-description">Essential for all hair types for everyone</div>
+                            <div class="product-size">100ml</div>
+                            <p class="product-price">R 130.00</p>
+                            <div class="product-actions">
+                                <button class="add-to-cart-btn">Add to bag</button>
+                                <img src="../img/whichlist-svgrepo-com.svg" alt="wishlist" class="wishlist-icon">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 2 -->
+                    <div class="product-container" data-category="hair-spray" data-price="130" data-rating="5" data-size="100ml">
+                        <div class="product-card">
+                            <div class="product-badge">POPULAR</div>
+                            <img src="../img/Vitality-Spray.png" alt="Vitality Hair Spray" class="product-image">
+                            <div class="product-overlay">
+                                <button class="quick-view" data-product="2">
+                                    <i class="fas fa-eye"></i>
+                                    Quick View
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-details">
+                            <h3 class="product-name">Vitality Hair Spray</h3>
+                            <div class="product-rating">
+                                <div class="stars">★★★★★</div>
+                                <span class="rating-count">(96)</span>
+                            </div>
+                            <div class="product-description">Penetrates into the scalp for maximal results</div>
+                            <div class="product-size">100 ml</div>
+                            <p class="product-price">R 130.00</p>
+                            <div class="product-actions">
+                                <button class="add-to-cart-btn">Add to bag</button>
+                                <img src="../img/whichlist-svgrepo-com.svg" alt="wishlist" class="wishlist-icon">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 3 -->
+                    <div class="product-container" data-category="hair-food" data-price="120" data-rating="5" data-size="100ml">
+                        <div class="product-card">
+                            <div class="product-badge">NEW</div>
+                            <img src="../img/hairfood.png" alt="Hair Food" class="product-image">
+                            <div class="product-overlay">
+                                <button class="quick-view" data-product="3">
+                                    <i class="fas fa-eye"></i>
+                                    Quick View
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-details">
+                            <h3 class="product-name">Hair Food</h3>
+                            <div class="product-rating">
+                                <div class="stars">★★★★★</div>
+                                <span class="rating-count">(87)</span>
+                            </div>
+                            <div class="product-description">Protect your scalp and nurture your hair</div>
+                            <div class="product-size">100ml</div>
+                            <p class="product-price">R 120.00</p>
+                            <div class="product-actions">
+                                <button class="add-to-cart-btn">Add to bag</button>
+                                <img src="../img/whichlist-svgrepo-com.svg" alt="wishlist" class="wishlist-icon">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 4 -->
+                    <div class="product-container" data-category="growth-oil" data-price="150" data-rating="4" data-size="50ml">
+                        <div class="product-card">
+                            <img src="../img/Growth-Oil.png" alt="Intensive Repair Serum" class="product-image">
+                            <div class="product-overlay">
+                                <button class="quick-view" data-product="4">
+                                    <i class="fas fa-eye"></i>
+                                    Quick View
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-details">
+                            <h3 class="product-name">Intensive Repair Serum</h3>
+                            <div class="product-rating">
+                                <div class="stars">★★★★☆</div>
+                                <span class="rating-count">(64)</span>
+                            </div>
+                            <div class="product-description">Deep repair for damaged and brittle hair</div>
+                            <div class="product-size">50ml</div>
+                            <p class="product-price">R 150.00</p>
+                            <div class="product-actions">
+                                <button class="add-to-cart-btn">Add to bag</button>
+                                <img src="../img/whichlist-svgrepo-com.svg" alt="wishlist" class="wishlist-icon">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 5 -->
+                    <div class="product-container" data-category="combo" data-price="350" data-rating="5" data-size="multi">
+                        <div class="product-card">
+                            <div class="product-badge">COMBO</div>
+                            <img src="../img/product-5.jpg" alt="Complete Hair Care Kit" class="product-image">
+                            <div class="product-overlay">
+                                <button class="quick-view" data-product="5">
+                                    <i class="fas fa-eye"></i>
+                                    Quick View
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-details">
+                            <h3 class="product-name">Complete Hair Care Kit</h3>
+                            <div class="product-rating">
+                                <div class="stars">★★★★★</div>
+                                <span class="rating-count">(42)</span>
+                            </div>
+                            <div class="product-description">Everything you need for healthy hair growth</div>
+                            <div class="product-size">3 Items</div>
+                            <p class="product-price">R 350.00 <span class="original-price">R 400.00</span></p>
+                            <div class="product-actions">
+                                <button class="add-to-cart-btn">Add to bag</button>
+                                <img src="../img/whichlist-svgrepo-com.svg" alt="wishlist" class="wishlist-icon">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 6 -->
+                    <div class="product-container" data-category="hair-food" data-price="110" data-rating="4" data-size="100ml">
+                        <div class="product-card">
+                            <img src="../img/hairfood.png" alt="Scalp Treatment" class="product-image">
+                            <div class="product-overlay">
+                                <button class="quick-view" data-product="6">
+                                    <i class="fas fa-eye"></i>
+                                    Quick View
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-details">
+                            <h3 class="product-name">Scalp Treatment</h3>
+                            <div class="product-rating">
+                                <div class="stars">★★★★☆</div>
+                                <span class="rating-count">(53)</span>
+                            </div>
+                            <div class="product-description">Soothes and revitalizes your scalp</div>
+                            <div class="product-size">100ml</div>
+                            <p class="product-price">R 110.00</p>
+                            <div class="product-actions">
+                                <button class="add-to-cart-btn">Add to bag</button>
+                                <img src="../img/whichlist-svgrepo-com.svg" alt="wishlist" class="wishlist-icon">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Pagination -->
+                <div class="pagination">
+                    <button class="page-btn active">1</button>
+                    <button class="page-btn">2</button>
+                    <button class="page-btn">3</button>
+                    <button class="page-btn next">
+                        Next <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Special Offers Banner -->
+        <section class="special-offers">
+            <div class="container">
+                <div class="offer-banner">
+                    <div class="offer-content">
+                        <h3>Special Bundle Offer</h3>
+                        <p>Save 15% when you buy any 3 products together</p>
+                        <button class="offer-btn">Shop Bundles</button>
+                    </div>
+                    <div class="offer-image">
+                        <img src="../img/offer-bundle.png" alt="Special Bundle Offer">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+<!-- Compact Quick View Modal -->
+<div class="quick-view-modal">
+    <div class="modal-content">
+        <button class="close-modal" aria-label="Close modal">
+            <i class="fas fa-times"></i>
+        </button>
+        <div class="modal-body">
+            <div class="modal-image-section">
+                <img src="" alt="Product Image" class="main-product-image">
+                <div class="image-thumbnails">
+                    <!-- Thumbnails will be dynamically added here -->
+                </div>
+            </div>
+            <div class="modal-details-section">
+                <div class="product-header">
+                    <div class="product-badge-modal">BEST SELLER</div>
+                    <h2 class="product-title" id="modal-title">Product Name</h2>
+                    <div class="product-rating-modal">
+                        <div class="stars-modal">★★★★★</div>
+                        <span class="rating-count-modal">(128)</span>
+                    </div>
+                    <div class="product-price-modal">R 130.00</div>
+                    <p class="product-description-modal">
+                        Compact product description that fits perfectly without scrolling.
+                    </p>
+                </div>
+                
+                <div class="product-features">
+                    <h4>Key Features:</h4>
+                    <ul class="feature-list">
+                        <!-- Features will be dynamically added here -->
+                    </ul>
+                </div>
+                
+                <div class="size-options-modal">
+                    <h4>Size:</h4>
+                    <div class="size-buttons">
+                        <!-- Size buttons will be dynamically added here -->
+                    </div>
+                </div>
+                
+                <div class="quantity-selector">
+                    <h4>Quantity:</h4>
+                    <div class="quantity-controls">
+                        <button class="quantity-btn decrease">-</button>
+                        <span class="quantity-display">1</span>
+                        <button class="quantity-btn increase">+</button>
+                    </div>
+                </div>
+                
+                <div class="modal-actions">
+                    <button class="add-to-cart-btn-modal">Add to Bag</button>
+                    <button class="wishlist-btn-modal" aria-label="Add to wishlist">
+                        <i class="fas fa-heart"></i>
+                    </button>
+                </div>
+                
+                <div class="product-meta">
+                    <div class="meta-item">
+                        <i class="fas fa-tag"></i>
+                        <span>SKU: <span class="sku-value">GM-GO-100</span></span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-box"></i>
+                        <span>Stock: <span class="stock-value">In Stock</span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+        <!-- Features Section -->
         <div class="features-section-placeholder"></div>
-        <div class="footer-placeholder"></div>
+
+        <!-- Footer -->
+        <footer class="site-footer">
+            <div class="container footer-container">
+                <!-- Brand & Description -->
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="../img/logo.jpeg" alt="Green Marvel Logo" class="logo">
+                        <h3>Green Marvel</h3>
+                    </div>
+                    <p class="brand-description">Premium organic hair care products designed to nourish your natural beauty.</p>
+                    
+                    <!-- Delivery Partners - Compact -->
+                    <div class="delivery-partners">
+                        <h4>Delivery Partners</h4>
+                        <div class="partners-list">
+                            <span>Courier Guy</span>
+                            <span>RAM</span>
+                            <span>PAXI</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer-column">
+                    <h4 class="footer-title">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="shop.html" class="footer-link">Collections</a></li>
+                        <li><a href="new-arrivals.html" class="footer-link">New Arrivals</a></li>
+                        <li><a href="specials.html" class="footer-link">Sale</a></li>
+                        <li><a href="about.html" class="footer-link">About Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Customer Service -->
+                <div class="footer-column">
+                    <h4 class="footer-title">Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="contact.html" class="footer-link">Contact Us</a></li>
+                        <li><a href="shipping.html" class="footer-link">Shipping</a></li>
+                        <li><a href="returns.html" class="footer-link">Returns</a></li>
+                        <li><a href="faq.html" class="footer-link">FAQ</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact & Social -->
+                <div class="footer-column">
+                    <h4 class="footer-title">Get in Touch</h4>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:admin@greenmarvel.co.za">admin@greenmarvel.co.za</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <a href="tel:0817523336">081 752 3336</a>
+                        </div>
+                    </div>
+
+                    <!-- Social Media Icons -->
+                    <div class="social-section">
+                        <h4 class="footer-title">Follow Us</h4>
+                        <div class="social-links">
+                            <a href="https://wa.me/27817523336" class="social-link whatsapp" target="_blank" aria-label="WhatsApp">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                            <a href="mailto:admin@greenmarvel.co.za" class="social-link email" aria-label="Email">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                            <a href="https://facebook.com/greenmarvel" class="social-link facebook" target="_blank" aria-label="Facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="https://instagram.com/greenmarvel" class="social-link instagram" target="_blank" aria-label="Instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Newsletter - Compact -->
+                    <div class="newsletter-section">
+                        <h4 class="footer-title">Newsletter</h4>
+                        <form class="subscribe-form" id="newsletterForm">
+                            <div class="input-group">
+                                <input type="email" placeholder="Your email" required class="newsletter-input" id="newsletterEmail">
+                                <button type="submit" class="newsletter-btn" id="newsletterSubmit">
+                                    <i class="fas fa-paper-plane"></i>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <div class="container">
+                    <div class="footer-bottom-content">
+                        <p class="copyright">© 2025 Green Marvel. All rights reserved.</p>
+                        <div class="legal-links">
+                            <a href="privacy.html">Privacy</a>
+                            <a href="terms.html">Terms</a>
+                            <a href="cookies.html">Cookies</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
     </div>
 
-    <!-- Component Loader -->
-    <script src="../js/components.js"></script>
+    <!-- ========================================
+         EXTERNAL JAVASCRIPT
+    ========================================= -->
+    <script src="../js-codes/index.js"></script>
+    <script src="../js-codes/header.js"></script>
+    <script src="../js-codes/shop.js"></script>
 </body>
 </html>
