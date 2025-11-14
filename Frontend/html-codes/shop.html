@@ -25,7 +25,20 @@
 
         <!-- Main Content -->
         <main class="main-content">
-            <!-- Shop Filters & Sorting -->
+            <!-- Shop Header -->
+            <section class="shop-header">
+                <div class="container">
+                    <div class="shop-breadcrumb">
+                        <a href="index.html">Home</a>
+                        <span class="breadcrumb-separator">/</span>
+                        <span class="current-page">Shop</span>
+                    </div>
+                    <h1 class="shop-title">Our Products</h1>
+                    <p class="shop-subtitle">Premium organic hair care solutions for healthy, beautiful hair</p>
+                </div>
+            </section>
+
+            <!-- Shop Controls -->
             <section class="shop-controls">
                 <div class="container">
                     <div class="controls-grid">
@@ -70,10 +83,10 @@
                                 <div class="filter-group">
                                     <h4>Price Range</h4>
                                     <div class="price-range">
-                                        <input type="range" min="0" max="300" value="300" class="price-slider">
+                                        <input type="range" min="0" max="500" value="500" class="price-slider">
                                         <div class="price-values">
                                             <span>R0</span>
-                                            <span>R300</span>
+                                            <span>R500</span>
                                         </div>
                                     </div>
                                 </div>
@@ -119,285 +132,434 @@
                 </div>
             </section>
 
-            <!-- Products Grid Section -->
-            <section class="shop-products">
+            <!-- All Products Section -->
+            <section class="products-section" id="all-products">
                 <div class="container">
-                    <div class="products-header">
-                        <h2>All Products</h2>
-                        <p class="products-count">Showing 6 products</p>
+                    <div class="section-header">
+                        <h2 class="section-title">All Products</h2>
+                        <p class="section-subtitle">Discover our complete range of premium hair care products</p>
                     </div>
                     
-                    <div class="products-grid" id="productsGrid">
-                        <!-- Product 1 -->
-                        <div class="product-container" data-category="growth-oil" data-price="130" data-rating="5" data-size="100ml">
-                            <div class="product-card">
-                                <div class="product-badge">BEST SELLER</div>
-                                <img src="../img/Growth-Oil.png" alt="Growth Oil" class="product-image">
-                                <div class="product-overlay">
-                                    <button class="quick-view" data-product="1">
-                                        <i class="fas fa-eye"></i>
-                                        Quick View
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="product-details">
-                                <h3 class="product-name">Growth Oil</h3>
-                                <div class="product-rating">
-                                    <div class="stars">★★★★★</div>
-                                    <span class="rating-count">(128)</span>
-                                </div>
-                                <div class="product-description">Essential for all hair types for everyone</div>
-                                <div class="product-size">100ml</div>
-                                <p class="product-price">R 130.00</p>
-                                <div class="product-actions">
-                                    <button class="add-to-cart-btn">Add to bag</button>
-                                    <img src="../img/whichlist-svgrepo-com.svg" alt="wishlist" class="wishlist-icon">
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Product 2 -->
-                        <div class="product-container" data-category="hair-spray" data-price="130" data-rating="5" data-size="100ml">
-                            <div class="product-card">
-                                <div class="product-badge">POPULAR</div>
-                                <img src="../img/Vitality-Spray.png" alt="Vitality Hair Spray" class="product-image">
-                                <div class="product-overlay">
-                                    <button class="quick-view" data-product="2">
-                                        <i class="fas fa-eye"></i>
-                                        Quick View
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="product-details">
-                                <h3 class="product-name">Vitality Hair Spray</h3>
-                                <div class="product-rating">
-                                    <div class="stars">★★★★★</div>
-                                    <span class="rating-count">(96)</span>
-                                </div>
-                                <div class="product-description">Penetrates into the scalp for maximal results</div>
-                                <div class="product-size">100 ml</div>
-                                <p class="product-price">R 130.00</p>
-                                <div class="product-actions">
-                                    <button class="add-to-cart-btn">Add to bag</button>
-                                    <img src="../img/whichlist-svgrepo-com.svg" alt="wishlist" class="wishlist-icon">
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Product 3 -->
-                        <div class="product-container" data-category="hair-food" data-price="120" data-rating="5" data-size="100ml">
-                            <div class="product-card">
-                                <div class="product-badge">NEW</div>
-                                <img src="../img/hairfood.png" alt="Hair Food" class="product-image">
-                                <div class="product-overlay">
-                                    <button class="quick-view" data-product="3">
-                                        <i class="fas fa-eye"></i>
-                                        Quick View
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="product-details">
-                                <h3 class="product-name">Hair Food</h3>
-                                <div class="product-rating">
-                                    <div class="stars">★★★★★</div>
-                                    <span class="rating-count">(87)</span>
-                                </div>
-                                <div class="product-description">Protect your scalp and nurture your hair</div>
-                                <div class="product-size">100ml</div>
-                                <p class="product-price">R 120.00</p>
-                                <div class="product-actions">
-                                    <button class="add-to-cart-btn">Add to bag</button>
-                                    <img src="../img/whichlist-svgrepo-com.svg" alt="wishlist" class="wishlist-icon">
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Product 4 -->
-                        <div class="product-container" data-category="growth-oil" data-price="150" data-rating="4" data-size="50ml">
-                            <div class="product-card">
-                                <img src="../img/Growth-Oil.png" alt="Intensive Repair Serum" class="product-image">
-                                <div class="product-overlay">
-                                    <button class="quick-view" data-product="4">
-                                        <i class="fas fa-eye"></i>
-                                        Quick View
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="product-details">
-                                <h3 class="product-name">Intensive Repair Serum</h3>
-                                <div class="product-rating">
-                                    <div class="stars">★★★★☆</div>
-                                    <span class="rating-count">(64)</span>
-                                </div>
-                                <div class="product-description">Deep repair for damaged and brittle hair</div>
-                                <div class="product-size">50ml</div>
-                                <p class="product-price">R 150.00</p>
-                                <div class="product-actions">
-                                    <button class="add-to-cart-btn">Add to bag</button>
-                                    <img src="../img/whichlist-svgrepo-com.svg" alt="wishlist" class="wishlist-icon">
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Product 5 -->
-                        <div class="product-container" data-category="combo" data-price="350" data-rating="5" data-size="multi">
-                            <div class="product-card">
-                                <div class="product-badge">COMBO</div>
-                                <img src="../img/product-5.jpg" alt="Complete Hair Care Kit" class="product-image">
-                                <div class="product-overlay">
-                                    <button class="quick-view" data-product="5">
-                                        <i class="fas fa-eye"></i>
-                                        Quick View
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="product-details">
-                                <h3 class="product-name">Complete Hair Care Kit</h3>
-                                <div class="product-rating">
-                                    <div class="stars">★★★★★</div>
-                                    <span class="rating-count">(42)</span>
-                                </div>
-                                <div class="product-description">Everything you need for healthy hair growth</div>
-                                <div class="product-size">3 Items</div>
-                                <p class="product-price">R 350.00 <span class="original-price">R 400.00</span></p>
-                                <div class="product-actions">
-                                    <button class="add-to-cart-btn">Add to bag</button>
-                                    <img src="../img/whichlist-svgrepo-com.svg" alt="wishlist" class="wishlist-icon">
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Product 6 -->
-                        <div class="product-container" data-category="hair-food" data-price="110" data-rating="4" data-size="100ml">
-                            <div class="product-card">
-                                <img src="../img/hairfood.png" alt="Scalp Treatment" class="product-image">
-                                <div class="product-overlay">
-                                    <button class="quick-view" data-product="6">
-                                        <i class="fas fa-eye"></i>
-                                        Quick View
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="product-details">
-                                <h3 class="product-name">Scalp Treatment</h3>
-                                <div class="product-rating">
-                                    <div class="stars">★★★★☆</div>
-                                    <span class="rating-count">(53)</span>
-                                </div>
-                                <div class="product-description">Soothes and revitalizes your scalp</div>
-                                <div class="product-size">100ml</div>
-                                <p class="product-price">R 110.00</p>
-                                <div class="product-actions">
-                                    <button class="add-to-cart-btn">Add to bag</button>
-                                    <img src="../img/whichlist-svgrepo-com.svg" alt="wishlist" class="wishlist-icon">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Pagination -->
-                    <div class="pagination">
-                        <button class="page-btn active">1</button>
-                        <button class="page-btn">2</button>
-                        <button class="page-btn">3</button>
-                        <button class="page-btn next">
-                            Next <i class="fas fa-chevron-right"></i>
+                    <div class="products-carousel">
+                        <button class="carousel-btn prev-btn" aria-label="Previous products">
+                            <i class="fas fa-chevron-left"></i>
                         </button>
+                        
+                        <div class="products-grid">
+                            <!-- Product 1 -->
+                            <div class="product-container" data-category="growth-oil" data-price="130" data-rating="5" data-size="100ml">
+                                <div class="product-card">
+                                    <div class="product-badge best-seller">BEST SELLER</div>
+                                    <img src="../img/Growth-Oil.png" alt="Growth Oil" class="product-image">
+                                    <div class="product-overlay">
+                                        <button class="quick-view" data-product="1">
+                                            <i class="fas fa-eye"></i>
+                                            Quick View
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="product-details">
+                                    <h3 class="product-name">Growth Oil</h3>
+                                    <div class="product-rating">
+                                        <div class="stars">★★★★★</div>
+                                        <span class="rating-count">(128)</span>
+                                    </div>
+                                    <div class="product-description">Essential for all hair types for everyone</div>
+                                    <div class="product-size">100ml</div>
+                                    <p class="product-price">R 130.00</p>
+                                    <div class="product-actions">
+                                        <button class="add-to-cart-btn">Add to bag</button>
+                                        <img src="../img/whichlist-svgrepo-com.svg" alt="wishlist" class="wishlist-icon">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Product 2 -->
+                            <div class="product-container" data-category="hair-spray" data-price="130" data-rating="5" data-size="100ml">
+                                <div class="product-card">
+                                    <div class="product-badge popular">POPULAR</div>
+                                    <img src="../img/Vitality-Spray.png" alt="Vitality Hair Spray" class="product-image">
+                                    <div class="product-overlay">
+                                        <button class="quick-view" data-product="2">
+                                            <i class="fas fa-eye"></i>
+                                            Quick View
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="product-details">
+                                    <h3 class="product-name">Vitality Hair Spray</h3>
+                                    <div class="product-rating">
+                                        <div class="stars">★★★★★</div>
+                                        <span class="rating-count">(96)</span>
+                                    </div>
+                                    <div class="product-description">Penetrates into the scalp for maximal results</div>
+                                    <div class="product-size">100 ml</div>
+                                    <p class="product-price">R 130.00</p>
+                                    <div class="product-actions">
+                                        <button class="add-to-cart-btn">Add to bag</button>
+                                        <img src="../img/whichlist-svgrepo-com.svg" alt="wishlist" class="wishlist-icon">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Product 3 -->
+                            <div class="product-container" data-category="hair-food" data-price="120" data-rating="5" data-size="100ml">
+                                <div class="product-card">
+                                    <div class="product-badge new">NEW</div>
+                                    <img src="../img/hairfood.png" alt="Hair Food" class="product-image">
+                                    <div class="product-overlay">
+                                        <button class="quick-view" data-product="3">
+                                            <i class="fas fa-eye"></i>
+                                            Quick View
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="product-details">
+                                    <h3 class="product-name">Hair Food</h3>
+                                    <div class="product-rating">
+                                        <div class="stars">★★★★★</div>
+                                        <span class="rating-count">(87)</span>
+                                    </div>
+                                    <div class="product-description">Protect your scalp and nurture your hair</div>
+                                    <div class="product-size">100ml</div>
+                                    <p class="product-price">R 120.00</p>
+                                    <div class="product-actions">
+                                        <button class="add-to-cart-btn">Add to bag</button>
+                                        <img src="../img/whichlist-svgrepo-com.svg" alt="wishlist" class="wishlist-icon">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <button class="carousel-btn next-btn" aria-label="Next products">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="carousel-dots">
+                        <span class="dot active" data-slide="0"></span>
+                        <span class="dot" data-slide="1"></span>
+                        <span class="dot" data-slide="2"></span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Combo Deals Section -->
+            <section class="products-section" id="combo-deals">
+                <div class="container">
+                    <div class="section-header">
+                        <h2 class="section-title">Combo Deals</h2>
+                        <p class="section-subtitle">Save more with our specially curated bundles</p>
+                    </div>
+                    
+                    <div class="products-carousel">
+                        <button class="carousel-btn prev-btn" aria-label="Previous combos">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        
+                        <div class="products-grid">
+                            <!-- Combo 1 -->
+                            <div class="product-container" data-category="combo" data-price="350" data-rating="5" data-size="multi">
+                                <div class="product-card">
+                                    <div class="product-badge combo">COMBO</div>
+                                    <img src="../img/combo-1.jpg" alt="Complete Hair Care Kit" class="product-image">
+                                    <div class="product-overlay">
+                                        <button class="quick-view" data-product="5">
+                                            <i class="fas fa-eye"></i>
+                                            Quick View
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="product-details">
+                                    <h3 class="product-name">Complete Hair Care Kit</h3>
+                                    <div class="product-rating">
+                                        <div class="stars">★★★★★</div>
+                                        <span class="rating-count">(42)</span>
+                                    </div>
+                                    <div class="product-description">Everything you need for healthy hair growth</div>
+                                    <div class="product-size">3 Items</div>
+                                    <p class="product-price">R 350.00 <span class="original-price">R 400.00</span></p>
+                                    <div class="product-actions">
+                                        <button class="add-to-cart-btn">Add to bag</button>
+                                        <img src="../img/whichlist-svgrepo-com.svg" alt="wishlist" class="wishlist-icon">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Combo 2 -->
+                            <div class="product-container" data-category="combo" data-price="240" data-rating="5" data-size="multi">
+                                <div class="product-card">
+                                    <div class="product-badge combo">COMBO</div>
+                                    <img src="../img/combo-2.jpg" alt="Growth & Repair Duo" class="product-image">
+                                    <div class="product-overlay">
+                                        <button class="quick-view" data-product="7">
+                                            <i class="fas fa-eye"></i>
+                                            Quick View
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="product-details">
+                                    <h3 class="product-name">Growth & Repair Duo</h3>
+                                    <div class="product-rating">
+                                        <div class="stars">★★★★★</div>
+                                        <span class="rating-count">(38)</span>
+                                    </div>
+                                    <div class="product-description">Powerful combination for hair growth and repair</div>
+                                    <div class="product-size">2 Items</div>
+                                    <p class="product-price">R 240.00 <span class="original-price">R 280.00</span></p>
+                                    <div class="product-actions">
+                                        <button class="add-to-cart-btn">Add to bag</button>
+                                        <img src="../img/whichlist-svgrepo-com.svg" alt="wishlist" class="wishlist-icon">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Combo 3 -->
+                            <div class="product-container" data-category="combo" data-price="450" data-rating="5" data-size="multi">
+                                <div class="product-card">
+                                    <div class="product-badge combo">COMBO</div>
+                                    <img src="../img/combo-3.jpg" alt="Luxury Hair Bundle" class="product-image">
+                                    <div class="product-overlay">
+                                        <button class="quick-view" data-product="8">
+                                            <i class="fas fa-eye"></i>
+                                            Quick View
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="product-details">
+                                    <h3 class="product-name">Luxury Hair Bundle</h3>
+                                    <div class="product-rating">
+                                        <div class="stars">★★★★★</div>
+                                        <span class="rating-count">(29)</span>
+                                    </div>
+                                    <div class="product-description">Ultimate luxury hair care experience</div>
+                                    <div class="product-size">4 Items</div>
+                                    <p class="product-price">R 450.00 <span class="original-price">R 550.00</span></p>
+                                    <div class="product-actions">
+                                        <button class="add-to-cart-btn">Add to bag</button>
+                                        <img src="../img/whichlist-svgrepo-com.svg" alt="wishlist" class="wishlist-icon">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <button class="carousel-btn next-btn" aria-label="Next combos">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="carousel-dots">
+                        <span class="dot active" data-slide="0"></span>
+                        <span class="dot" data-slide="1"></span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Specials Section -->
+            <section class="products-section" id="specials">
+                <div class="container">
+                    <div class="section-header">
+                        <h2 class="section-title">Special Offers</h2>
+                        <p class="section-subtitle">Limited time offers and exclusive deals</p>
+                    </div>
+                    
+                    <div class="products-carousel">
+                        <button class="carousel-btn prev-btn" aria-label="Previous specials">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        
+                        <div class="products-grid">
+                            <!-- Special 1 -->
+                            <div class="product-container" data-category="combo" data-price="90" data-rating="4" data-size="multi">
+                                <div class="product-card">
+                                    <div class="product-badge special">SPECIAL</div>
+                                    <img src="../img/special-1.jpg" alt="Travel Size Trio" class="product-image">
+                                    <div class="product-overlay">
+                                        <button class="quick-view" data-product="9">
+                                            <i class="fas fa-eye"></i>
+                                            Quick View
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="product-details">
+                                    <h3 class="product-name">Travel Size Trio</h3>
+                                    <div class="product-rating">
+                                        <div class="stars">★★★★☆</div>
+                                        <span class="rating-count">(47)</span>
+                                    </div>
+                                    <div class="product-description">Perfect for travel and on-the-go care</div>
+                                    <div class="product-size">3 Travel Items</div>
+                                    <p class="product-price">R 90.00 <span class="original-price">R 120.00</span></p>
+                                    <div class="product-actions">
+                                        <button class="add-to-cart-btn">Add to bag</button>
+                                        <img src="../img/whichlist-svgrepo-com.svg" alt="wishlist" class="wishlist-icon">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Special 2 -->
+                            <div class="product-container" data-category="growth-oil" data-price="150" data-rating="4" data-size="50ml">
+                                <div class="product-card">
+                                    <div class="product-badge special">SPECIAL</div>
+                                    <img src="../img/Growth-Oil.png" alt="Intensive Repair Serum" class="product-image">
+                                    <div class="product-overlay">
+                                        <button class="quick-view" data-product="4">
+                                            <i class="fas fa-eye"></i>
+                                            Quick View
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="product-details">
+                                    <h3 class="product-name">Intensive Repair Serum</h3>
+                                    <div class="product-rating">
+                                        <div class="stars">★★★★☆</div>
+                                        <span class="rating-count">(64)</span>
+                                    </div>
+                                    <div class="product-description">Deep repair for damaged and brittle hair</div>
+                                    <div class="product-size">50ml</div>
+                                    <p class="product-price">R 150.00</p>
+                                    <div class="product-actions">
+                                        <button class="add-to-cart-btn">Add to bag</button>
+                                        <img src="../img/whichlist-svgrepo-com.svg" alt="wishlist" class="wishlist-icon">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Special 3 -->
+                            <div class="product-container" data-category="hair-food" data-price="110" data-rating="4" data-size="100ml">
+                                <div class="product-card">
+                                    <div class="product-badge special">SPECIAL</div>
+                                    <img src="../img/hairfood.png" alt="Scalp Treatment" class="product-image">
+                                    <div class="product-overlay">
+                                        <button class="quick-view" data-product="6">
+                                            <i class="fas fa-eye"></i>
+                                            Quick View
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="product-details">
+                                    <h3 class="product-name">Scalp Treatment</h3>
+                                    <div class="product-rating">
+                                        <div class="stars">★★★★☆</div>
+                                        <span class="rating-count">(53)</span>
+                                    </div>
+                                    <div class="product-description">Soothes and revitalizes your scalp</div>
+                                    <div class="product-size">100ml</div>
+                                    <p class="product-price">R 110.00</p>
+                                    <div class="product-actions">
+                                        <button class="add-to-cart-btn">Add to bag</button>
+                                        <img src="../img/whichlist-svgrepo-com.svg" alt="wishlist" class="wishlist-icon">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <button class="carousel-btn next-btn" aria-label="Next specials">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="carousel-dots">
+                        <span class="dot active" data-slide="0"></span>
+                        <span class="dot" data-slide="1"></span>
                     </div>
                 </div>
             </section>
 
         </main>
-        <div class="reviews-component-placeholder"></div>
-
-        
 
         <!-- Component Placeholders -->
+        <div class="reviews-component-placeholder"></div>
         <div class="features-section-placeholder"></div>
         <div class="footer-placeholder"></div>
     </div>
 
-    <!-- Quick View Modal - FIXED TO MATCH ABOUT PAGE -->
-<div class="quick-view-modal" id="quickViewModal">
-    <div class="modal-overlay" id="modalOverlay"></div>
-    <div class="modal-container">
-        <div class="modal-content">
-            <button class="close-modal" id="closeModal" aria-label="Close modal">
-                <i class="fas fa-times"></i>
-            </button>
-            <div class="modal-body">
-                <div class="modal-image-section">
-                    <img src="../img/Growth-Oil.png" alt="Growth Oil" class="main-product-image">
-                    <div class="image-thumbnails">
-                        <img src="../img/Growth-Oil.png" alt="Thumbnail 1" class="thumbnail active">
-                        <img src="../img/Vitality-Spray.png" alt="Thumbnail 2" class="thumbnail">
-                        <img src="../img/hairfood.png" alt="Thumbnail 3" class="thumbnail">
-                    </div>
-                </div>
-                <div class="modal-details-section">
-                    <div class="product-header">
-                        <div class="product-badge-modal">BEST SELLER</div>
-                        <h2 class="product-title">Growth Oil</h2>
-                        <div class="product-rating-modal">
-                            <div class="stars-modal">★★★★★</div>
-                            <span class="rating-count-modal">(128 reviews)</span>
-                        </div>
-                        <div class="product-price-modal">R 130.00</div>
-                        <p class="product-description-modal">
-                            Essential for all hair types. Our premium Growth Oil is specially formulated with 100% natural ingredients to stimulate hair growth and strengthen hair follicles.
-                        </p>
-                    </div>
-                    
-                    <div class="product-features">
-                        <h4>Key Features:</h4>
-                        <ul class="feature-list">
-                            <li><i class="fas fa-check"></i> Stimulates natural hair growth</li>
-                            <li><i class="fas fa-check"></i> Strengthens hair follicles</li>
-                            <li><i class="fas fa-check"></i> Nourishes and moisturizes scalp</li>
-                            <li><i class="fas fa-check"></i> Reduces hair breakage</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="size-options-modal">
-                        <h4>Size:</h4>
-                        <div class="size-buttons">
-                            <button class="size-btn active">50ml</button>
-                            <button class="size-btn">100ml</button>
-                            <button class="size-btn">200ml</button>
+    <!-- Quick View Modal -->
+    <div class="quick-view-modal" id="quickViewModal">
+        <div class="modal-overlay" id="modalOverlay"></div>
+        <div class="modal-container">
+            <div class="modal-content">
+                <button class="close-modal" id="closeModal" aria-label="Close modal">
+                    <i class="fas fa-times"></i>
+                </button>
+                <div class="modal-body">
+                    <div class="modal-image-section">
+                        <div class="main-image-container">
+                            <img src="../img/Growth-Oil.png" alt="Growth Oil" class="main-product-image">
                         </div>
                     </div>
-                    
-                    <div class="quantity-selector">
-                        <h4>Quantity:</h4>
-                        <div class="quantity-controls">
-                            <button class="quantity-btn decrease">-</button>
-                            <span class="quantity-display">1</span>
-                            <button class="quantity-btn increase">+</button>
+                    <div class="modal-details-section">
+                        <div class="product-header">
+                            <div class="product-badge-modal">BEST SELLER</div>
+                            <h2 class="product-title">Growth Oil</h2>
+                            <div class="product-rating-modal">
+                                <div class="stars-modal">★★★★★</div>
+                                <span class="rating-count-modal">(128 reviews)</span>
+                            </div>
+                            <div class="product-price-modal">R 130.00</div>
                         </div>
-                    </div>
-                    
-                    <div class="modal-actions">
-                        <button class="add-to-cart-btn-modal">Add to Bag</button>
-                        <button class="wishlist-btn-modal" aria-label="Add to wishlist">
-                            <i class="fas fa-heart"></i>
-                        </button>
-                    </div>
-                    
-                    <div class="product-meta">
-                        <div class="meta-item">
-                            <i class="fas fa-tag"></i>
-                            <span>SKU: GM-GO-100</span>
+                        
+                        <div class="product-description-section">
+                            <p class="product-description-modal">
+                                Essential for all hair types. Our premium Growth Oil is specially formulated with 100% natural ingredients to stimulate hair growth and strengthen hair follicles.
+                            </p>
                         </div>
-                        <div class="meta-item">
-                            <i class="fas fa-box"></i>
-                            <span>In Stock</span>
+                        
+                        <div class="product-features">
+                            <h4>Key Benefits:</h4>
+                            <ul class="feature-list">
+                                <li><i class="fas fa-check"></i> Stimulates natural hair growth</li>
+                                <li><i class="fas fa-check"></i> Strengthens hair follicles</li>
+                                <li><i class="fas fa-check"></i> Nourishes and moisturizes scalp</li>
+                                <li><i class="fas fa-check"></i> Reduces hair breakage</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="product-options">
+                            <div class="size-options-modal">
+                                <label>Size:</label>
+                                <div class="size-buttons">
+                                    <button class="size-btn active">50ml</button>
+                                    <button class="size-btn">100ml</button>
+                                    <button class="size-btn">200ml</button>
+                                </div>
+                            </div>
+                            
+                            <div class="quantity-selector">
+                                <label>Quantity:</label>
+                                <div class="quantity-controls">
+                                    <button class="quantity-btn decrease">-</button>
+                                    <span class="quantity-display">1</span>
+                                    <button class="quantity-btn increase">+</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="modal-actions">
+                            <button class="add-to-cart-btn-modal">
+                                <i class="fas fa-shopping-bag"></i>
+                                Add to Bag
+                            </button>
+                            <button class="wishlist-btn-modal" aria-label="Add to wishlist">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                        
+                        <div class="product-meta">
+                            <div class="meta-item">
+                                <i class="fas fa-truck"></i>
+                                <span>Free shipping over R600</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="fas fa-shield-alt"></i>
+                                <span>30-day money back guarantee</span>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
     <!-- JavaScript -->
     <script src="../js-codes/index.js"></script>
