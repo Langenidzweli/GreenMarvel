@@ -1,6 +1,10 @@
 /* ========================================
    STICKY NAVIGATION STYLES
 ======================================== */
+
+/* ========================================
+   MAIN STICKY NAV CONTAINER
+======================================== */
 .sticky-nav {
     position: fixed;
     top: 0;
@@ -20,6 +24,9 @@
     transform: translateY(0);
 }
 
+/* ========================================
+   LAYOUT & CONTAINER
+======================================== */
 .sticky-nav-container {
     display: flex;
     align-items: center;
@@ -29,7 +36,9 @@
     padding: 0 200px; /* Match body padding */
 }
 
-/* Logo Styling - Matches index.css */
+/* ========================================
+   LOGO STYLING
+======================================== */
 .sticky-nav-logo {
     flex-shrink: 0;
 }
@@ -46,7 +55,9 @@
     transform: scale(1.05);
 }
 
-/* Navigation Menu */
+/* ========================================
+   NAVIGATION MENU
+======================================== */
 .sticky-nav-menu {
     display: flex;
     list-style: none;
@@ -85,7 +96,9 @@
     width: 100%;
 }
 
-/* Right Section Icons */
+/* ========================================
+   ICONS SECTION
+======================================== */
 .sticky-nav-icons {
     display: flex;
     align-items: center;
@@ -99,44 +112,19 @@
     border-radius: 4px;
 }
 
-.sticky-nav-icons .icon:hover {
-    transform: scale(1.1);
-    background: rgba(70, 133, 60, 0.1); /* Light green background on hover */
-}
-
 .sticky-nav-icons img {
     height: 22px;
     width: 22px;
     transition: filter 0.3s ease;
 }
 
-.sticky-nav-icons .icon:hover img {
-    filter: brightness(0.8);
-}
-
-/* Cart icon specific styling */
-.sticky-nav-icons .cart-icon {
-    position: relative;
-}
-
-.sticky-nav-icons .cart-icon::after {
-    content: '';
-    position: absolute;
-    top: 5px;
-    right: 5px;
-    width: 8px;
-    height: 8px;
-    background: #46853c;
-    border-radius: 50%;
-    border: 2px solid white;
-}
-
-/* Hide original navbar when sticky nav is active */
+/* ========================================
+   BODY ADJUSTMENTS FOR STICKY NAV
+======================================== */
 body.sticky-nav-active .navbar {
     margin-top: 70px; /* Adjust based on sticky nav height */
 }
 
-/* Smooth transition for body padding */
 body {
     transition: padding-top 0.3s ease;
 }
@@ -146,217 +134,8 @@ body.sticky-nav-active {
 }
 
 /* ========================================
-   RESPONSIVE DESIGN
+   ACTIVE NAVIGATION INDICATORS
 ======================================== */
-
-/* Large desktop screens (1440px and above) */
-@media (min-width: 1440px) {
-    .sticky-nav-container {
-        padding: 0 200px;
-    }
-}
-
-/* Standard desktop screens (1200px to 1439px) */
-@media (max-width: 1439px) and (min-width: 1200px) {
-    .sticky-nav-container {
-        padding: 0 150px;
-    }
-}
-
-/* Small desktop screens (1024px to 1199px) */
-@media (max-width: 1199px) and (min-width: 1024px) {
-    .sticky-nav-container {
-        padding: 0 100px;
-    }
-}
-
-/* Tablet screens (768px to 1023px) */
-@media (max-width: 1023px) and (min-width: 769px) {
-    .sticky-nav-container {
-        padding: 0 50px;
-    }
-    
-    .sticky-nav-menu {
-        gap: 20px;
-    }
-    
-    .sticky-nav-menu .nav-item a {
-        font-size: 13px;
-    }
-    
-    .sticky-nav-icons {
-        gap: 12px;
-    }
-    
-    .sticky-nav-icons img {
-        height: 20px;
-        width: 20px;
-    }
-}
-
-/* Mobile screens (768px and below) */
-@media (max-width: 768px) {
-    .sticky-nav-container {
-        padding: 0 20px;
-    }
-    
-    .sticky-nav-logo img {
-        height: 40px; /* Slightly smaller logo for mobile */
-    }
-    
-    .sticky-nav-menu {
-        gap: 15px;
-    }
-    
-    .sticky-nav-menu .nav-item a {
-        font-size: 12px;
-        padding: 6px 0;
-    }
-    
-    .sticky-nav-icons {
-        gap: 10px;
-    }
-    
-    .sticky-nav-icons img {
-        height: 18px;
-        width: 18px;
-    }
-    
-    .sticky-nav-icons .icon {
-        padding: 6px;
-    }
-}
-
-/* Small mobile screens (480px and below) */
-@media (max-width: 480px) {
-    .sticky-nav-container {
-        padding: 0 15px;
-    }
-    
-    .sticky-nav {
-        padding: 8px 0;
-    }
-    
-    .sticky-nav-logo img {
-        height: 35px;
-    }
-    
-    .sticky-nav-menu {
-        gap: 12px;
-    }
-    
-    .sticky-nav-menu .nav-item a {
-        font-size: 11px;
-    }
-    
-    .sticky-nav-icons {
-        gap: 8px;
-    }
-    
-    .sticky-nav-icons img {
-        height: 16px;
-        width: 16px;
-    }
-    
-    body.sticky-nav-active .navbar {
-        margin-top: 60px;
-    }
-    
-    body.sticky-nav-active {
-        padding-top: 60px;
-    }
-}
-
-/* Extra small mobile screens (360px and below) */
-@media (max-width: 360px) {
-    .sticky-nav-container {
-        padding: 0 10px;
-    }
-    
-    .sticky-nav-menu {
-        gap: 10px;
-    }
-    
-    .sticky-nav-menu .nav-item a {
-        font-size: 10px;
-    }
-    
-    .sticky-nav-icons {
-        gap: 6px;
-    }
-}
-
-/* ========================================
-   ACCESSIBILITY & PERFORMANCE
-======================================== */
-
-/* High contrast mode support */
-@media (prefers-contrast: high) {
-    .sticky-nav {
-        background: white;
-        border-bottom: 2px solid #000;
-    }
-    
-    .sticky-nav-menu .nav-item a {
-        font-weight: 600;
-    }
-}
-
-/* Reduced motion support */
-@media (prefers-reduced-motion: reduce) {
-    .sticky-nav {
-        transition: none;
-    }
-    
-    .sticky-nav-menu .nav-item a::after {
-        transition: none;
-    }
-    
-    .sticky-nav-icons .icon:hover {
-        transform: none;
-    }
-    
-    .sticky-nav-logo:hover img {
-        transform: none;
-    }
-}
-
-/* Focus styles for keyboard navigation */
-.sticky-nav-menu .nav-item a:focus-visible,
-.sticky-nav-icons .icon:focus-visible {
-    outline: 2px solid #46853c;
-    outline-offset: 2px;
-    border-radius: 4px;
-}
-
-/* Print styles */
-@media print {
-    .sticky-nav {
-        display: none;
-    }
-}
-
-/* ========================================
-   SMOOTH SCROLL BEHAVIOR
-======================================== */
-html {
-    scroll-behavior: smooth;
-}
-
-/* ========================================
-   LOADING STATES
-======================================== */
-.sticky-nav.loading {
-    opacity: 0;
-}
-
-.sticky-nav.loaded {
-    opacity: 1;
-}
-
-/* ========================================
-   ACTIVE NAVIGATION INDICATOR
-========================================= */
 
 /* Main Navigation Links */
 .nav-list .nav-item a {
@@ -441,4 +220,235 @@ html {
     to {
         transform: scaleX(1);
     }
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+======================================== */
+
+/* ========================================
+   LARGE DESKTOP SCREENS (1440px and above)
+======================================== */
+@media (min-width: 1440px) {
+    .sticky-nav-container {
+        padding: 0 200px;
+    }
+}
+
+/* ========================================
+   STANDARD DESKTOP SCREENS (1200px to 1439px)
+======================================== */
+@media (max-width: 1439px) and (min-width: 1200px) {
+    .sticky-nav-container {
+        padding: 0 150px;
+    }
+}
+
+/* ========================================
+   SMALL DESKTOP SCREENS (1024px to 1199px)
+======================================== */
+@media (max-width: 1199px) and (min-width: 1024px) {
+    .sticky-nav-container {
+        padding: 0 100px;
+    }
+}
+
+/* ========================================
+   TABLET SCREENS (768px to 1023px)
+======================================== */
+@media (max-width: 1023px) and (min-width: 769px) {
+    .sticky-nav-container {
+        padding: 0 50px;
+    }
+    
+    .sticky-nav-menu {
+        gap: 20px;
+    }
+    
+    .sticky-nav-menu .nav-item a {
+        font-size: 13px;
+    }
+    
+    .sticky-nav-icons {
+        gap: 12px;
+    }
+    
+    .sticky-nav-icons img {
+        height: 20px;
+        width: 20px;
+    }
+}
+
+/* ========================================
+   MOBILE SCREENS (768px and below)
+======================================== */
+@media (max-width: 768px) {
+    .sticky-nav-container {
+        padding: 0 20px;
+    }
+    
+    .sticky-nav-logo img {
+        height: 40px; /* Slightly smaller logo for mobile */
+    }
+    
+    .sticky-nav-menu {
+        gap: 15px;
+    }
+    
+    .sticky-nav-menu .nav-item a {
+        font-size: 12px;
+        padding: 6px 0;
+    }
+    
+    .sticky-nav-icons {
+        gap: 10px;
+    }
+    
+    .sticky-nav-icons img {
+        height: 18px;
+        width: 18px;
+    }
+    
+    .sticky-nav-icons .icon {
+        padding: 6px;
+    }
+}
+
+/* ========================================
+   SMALL MOBILE SCREENS (480px and below)
+======================================== */
+@media (max-width: 480px) {
+    .sticky-nav-container {
+        padding: 0 15px;
+    }
+    
+    .sticky-nav {
+        padding: 8px 0;
+    }
+    
+    .sticky-nav-logo img {
+        height: 35px;
+    }
+    
+    .sticky-nav-menu {
+        gap: 12px;
+    }
+    
+    .sticky-nav-menu .nav-item a {
+        font-size: 11px;
+    }
+    
+    .sticky-nav-icons {
+        gap: 8px;
+    }
+    
+    .sticky-nav-icons img {
+        height: 16px;
+        width: 16px;
+    }
+    
+    body.sticky-nav-active .navbar {
+        margin-top: 60px;
+    }
+    
+    body.sticky-nav-active {
+        padding-top: 60px;
+    }
+}
+
+/* ========================================
+   EXTRA SMALL MOBILE SCREENS (360px and below)
+======================================== */
+@media (max-width: 360px) {
+    .sticky-nav-container {
+        padding: 0 10px;
+    }
+    
+    .sticky-nav-menu {
+        gap: 10px;
+    }
+    
+    .sticky-nav-menu .nav-item a {
+        font-size: 10px;
+    }
+    
+    .sticky-nav-icons {
+        gap: 6px;
+    }
+}
+
+/* ========================================
+   ACCESSIBILITY & PERFORMANCE
+======================================== */
+
+/* ========================================
+   HIGH CONTRAST MODE SUPPORT
+======================================== */
+@media (prefers-contrast: high) {
+    .sticky-nav {
+        background: white;
+        border-bottom: 2px solid #000;
+    }
+    
+    .sticky-nav-menu .nav-item a {
+        font-weight: 600;
+    }
+}
+
+/* ========================================
+   REDUCED MOTION SUPPORT
+======================================== */
+@media (prefers-reduced-motion: reduce) {
+    .sticky-nav {
+        transition: none;
+    }
+    
+    .sticky-nav-menu .nav-item a::after {
+        transition: none;
+    }
+    
+    .sticky-nav-icons .icon:hover {
+        transform: none;
+    }
+    
+    .sticky-nav-logo:hover img {
+        transform: none;
+    }
+}
+
+/* ========================================
+   FOCUS STYLES FOR KEYBOARD NAVIGATION
+======================================== */
+.sticky-nav-menu .nav-item a:focus-visible,
+.sticky-nav-icons .icon:focus-visible {
+    outline: 2px solid #46853c;
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
+/* ========================================
+   PRINT STYLES
+======================================== */
+@media print {
+    .sticky-nav {
+        display: none;
+    }
+}
+
+/* ========================================
+   SMOOTH SCROLL BEHAVIOR
+======================================== */
+html {
+    scroll-behavior: smooth;
+}
+
+/* ========================================
+   LOADING STATES
+======================================== */
+.sticky-nav.loading {
+    opacity: 0;
+}
+
+.sticky-nav.loaded {
+    opacity: 1;
 }
