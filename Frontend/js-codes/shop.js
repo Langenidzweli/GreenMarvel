@@ -1,8 +1,7 @@
 // ========================================
-// FIXED QUICK VIEW MODAL FUNCTIONALITY
+// PRODUCT DATA
 // ========================================
 
-// Product data with complete descriptions
 const productData = {
     1: {
         id: 1,
@@ -13,6 +12,8 @@ const productData = {
         price: 130.00,
         originalPrice: null,
         size: "100ml",
+        category: "growth-oil",
+        type: "regular",
         description: "Essential for all hair types for everyone",
         fullDescription: "Our premium Growth Oil is specially formulated with 100% natural ingredients to stimulate hair growth and strengthen hair follicles. Perfect for all hair types including color-treated hair. Regular use promotes thicker, healthier hair and reduces breakage.",
         features: [
@@ -22,11 +23,6 @@ const productData = {
             "Reduces hair breakage and split ends",
             "Suitable for all hair types",
             "100% natural ingredients"
-        ],
-        images: [
-            "../img/Growth-Oil.png",
-            "../img/Growth-Oil-2.jpg",
-            "../img/Growth-Oil-3.jpg"
         ],
         sizes: ["50ml", "100ml", "200ml"],
         inStock: true,
@@ -41,6 +37,8 @@ const productData = {
         price: 130.00,
         originalPrice: null,
         size: "100ml",
+        category: "hair-spray",
+        type: "regular",
         description: "Penetrates into the scalp for maximal results",
         fullDescription: "Vitality Hair Spray combines the benefits of a treatment product with the convenience of a styling spray. It penetrates deep into the scalp to deliver essential nutrients while providing flexible hold and fighting frizz. Enriched with natural proteins for daily use.",
         features: [
@@ -50,10 +48,6 @@ const productData = {
             "Enriched with natural proteins",
             "Suitable for daily use",
             "Alcohol-free formula"
-        ],
-        images: [
-            "../img/Vitality-Spray.png",
-            "../img/Vitality-Spray-2.jpg"
         ],
         sizes: ["100ml", "200ml"],
         inStock: true,
@@ -68,6 +62,8 @@ const productData = {
         price: 120.00,
         originalPrice: null,
         size: "100ml",
+        category: "hair-food",
+        type: "regular",
         description: "Protect your scalp and nurture your hair",
         fullDescription: "Hair Food is a deeply conditioning treatment that protects both your scalp and hair. Formulated with natural butters and oils, it repairs damage, restores moisture balance, and creates a protective barrier against environmental stressors. Use weekly for optimal results.",
         features: [
@@ -77,10 +73,6 @@ const productData = {
             "Repairs damaged hair structure",
             "Weekly treatment for best results",
             "Natural butters and oils"
-        ],
-        images: [
-            "../img/hairfood.png",
-            "../img/hairfood-2.jpg"
         ],
         sizes: ["100ml", "200ml"],
         inStock: true,
@@ -95,6 +87,8 @@ const productData = {
         price: 150.00,
         originalPrice: null,
         size: "50ml",
+        category: "growth-oil",
+        type: "regular",
         description: "Deep repair for damaged and brittle hair",
         fullDescription: "Our Intensive Repair Serum is a concentrated formula designed to repair damaged hair at the cellular level. It restores strength, elasticity, and shine to brittle hair while preventing future breakage. Enriched with keratin proteins for structural repair.",
         features: [
@@ -105,23 +99,21 @@ const productData = {
             "Concentrated repair serum",
             "For severely damaged hair"
         ],
-        images: [
-            "../img/Growth-Oil.png",
-            "../img/repair-serum-2.jpg"
-        ],
         sizes: ["50ml", "100ml"],
         inStock: true,
         sku: "GM-IR-50"
     },
     5: {
         id: 5,
-        name: "Hair Care Kit",
+        name: "Complete Hair Care Kit",
         badge: "COMBO",
         rating: 5,
         ratingCount: 42,
         price: 350.00,
         originalPrice: 400.00,
         size: "3 Items",
+        category: "combo",
+        type: "combo",
         description: "Everything you need for healthy hair growth",
         fullDescription: "Our Complete Hair Care Kit includes our three best-selling products: Growth Oil, Hair Food, and Vitality Spray. This comprehensive system provides everything you need for healthy hair growth and maintenance. Save 15% compared to buying individually.",
         features: [
@@ -131,10 +123,6 @@ const productData = {
             "Synergistic results when used together",
             "Perfect starter kit for new users",
             "Comprehensive hair solution"
-        ],
-        images: [
-            "../img/kit-main.jpg",
-            "../img/kit-content.jpg"
         ],
         sizes: ["Standard Kit"],
         inStock: true,
@@ -149,6 +137,8 @@ const productData = {
         price: 110.00,
         originalPrice: null,
         size: "100ml",
+        category: "hair-food",
+        type: "regular",
         description: "Soothes and revitalizes your scalp",
         fullDescription: "Scalp Treatment is specially formulated to soothe irritation, balance oil production, and remove product buildup. With tea tree oil and aloe vera, it refreshes and revitalizes your scalp, creating the optimal environment for healthy hair growth.",
         features: [
@@ -159,33 +149,194 @@ const productData = {
             "Creates optimal growth environment",
             "Refreshes and revitalizes"
         ],
-        images: [
-            "../img/hairfood.png",
-            "../img/scalp-treatment-2.jpg"
-        ],
         sizes: ["100ml", "200ml"],
         inStock: true,
         sku: "GM-ST-100"
+    },
+    7: {
+        id: 7,
+        name: "Growth & Repair Duo",
+        badge: "COMBO",
+        rating: 5,
+        ratingCount: 38,
+        price: 240.00,
+        originalPrice: 280.00,
+        size: "2 Items",
+        category: "combo",
+        type: "combo",
+        description: "Powerful combination for hair growth and repair",
+        fullDescription: "This powerful duo combines our best-selling Growth Oil with our intensive Repair Serum for maximum results. Perfect for those dealing with hair loss and damage, this combination accelerates growth while repairing existing damage.",
+        features: [
+            "Accelerates hair growth",
+            "Repairs existing damage",
+            "Saves 15% on individual prices",
+            "Perfect for damaged hair",
+            "Synergistic formula combination",
+            "Visible results in 4-6 weeks"
+        ],
+        sizes: ["Duo Pack"],
+        inStock: true,
+        sku: "GM-DUO-001"
+    },
+    8: {
+        id: 8,
+        name: "Luxury Hair Bundle",
+        badge: "COMBO",
+        rating: 5,
+        ratingCount: 29,
+        price: 450.00,
+        originalPrice: 550.00,
+        size: "4 Items",
+        category: "combo",
+        type: "combo",
+        description: "Ultimate luxury hair care experience",
+        fullDescription: "Our Luxury Hair Bundle includes all our premium products plus exclusive accessories. Experience the ultimate in hair care with this complete set that covers every aspect of hair health and styling.",
+        features: [
+            "Includes all premium products",
+            "Exclusive hair care accessories",
+            "Save over 20%",
+            "Luxury packaging",
+            "Complete hair care solution",
+            "Perfect gift set"
+        ],
+        sizes: ["Luxury Bundle"],
+        inStock: true,
+        sku: "GM-LUX-001"
+    },
+    9: {
+        id: 9,
+        name: "Travel Size Trio",
+        badge: "SPECIAL",
+        rating: 4,
+        ratingCount: 47,
+        price: 90.00,
+        originalPrice: 120.00,
+        size: "3 Travel Items",
+        category: "combo",
+        type: "special",
+        description: "Perfect for travel and on-the-go care",
+        fullDescription: "Our Travel Size Trio includes mini versions of our three essential products. Perfect for travel, gym bags, or trying out our products before committing to full sizes. All the benefits in convenient travel-friendly packaging.",
+        features: [
+            "Travel-friendly sizes",
+            "Perfect for trying products",
+            "Save 25% on individual prices",
+            "TSA compliant sizes",
+            "All essential products included",
+            "Great for gifts"
+        ],
+        sizes: ["Travel Pack"],
+        inStock: true,
+        sku: "GM-TRV-001"
     }
 };
 
 // ========================================
-// QUICK VIEW MODAL FUNCTIONS - FIXED FOR BACKGROUND SCROLLING
+// CAROUSEL FUNCTIONALITY
 // ========================================
 
-// Initialize quick view functionality
-function initializeQuickView() {
-    console.log('Initializing quick view...');
+function initializeCarousels() {
+    const carousels = document.querySelectorAll('.products-carousel');
     
+    carousels.forEach(carousel => {
+        const prevBtn = carousel.querySelector('.prev-btn');
+        const nextBtn = carousel.querySelector('.next-btn');
+        const grid = carousel.querySelector('.products-grid');
+        const dots = carousel.parentElement.querySelectorAll('.dot');
+        const products = grid.querySelectorAll('.product-container');
+        
+        // Create slides array with 3 products per slide
+        const slides = [];
+        for (let i = 0; i < products.length; i += 3) {
+            slides.push(Array.from(products).slice(i, i + 3));
+        }
+        
+        let currentSlide = 0;
+        
+        function showSlide(slideIndex) {
+            // Hide all products
+            products.forEach(product => {
+                product.style.display = 'none';
+            });
+            
+            // Show products for current slide
+            if (slides[slideIndex]) {
+                slides[slideIndex].forEach(product => {
+                    product.style.display = 'flex';
+                });
+            }
+            
+            // Update dots
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === slideIndex);
+            });
+            
+            // Update button states
+            if (prevBtn) prevBtn.disabled = slideIndex === 0;
+            if (nextBtn) nextBtn.disabled = slideIndex === slides.length - 1;
+            
+            currentSlide = slideIndex;
+        }
+        
+        // Initialize carousel
+        showSlide(0);
+        
+        // Event listeners for buttons
+        if (prevBtn) {
+            prevBtn.addEventListener('click', function() {
+                if (currentSlide > 0) {
+                    showSlide(currentSlide - 1);
+                }
+            });
+        }
+        
+        if (nextBtn) {
+            nextBtn.addEventListener('click', function() {
+                if (currentSlide < slides.length - 1) {
+                    showSlide(currentSlide + 1);
+                }
+            });
+        }
+        
+        // Event listeners for dots
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', function() {
+                showSlide(index);
+            });
+        });
+    });
+}
+
+// ========================================
+// SHOP INITIALIZATION
+// ========================================
+
+function initializeShop() {
+    console.log('Initializing Green Marvel Shop...');
+    
+    // Initialize functionality
+    initializeCarousels();
+    initializeQuickView();
+    initializeFilters();
+    initializeSorting();
+    initializeViewToggle();
+    initializeWishlist();
+    initializeAddToCart();
+    
+    // Update cart counter
+    updateCartCounter();
+    
+    console.log('Green Marvel Shop initialized successfully');
+}
+
+// ========================================
+// QUICK VIEW MODAL FUNCTIONS
+// ========================================
+
+function initializeQuickView() {
     const quickViewButtons = document.querySelectorAll('.quick-view');
     const quickViewModal = document.getElementById('quickViewModal');
     const closeModal = document.getElementById('closeModal');
     const modalOverlay = document.getElementById('modalOverlay');
-    
-    console.log('Quick view buttons found:', quickViewButtons.length);
-    console.log('Modal found:', !!quickViewModal);
-    console.log('Close button found:', !!closeModal);
-    console.log('Overlay found:', !!modalOverlay);
     
     if (!quickViewModal || !closeModal || !modalOverlay) {
         console.error('Quick view modal elements not found');
@@ -197,7 +348,6 @@ function initializeQuickView() {
         button.addEventListener('click', function(e) {
             e.preventDefault();
             e.stopPropagation();
-            console.log('Quick view clicked, product:', this.getAttribute('data-product'));
             
             const productId = this.getAttribute('data-product');
             openQuickViewModal(productId);
@@ -232,14 +382,9 @@ function initializeQuickView() {
             e.stopPropagation();
         });
     }
-    
-    console.log('Quick view initialization complete');
 }
 
-// Open quick view modal - ALLOWS BACKGROUND SCROLLING
 function openQuickViewModal(productId) {
-    console.log('Opening quick view for product:', productId);
-    
     const product = productData[productId];
     if (!product) {
         console.error('Product not found:', productId);
@@ -255,35 +400,26 @@ function openQuickViewModal(productId) {
     // Update modal content with product data
     updateModalContent(product);
     
-    // Initialize image gallery
-    initializeImageGallery(product.images);
-    
     // Show modal
     modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
     
     // Focus management for accessibility
     modal.setAttribute('aria-hidden', 'false');
     const closeBtn = document.getElementById('closeModal');
     if (closeBtn) closeBtn.focus();
-    
-    console.log('Modal opened successfully - background scrolling allowed');
 }
 
-// Close quick view modal
 function closeQuickViewModal() {
-    console.log('Closing quick view modal');
-    
     const modal = document.getElementById('quickViewModal');
     if (modal) {
         modal.classList.remove('active');
+        document.body.style.overflow = '';
         modal.setAttribute('aria-hidden', 'true');
     }
 }
 
-// Update modal content with product data
 function updateModalContent(product) {
-    console.log('Updating modal content for:', product.name);
-    
     // Update basic product info
     const badgeElement = document.querySelector('.product-badge-modal');
     if (badgeElement) {
@@ -345,17 +481,11 @@ function updateModalContent(product) {
         });
     }
     
-    // Update product meta
-    const metaItems = document.querySelectorAll('.meta-item');
-    if (metaItems.length >= 2) {
-        const skuSpan = metaItems[0].querySelector('span');
-        if (skuSpan) skuSpan.textContent = `SKU: ${product.sku}`;
-        
-        const stockSpan = metaItems[1].querySelector('span');
-        if (stockSpan) {
-            stockSpan.textContent = product.inStock ? 'In Stock' : 'Out of Stock';
-            stockSpan.style.color = product.inStock ? '#46853c' : '#e74c3c';
-        }
+    // Update product image
+    const productImage = document.querySelector('.main-product-image');
+    if (productImage) {
+        productImage.src = `../img/${product.name.toLowerCase().replace(/ /g, '-')}.png`;
+        productImage.alt = product.name;
     }
     
     // Update wishlist button
@@ -375,85 +505,21 @@ function updateModalContent(product) {
     initializeQuantitySelector();
 }
 
-// Initialize image gallery
-function initializeImageGallery(images) {
-    const mainImage = document.querySelector('.main-product-image');
-    const thumbnailsContainer = document.querySelector('.image-thumbnails');
-    
-    if (!mainImage) {
-        console.error('Main product image not found');
-        return;
-    }
-    
-    // Clear existing thumbnails
-    if (thumbnailsContainer) {
-        thumbnailsContainer.innerHTML = '';
-    }
-    
-    // Set main image with error handling
-    const firstImage = images[0] || '../img/Growth-Oil.png';
-    mainImage.src = firstImage;
-    mainImage.alt = 'Product Image';
-    mainImage.onerror = function() {
-        console.error('Failed to load image:', firstImage);
-        this.src = '../img/Growth-Oil.png';
-    };
-    
-    // Create thumbnails
-    if (thumbnailsContainer && images.length > 1) {
-        const displayImages = images.slice(0, 3);
-        displayImages.forEach((image, index) => {
-            const thumbnail = document.createElement('img');
-            thumbnail.className = 'thumbnail';
-            thumbnail.src = image || '../img/Growth-Oil.png';
-            thumbnail.alt = `Thumbnail ${index + 1}`;
-            thumbnail.onerror = function() {
-                this.src = '../img/Growth-Oil.png';
-            };
-            
-            if (index === 0) {
-                thumbnail.classList.add('active');
-            }
-            
-            thumbnail.addEventListener('click', function() {
-                // Update main image
-                mainImage.src = image || '../img/Growth-Oil.png';
-                
-                // Update active thumbnail
-                document.querySelectorAll('.thumbnail').forEach(thumb => {
-                    thumb.classList.remove('active');
-                });
-                this.classList.add('active');
-            });
-            
-            thumbnailsContainer.appendChild(thumbnail);
-        });
-    }
-}
-
-// Initialize quantity selector
 function initializeQuantitySelector() {
     const quantityDisplay = document.querySelector('.quantity-display');
     const decreaseBtn = document.querySelector('.quantity-btn.decrease');
     const increaseBtn = document.querySelector('.quantity-btn.increase');
     
-    if (!quantityDisplay || !decreaseBtn || !increaseBtn) {
-        console.error('Quantity selector elements not found');
-        return;
-    }
+    if (!quantityDisplay || !decreaseBtn || !increaseBtn) return;
     
     let quantity = 1;
     
-    // Update quantity display
     function updateQuantityDisplay() {
         quantityDisplay.textContent = quantity;
-        
-        // Update button states
         decreaseBtn.disabled = quantity <= 1;
         increaseBtn.disabled = quantity >= 10;
     }
     
-    // Decrease quantity
     decreaseBtn.addEventListener('click', function() {
         if (quantity > 1) {
             quantity--;
@@ -461,7 +527,6 @@ function initializeQuantitySelector() {
         }
     });
     
-    // Increase quantity
     increaseBtn.addEventListener('click', function() {
         if (quantity < 10) {
             quantity++;
@@ -469,7 +534,6 @@ function initializeQuantitySelector() {
         }
     });
     
-    // Initialize display
     updateQuantityDisplay();
 }
 
@@ -486,19 +550,16 @@ function initializeFilters() {
     
     if (!filterToggle || !filterSection) return;
     
-    // Toggle filter options
     filterToggle.addEventListener('click', function() {
         filterSection.classList.toggle('active');
     });
     
-    // Close filters when clicking outside
     document.addEventListener('click', function(e) {
         if (!filterSection.contains(e.target) && !filterToggle.contains(e.target)) {
             filterSection.classList.remove('active');
         }
     });
     
-    // Update price range display
     if (priceSlider) {
         priceSlider.addEventListener('input', function() {
             const priceValues = this.parentElement.querySelector('.price-values');
@@ -509,7 +570,6 @@ function initializeFilters() {
         });
     }
     
-    // Size option selection
     sizeOptions.forEach(option => {
         option.addEventListener('click', function() {
             sizeOptions.forEach(opt => opt.classList.remove('active'));
@@ -517,7 +577,6 @@ function initializeFilters() {
         });
     });
     
-    // Apply filters
     if (applyFiltersBtn) {
         applyFiltersBtn.addEventListener('click', function() {
             applyFilters();
@@ -527,40 +586,41 @@ function initializeFilters() {
 }
 
 function applyFilters() {
-    const products = document.querySelectorAll('.product-container');
-    const selectedCategories = getSelectedCategories();
-    const priceSlider = document.querySelector('.price-slider');
-    const activeSizeOption = document.querySelector('.size-option.active');
+    const sections = document.querySelectorAll('.products-section');
     
-    if (!priceSlider || !activeSizeOption) return;
-    
-    const maxPrice = parseInt(priceSlider.value);
-    const selectedSize = activeSizeOption.getAttribute('data-size');
-    
-    let visibleCount = 0;
-    
-    products.forEach(product => {
-        const productPrice = parseInt(product.getAttribute('data-price'));
-        const productCategory = product.getAttribute('data-category');
-        const productSize = product.getAttribute('data-size');
+    sections.forEach(section => {
+        const products = section.querySelectorAll('.product-container');
+        const selectedCategories = getSelectedCategories();
+        const priceSlider = document.querySelector('.price-slider');
+        const activeSizeOption = document.querySelector('.size-option.active');
         
-        const categoryMatch = selectedCategories.includes('all') || selectedCategories.includes(productCategory);
-        const priceMatch = productPrice <= maxPrice;
-        const sizeMatch = selectedSize === 'all' || productSize === selectedSize;
+        if (!priceSlider || !activeSizeOption) return;
         
-        if (categoryMatch && priceMatch && sizeMatch) {
-            product.style.display = 'flex';
-            visibleCount++;
-        } else {
-            product.style.display = 'none';
-        }
+        const maxPrice = parseInt(priceSlider.value);
+        const selectedSize = activeSizeOption.getAttribute('data-size');
+        
+        let visibleCount = 0;
+        
+        products.forEach(product => {
+            const productPrice = parseInt(product.getAttribute('data-price'));
+            const productCategory = product.getAttribute('data-category');
+            const productSize = product.getAttribute('data-size');
+            
+            const categoryMatch = selectedCategories.includes('all') || selectedCategories.includes(productCategory);
+            const priceMatch = productPrice <= maxPrice;
+            const sizeMatch = selectedSize === 'all' || productSize === selectedSize;
+            
+            if (categoryMatch && priceMatch && sizeMatch) {
+                product.style.display = 'flex';
+                visibleCount++;
+            } else {
+                product.style.display = 'none';
+            }
+        });
+        
+        // Reinitialize carousel after filtering
+        initializeCarousels();
     });
-    
-    // Update product count
-    const productsCount = document.querySelector('.products-count');
-    if (productsCount) {
-        productsCount.textContent = `Showing ${visibleCount} products`;
-    }
 }
 
 function getSelectedCategories() {
@@ -586,30 +646,37 @@ function initializeSorting() {
 }
 
 function sortProducts(sortBy) {
-    const productsGrid = document.getElementById('productsGrid');
-    if (!productsGrid) return;
+    const sections = document.querySelectorAll('.products-section');
     
-    const products = Array.from(document.querySelectorAll('.product-container'));
-    
-    products.sort((a, b) => {
-        switch (sortBy) {
-            case 'price-low':
-                return parseFloat(a.getAttribute('data-price')) - parseFloat(b.getAttribute('data-price'));
-            case 'price-high':
-                return parseFloat(b.getAttribute('data-price')) - parseFloat(a.getAttribute('data-price'));
-            case 'rating':
-                return parseFloat(b.getAttribute('data-rating')) - parseFloat(a.getAttribute('data-rating'));
-            case 'newest':
-                return parseInt(b.getAttribute('data-id')) - parseInt(a.getAttribute('data-id'));
-            case 'featured':
-            default:
-                return 0;
-        }
-    });
-    
-    // Reappend sorted products
-    products.forEach(product => {
-        productsGrid.appendChild(product);
+    sections.forEach(section => {
+        const grid = section.querySelector('.products-grid');
+        if (!grid) return;
+        
+        const products = Array.from(section.querySelectorAll('.product-container'));
+        
+        products.sort((a, b) => {
+            switch (sortBy) {
+                case 'price-low':
+                    return parseFloat(a.getAttribute('data-price')) - parseFloat(b.getAttribute('data-price'));
+                case 'price-high':
+                    return parseFloat(b.getAttribute('data-price')) - parseFloat(a.getAttribute('data-price'));
+                case 'rating':
+                    return parseFloat(b.getAttribute('data-rating')) - parseFloat(a.getAttribute('data-rating'));
+                case 'newest':
+                    return parseInt(b.getAttribute('data-id')) - parseInt(a.getAttribute('data-id'));
+                case 'featured':
+                default:
+                    return 0;
+            }
+        });
+        
+        // Reorder products in grid
+        products.forEach(product => {
+            grid.appendChild(product);
+        });
+        
+        // Reinitialize carousel after sorting
+        initializeCarousels();
     });
 }
 
@@ -619,20 +686,28 @@ function sortProducts(sortBy) {
 
 function initializeViewToggle() {
     const viewOptions = document.querySelectorAll('.view-option');
-    const productsGrid = document.getElementById('productsGrid');
-    
-    if (!viewOptions.length || !productsGrid) return;
     
     viewOptions.forEach(option => {
         option.addEventListener('click', function() {
+            const sections = document.querySelectorAll('.products-section');
+            
             viewOptions.forEach(opt => opt.classList.remove('active'));
             this.classList.add('active');
             
             const viewType = this.getAttribute('data-view');
-            productsGrid.className = 'products-grid';
-            if (viewType === 'list') {
-                productsGrid.classList.add('list-view');
-            }
+            
+            sections.forEach(section => {
+                const grid = section.querySelector('.products-grid');
+                if (!grid) return;
+                
+                grid.className = 'products-grid';
+                if (viewType === 'list') {
+                    grid.classList.add('list-view');
+                }
+            });
+            
+            // Reinitialize carousel for new view
+            initializeCarousels();
         });
     });
 }
@@ -642,22 +717,32 @@ function initializeViewToggle() {
 // ========================================
 
 function initializeWishlist() {
-    const wishlistIcons = document.querySelectorAll('.wishlist-icon');
-    const modalWishlistBtn = document.querySelector('.wishlist-btn-modal');
-    
-    wishlistIcons.forEach(icon => {
-        icon.addEventListener('click', function() {
-            const productContainer = this.closest('.product-container');
-            const productId = getProductIdFromContainer(productContainer);
-            toggleWishlist(productId, this);
-        });
+    // Delegate events for dynamically loaded products
+    document.addEventListener('click', function(e) {
+        if (e.target.classList.contains('wishlist-icon') || e.target.closest('.wishlist-icon')) {
+            const icon = e.target.classList.contains('wishlist-icon') ? e.target : e.target.closest('.wishlist-icon');
+            const productContainer = icon.closest('.product-container');
+            const productId = productContainer.getAttribute('data-id');
+            toggleWishlist(productId, icon);
+        }
     });
     
+    const modalWishlistBtn = document.querySelector('.wishlist-btn-modal');
     if (modalWishlistBtn) {
         modalWishlistBtn.addEventListener('click', function() {
             const productId = this.getAttribute('data-product');
             if (productId) {
                 toggleWishlist(productId, this);
+                
+                // Update heart icon
+                const icon = this.querySelector('i');
+                if (icon) {
+                    if (this.classList.contains('active')) {
+                        icon.className = 'fas fa-heart';
+                    } else {
+                        icon.className = 'far fa-heart';
+                    }
+                }
                 
                 // Sync with grid icon
                 const gridIcon = document.querySelector(`.product-container[data-id="${productId}"] .wishlist-icon`);
@@ -702,37 +787,27 @@ function isProductInWishlist(productId) {
     return wishlist.includes(productId.toString());
 }
 
-function getProductIdFromContainer(container) {
-    const productName = container.querySelector('.product-name').textContent;
-    for (const [id, product] of Object.entries(productData)) {
-        if (product.name === productName) {
-            return id;
-        }
-    }
-    return null;
-}
-
 // ========================================
 // ADD TO CART FUNCTIONALITY
 // ========================================
 
 function initializeAddToCart() {
-    const addToCartButtons = document.querySelectorAll('.add-to-cart-btn');
-    const modalAddToCartBtn = document.querySelector('.add-to-cart-btn-modal');
-    
-    addToCartButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            const productContainer = this.closest('.product-container');
-            const productId = getProductIdFromContainer(productContainer);
+    // Delegate events for dynamically loaded products
+    document.addEventListener('click', function(e) {
+        if (e.target.classList.contains('add-to-cart-btn') || e.target.closest('.add-to-cart-btn')) {
+            const button = e.target.classList.contains('add-to-cart-btn') ? e.target : e.target.closest('.add-to-cart-btn');
+            const productContainer = button.closest('.product-container');
+            const productId = productContainer.getAttribute('data-id');
             const product = productData[productId];
             
             if (product) {
                 addToCart(product, 1);
-                showAddToCartAnimation(this);
+                showAddToCartAnimation(button);
             }
-        });
+        }
     });
     
+    const modalAddToCartBtn = document.querySelector('.add-to-cart-btn-modal');
     if (modalAddToCartBtn) {
         modalAddToCartBtn.addEventListener('click', function() {
             const productId = this.getAttribute('data-product');
@@ -762,8 +837,8 @@ function addToCart(product, quantity) {
             name: product.name,
             price: product.price,
             quantity: quantity,
-            image: product.images[0],
-            size: product.size
+            size: product.size,
+            image: `../img/${product.name.toLowerCase().replace(/ /g, '-')}.png`
         });
     }
     
@@ -773,18 +848,18 @@ function addToCart(product, quantity) {
 }
 
 function showAddToCartAnimation(button) {
-    const originalText = button.textContent;
-    button.textContent = 'Adding...';
+    const originalText = button.innerHTML;
+    button.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Adding...';
     button.style.backgroundColor = '#3a6f32';
     button.disabled = true;
     
     setTimeout(() => {
-        button.textContent = 'Added!';
+        button.innerHTML = '<i class="fas fa-check"></i> Added!';
         button.style.backgroundColor = '#46853c';
         
         setTimeout(() => {
-            button.textContent = originalText;
-            button.style.backgroundColor = '#003300';
+            button.innerHTML = originalText;
+            button.style.backgroundColor = '';
             button.disabled = false;
         }, 1000);
     }, 500);
@@ -827,60 +902,10 @@ function updateCartCounter() {
 }
 
 // ========================================
-// PAGINATION FUNCTIONALITY
-// ========================================
-
-function initializePagination() {
-    const pageButtons = document.querySelectorAll('.page-btn');
-    
-    pageButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            if (!this.classList.contains('active') && !this.classList.contains('next')) {
-                pageButtons.forEach(btn => btn.classList.remove('active'));
-                this.classList.add('active');
-                showNotification(`Loading page ${this.textContent}`, 'info');
-            } else if (this.classList.contains('next')) {
-                const activePage = document.querySelector('.page-btn.active');
-                if (activePage) {
-                    const nextPage = parseInt(activePage.textContent) + 1;
-                    
-                    if (nextPage <= 3) {
-                        pageButtons.forEach(btn => btn.classList.remove('active'));
-                        const nextPageBtn = document.querySelector(`.page-btn:nth-child(${nextPage})`);
-                        if (nextPageBtn) {
-                            nextPageBtn.classList.add('active');
-                            showNotification(`Loading page ${nextPage}`, 'info');
-                        }
-                    }
-                }
-            }
-        });
-    });
-}
-
-// ========================================
 // UTILITY FUNCTIONS
 // ========================================
 
-function initializeProductBadges() {
-    const badges = document.querySelectorAll('.product-badge');
-    const badgeColors = {
-        'BEST SELLER': '#46853c',
-        'POPULAR': '#e74c3c',
-        'NEW': '#3498db',
-        'COMBO': '#9b59b6'
-    };
-    
-    badges.forEach(badge => {
-        const badgeText = badge.textContent.trim();
-        if (badgeColors[badgeText]) {
-            badge.style.backgroundColor = badgeColors[badgeText];
-        }
-    });
-}
-
 function showNotification(message, type = 'info') {
-    // Remove existing notifications
     const existingNotifications = document.querySelectorAll('.notification');
     existingNotifications.forEach(notification => notification.remove());
     
@@ -894,7 +919,7 @@ function showNotification(message, type = 'info') {
         background: ${type === 'success' ? '#46853c' : type === 'error' ? '#e74c3c' : '#3498db'};
         color: white;
         padding: 15px 20px;
-        border-radius: 6px;
+        border-radius: 8px;
         box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         z-index: 10000;
         transform: translateX(100%);
@@ -904,12 +929,10 @@ function showNotification(message, type = 'info') {
     
     document.body.appendChild(notification);
     
-    // Animate in
     setTimeout(() => {
         notification.style.transform = 'translateX(0)';
     }, 100);
     
-    // Animate out and remove
     setTimeout(() => {
         notification.style.transform = 'translateX(100%)';
         setTimeout(() => {
@@ -924,34 +947,10 @@ function showNotification(message, type = 'info') {
 // INITIALIZATION
 // ========================================
 
-// Initialize when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
-    // Check if we're on the shop page
-    const isShopPage = document.querySelector('.shop-products') !== null;
-    
-    if (isShopPage) {
-        initializeQuickView();
-        initializeFilters();
-        initializeSorting();
-        initializeViewToggle();
-        initializeWishlist();
-        initializeAddToCart();
-        initializePagination();
-        initializeProductBadges();
-        
-        // Set data-id attributes for products (for sorting)
-        document.querySelectorAll('.product-container').forEach((container, index) => {
-            container.setAttribute('data-id', index + 1);
-        });
-    }
-    
-    // Always initialize cart counter
-    updateCartCounter();
-    
-    console.log('Green Marvel Shop initialized successfully');
+    initializeShop();
 });
 
-// Error handling for missing elements
 window.addEventListener('error', function(e) {
     console.error('JavaScript Error:', e.error);
 });
