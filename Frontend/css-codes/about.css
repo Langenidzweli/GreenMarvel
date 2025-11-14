@@ -3,9 +3,8 @@
 ========================================= */
 
 /* ========================================
-            ABOUT HERO SECTION
+            HERO SECTION
 ========================================= */
-
 .about-header {
     width: 100%;
     position: relative;
@@ -18,7 +17,7 @@
     margin-right: calc(-50vw + 50%);
     left: 0;
     right: 0;
-    height: 500px; /* Reduced height */
+    height: 500px;
     overflow: hidden;
 }
 
@@ -46,7 +45,7 @@
     color: white;
     max-width: 800px;
     padding: 0 20px;
-    margin: 0 auto; /* Center content with container */
+    margin: 0 auto;
 }
 
 .hero-content h1 {
@@ -71,6 +70,9 @@
     flex-wrap: wrap;
 }
 
+/* ========================================
+            BUTTON STYLES
+========================================= */
 .btn {
     padding: 15px 30px;
     border-radius: 6px;
@@ -81,6 +83,8 @@
     align-items: center;
     gap: 10px;
     font-size: 1rem;
+    position: relative;
+    overflow: hidden;
 }
 
 .btn.primary {
@@ -89,10 +93,36 @@
     border: 2px solid #46853c;
 }
 
-.btn.secondary {
+.btn.primary:hover {
+    background: #3a7232;
+    border-color: #3a7232;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(70, 133, 60, 0.3);
+}
+
+/* Hero specific secondary button */
+.hero-buttons .btn.secondary {
     background: transparent;
     color: white;
     border: 2px solid white;
+}
+
+.hero-buttons .btn.secondary:hover {
+    background: white;
+    color: #2c3e50;
+}
+
+/* CTA specific secondary button */
+.cta-section .btn.secondary {
+    background: transparent;
+    color: #2c3e50;
+    border: 2px solid #2c3e50;
+}
+
+.cta-section .btn.secondary:hover {
+    background: #2c3e50;
+    color: white;
+    border-color: #2c3e50;
 }
 
 .btn:hover {
@@ -100,15 +130,9 @@
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
 }
 
-.btn.secondary:hover {
-    background: white;
-    color: #2c3e50;
-}
-
 /* ========================================
             PROCESS SECTION
 ========================================= */
-
 .process-section {
     padding: 80px 0;
     background: white;
@@ -212,9 +236,8 @@
 }
 
 /* ========================================
-            STORY CARDS SECTION - UPDATED
+            STORY CARDS SECTION
 ========================================= */
-
 .story-cards {
     padding: 80px 0;
     background: #f8f8f8;
@@ -312,103 +335,367 @@
 }
 
 /* ========================================
-            TEAM SECTION
+            GALLERY SECTION
 ========================================= */
-
-.team-section {
-    padding: 80px 0;
+.gallery-section {
+    padding: 70px 0;
     background: white;
 }
 
-.team-grid {
+.gallery-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    margin-bottom: 50px;
 }
 
-.team-card {
+.gallery-item {
     background: white;
     border: 1px solid #e0e0e0;
     border-radius: 12px;
-    padding: 40px 30px;
-    text-align: center;
+    overflow: hidden;
     transition: all 0.3s ease;
+    position: relative;
+    cursor: pointer;
 }
 
-.team-card:hover {
+.gallery-item:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     border-color: #46853c;
 }
 
-.team-image {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    overflow: hidden;
-    margin: 0 auto 25px;
-    border: 3px solid #f8f8f8;
+/* Hidden items initially */
+.gallery-item.hidden-item {
+    display: none;
 }
 
-.team-image img {
+/* When expanded, show all items */
+.gallery-grid.expanded .gallery-item.hidden-item {
+    display: block;
+    animation: fadeInUp 0.5s ease;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.gallery-image {
+    position: relative;
+    height: 500px;
+    overflow: hidden;
+}
+
+.gallery-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: transform 0.3s ease;
 }
 
-.team-card h3 {
-    font-size: 1.3rem;
-    color: #2c3e50;
-    margin-bottom: 8px;
-    font-weight: 600;
+.gallery-item:hover .gallery-image img {
+    transform: scale(1.05);
 }
 
-.team-role {
-    color: #46853c;
-    font-weight: 600;
-    margin-bottom: 15px;
-    font-size: 0.95rem;
-}
-
-.team-bio {
-    color: #666;
-    line-height: 1.6;
-    margin-bottom: 20px;
-    font-size: 0.95rem;
-}
-
-.team-social {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-}
-
-.team-social a {
-    width: 40px;
-    height: 40px;
-    background: #f8f8f8;
-    border-radius: 50%;
+.gallery-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(70, 133, 60, 0.9);
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #666;
-    text-decoration: none;
+    opacity: 0;
     transition: all 0.3s ease;
-    border: 1px solid #e0e0e0;
 }
 
-.team-social a:hover {
+.gallery-item:hover .gallery-overlay {
+    opacity: 1;
+}
+
+.gallery-content {
+    text-align: center;
+    color: white;
+}
+
+.gallery-content i {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.gallery-content h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.gallery-caption {
+    padding: 25px;
+    text-align: center;
+}
+
+.gallery-caption h3 {
+    font-size: 1.3rem;
+    color: #2c3e50;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.gallery-caption p {
+    color: #666;
+    line-height: 1.6;
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+.gallery-footer {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.view-more-btn {
     background: #46853c;
     color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.view-more-btn:hover {
+    background: #3a7232;
     transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(70, 133, 60, 0.3);
 }
 
 /* ========================================
-            VALUES SECTION - UPDATED
+            GALLERY MODAL STYLES - IMPROVED TEXT FORMATTING
 ========================================= */
+.gallery-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 0.3s ease;
+    padding: 20px;
+    box-sizing: border-box;
+}
 
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    position: relative;
+    background: white;
+    border-radius: 12px;
+    max-width: 800px;
+    width: 100%;
+    max-height: 90vh;
+    overflow: auto;
+    z-index: 1001;
+    animation: scaleIn 0.3s ease;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes scaleIn {
+    from { transform: scale(0.9); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    z-index: 1002;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    font-size: 1.1rem;
+}
+
+.modal-close:hover {
+    background: rgba(0, 0, 0, 0.9);
+    transform: scale(1.1);
+}
+
+.modal-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 12px 12px 0 0;
+    max-height: 50vh;
+    object-fit: contain;
+    background: #f8f8f8;
+}
+
+.modal-caption {
+    padding: 30px;
+}
+
+.modal-caption h3 {
+    font-size: 1.8rem;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.modal-description {
+    color: #666;
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+    line-height: 1.6;
+    font-weight: 400;
+}
+
+.modal-detailed-content {
+    border-top: 2px solid #e8f5e8;
+    padding-top: 25px;
+}
+
+.modal-detailed-content h4 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+    font-size: 1.4rem;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.modal-detailed-content p {
+    color: #555;
+    line-height: 1.7;
+    margin-bottom: 20px;
+    font-size: 1.05rem;
+}
+
+.modal-detailed-content ul {
+    color: #555;
+    margin-bottom: 20px;
+    padding-left: 24px;
+}
+
+.modal-detailed-content li {
+    margin-bottom: 12px;
+    line-height: 1.6;
+    font-size: 1.05rem;
+    position: relative;
+}
+
+.modal-detailed-content li::before {
+    content: "•";
+    color: #46853c;
+    font-weight: bold;
+    position: absolute;
+    left: -15px;
+}
+
+.modal-detailed-content strong {
+    color: #46853c;
+    font-weight: 600;
+}
+
+/* ========================================
+            COMING SOON STYLES
+========================================= */
+.coming-soon-section {
+    margin-top: 40px;
+    animation: fadeInUp 0.5s ease;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.coming-soon-message {
+    text-align: center;
+    padding: 60px 40px;
+    background: #f8f9fa;
+    border-radius: 12px;
+    border: 2px dashed #e0e0e0;
+}
+
+.coming-soon-message i {
+    font-size: 3rem;
+    color: #46853c;
+    margin-bottom: 20px;
+    opacity: 0.7;
+}
+
+.coming-soon-message h3 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+.coming-soon-message p {
+    color: #666;
+    line-height: 1.6;
+    max-width: 400px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+}
+
+/* ========================================
+            UTILITY CLASSES
+========================================= */
+.hidden-item {
+    display: none;
+}
+
+/* ========================================
+            VALUES SECTION
+========================================= */
 .values-section {
-    padding: 60px 0; /* Reduced height */
+    padding: 60px 0;
     background: #f8f8f8;
     position: relative;
 }
@@ -498,7 +785,6 @@
 /* ========================================
             CTA SECTION
 ========================================= */
-
 .cta-section {
     padding: 80px 0;
     background: white;
@@ -535,7 +821,6 @@
 /* ========================================
             RESPONSIVE DESIGN
 ========================================= */
-
 @media (max-width: 768px) {
     .hero-content h1 {
         font-size: 2.5rem;
@@ -557,7 +842,7 @@
     
     .process-grid,
     .cards-grid,
-    .team-grid,
+    .gallery-grid,
     .values-grid {
         grid-template-columns: 1fr;
         gap: 30px;
@@ -572,20 +857,73 @@
     
     .process-card,
     .story-card,
-    .team-card,
+    .gallery-item,
     .value-item {
         padding: 30px 20px;
+    }
+    
+    .gallery-image {
+        height: 200px;
+    }
+    
+    .gallery-caption {
+        padding: 20px;
+    }
+    
+    .gallery-caption h3 {
+        font-size: 1.2rem;
     }
     
     .cta-buttons {
         flex-direction: column;
         align-items: center;
     }
+    
+    /* Improved Modal Responsive Styles */
+    .gallery-modal {
+        padding: 10px;
+    }
+    
+    .modal-content {
+        max-width: 95%;
+        max-height: 95vh;
+    }
+    
+    .modal-caption {
+        padding: 20px;
+    }
+    
+    .modal-caption h3 {
+        font-size: 1.4rem;
+    }
+    
+    .modal-description {
+        font-size: 1.1rem;
+    }
+    
+    .modal-detailed-content h4 {
+        font-size: 1.2rem;
+    }
+    
+    .modal-close {
+        top: 10px;
+        right: 10px;
+        width: 35px;
+        height: 35px;
+    }
+    
+    .coming-soon-message {
+        padding: 40px 20px;
+    }
+    
+    .coming-soon-message h3 {
+        font-size: 1.3rem;
+    }
 }
 
 @media (max-width: 480px) {
     .hero-farm {
-        height: 450px; /* Further reduced for mobile */
+        height: 450px;
     }
     
     .hero-content h1 {
@@ -594,13 +932,35 @@
     
     .process-section,
     .story-cards,
-    .team-section,
+    .gallery-section,
     .values-section,
     .cta-section {
         padding: 60px 0;
     }
     
     .values-section {
-        padding: 50px 0; /* Even more reduced for mobile */
+        padding: 50px 0;
+    }
+    
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .gallery-image {
+        height: 180px;
+    }
+    
+    /* Mobile Modal Improvements */
+    .modal-caption h3 {
+        font-size: 1.3rem;
+    }
+    
+    .modal-detailed-content h4 {
+        font-size: 1.1rem;
+    }
+    
+    .modal-detailed-content p,
+    .modal-detailed-content li {
+        font-size: 1rem;
     }
 }
