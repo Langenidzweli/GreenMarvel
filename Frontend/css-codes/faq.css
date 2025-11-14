@@ -269,6 +269,7 @@ body .faq-hero {
     font-size: 0.7rem;
     font-weight: 600;
     white-space: nowrap;
+    margin-right: 15px;
 }
 
 .question-badge.new {
@@ -337,6 +338,10 @@ body .faq-hero {
 }
 
 .product-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
     background: white;
     padding: 20px;
     border-radius: 8px;
@@ -357,6 +362,7 @@ body .faq-hero {
     line-height: 1.5;
     margin: 0;
 }
+
 
 /* Recommendation styles */
 .recommendation-grid {
