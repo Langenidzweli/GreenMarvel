@@ -87,12 +87,12 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Account icon functionality
+    // Account icon functionality — go to profile page
     document.querySelectorAll('.account-icon').forEach(icon => {
         icon.addEventListener('click', function() {
             console.log('Account clicked');
-            // Redirect to account page or show login modal
-            window.location.href = 'login.html';
+            // Redirect to profile page
+            window.location.href = 'profile.html';
         });
     });
 
@@ -105,16 +105,8 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Compare icon functionality (the second account icon)
-    document.querySelectorAll('.account-icon').forEach((icon, index) => {
-        if (index === 1) { // Second account icon is for compare
-            icon.addEventListener('click', function() {
-                console.log('Compare clicked');
-                // Redirect to compare page
-                window.location.href = 'compare.html';
-            });
-        }
-    });
+    // Note: account-icon now routes to profile; if you add a separate compare icon,
+    // give it a distinct class (e.g. `.compare-icon`) and handle it separately.
 });
 
 // Add smooth scrolling for navigation links

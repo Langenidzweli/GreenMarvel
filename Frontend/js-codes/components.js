@@ -288,7 +288,7 @@ class ComponentLoader {
             if (e.target.closest('.account-icon')) {
                 e.preventDefault();
                 console.log('Account clicked');
-                window.location.href = 'login.html';
+                window.location.href = 'profile.html';
             }
             
             // Notification icon
