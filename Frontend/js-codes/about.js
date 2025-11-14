@@ -418,6 +418,57 @@ aboutStyles.textContent = `
         }
     }
 `;
+// Smooth scrolling for "Watch Our Story" button
+function initSmoothScrolling() {
+    const watchStoryBtn = document.querySelector('a[href="#our-gallery"]');
+    
+    if (watchStoryBtn) {
+        watchStoryBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const gallerySection = document.getElementById('our-gallery');
+            if (gallerySection) {
+                gallerySection.scrollIntoView({ 
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    }
+}
+
+// Add this to your existing AboutPage class init method
+class AboutPage {
+    constructor() {
+        this.isExpanded = false;
+        this.init();
+    }
+
+    init() {
+        this.initGalleryInteractions();
+        this.initViewMoreButton();
+        this.initSmoothScrolling(); // Add this line
+    }
+
+    // Your existing methods...
+
+    // Add this new method
+    initSmoothScrolling() {
+        const watchStoryBtn = document.querySelector('a[href="#our-gallery"]');
+        
+        if (watchStoryBtn) {
+            watchStoryBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                const gallerySection = document.getElementById('our-gallery');
+                if (gallerySection) {
+                    gallerySection.scrollIntoView({ 
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        }
+    }
+}
 
 // ========================================
 // INITIALIZATION
