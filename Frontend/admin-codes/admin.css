@@ -1,0 +1,876 @@
+/* ========================================
+   GREEN MARVEL ADMIN DASHBOARD STYLES
+   Clean & Professional Design with Green Accents
+======================================== */
+
+/* ========================================
+   COLOR VARIABLES
+======================================== */
+:root {
+    --primary: #000000;
+    --primary-dark: #333333;
+    --primary-light: #666666;
+    --secondary: #f6f6f7;
+    --border: #e1e3e5;
+    --border-light: #f0f0f0;
+    --text: #202223;
+    --text-light: #6d7175;
+    --text-lighter: #8c9196;
+    --white: #ffffff;
+    --success: #008060;
+    --success-light: #e8f5f0;
+    --success-dark: #005e46;
+    --warning: #ffc453;
+    --error: #d72c0d;
+    --info: #2c6ecb;
+    --accent-green: #008060;
+    --accent-green-light: #e8f5f0;
+}
+
+/* ========================================
+   BASE STYLES & RESETS
+======================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--white);
+    color: var(--text);
+    line-height: 1.5;
+    font-size: 14px;
+}
+
+.admin-wrapper {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* ========================================
+   SIDEBAR NAVIGATION - WITH GREEN ACCENTS
+======================================== */
+.admin-sidebar {
+    width: 240px;
+    background: var(--white);
+    border-right: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    height: 100vh;
+    z-index: 1000;
+}
+
+.sidebar-brand {
+    padding: 16px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--white) 0%, var(--accent-green-light) 100%);
+}
+
+.brand-logo {
+    width: 32px;
+    height: 32px;
+    background: linear-gradient(135deg, var(--accent-green) 0%, var(--success-dark) 100%);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--white);
+    box-shadow: 0 2px 4px rgba(0, 128, 96, 0.2);
+}
+
+.brand-text h2 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 2px;
+    color: var(--accent-green);
+}
+
+.brand-text p {
+    font-size: 12px;
+    color: var(--text-light);
+}
+
+.sidebar-menu {
+    flex: 1;
+    padding: 16px 0;
+    overflow-y: auto;
+}
+
+.menu-section {
+    margin-bottom: 16px;
+}
+
+.menu-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    color: var(--text-lighter);
+    padding: 0 16px 8px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 16px;
+    color: var(--text);
+    text-decoration: none;
+    transition: all 0.2s ease;
+    font-weight: 400;
+    position: relative;
+    border: none;
+    background: none;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    border-left: 3px solid transparent;
+}
+
+.menu-item:hover {
+    background: var(--accent-green-light);
+    color: var(--accent-green);
+    border-left-color: var(--accent-green);
+}
+
+.menu-item.active {
+    background: var(--accent-green-light);
+    color: var(--accent-green);
+    font-weight: 500;
+    border-left-color: var(--accent-green);
+}
+
+.menu-item i {
+    font-size: 16px;
+    width: 20px;
+    text-align: center;
+    color: var(--accent-green);
+}
+
+.menu-item.active i {
+    color: var(--accent-green);
+}
+
+.menu-item .fa-chevron-right {
+    margin-left: auto;
+    font-size: 12px;
+    color: var(--text-lighter);
+}
+
+/* ========================================
+   MAIN CONTENT AREA
+======================================== */
+.admin-main {
+    flex: 1;
+    margin-left: 240px;
+    min-height: 100vh;
+    background: var(--white);
+}
+
+/* ========================================
+   ADMIN HEADER - WITH GREEN TOUCHES
+======================================== */
+.admin-header {
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+    padding: 0 20px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: linear-gradient(to right, var(--white) 0%, var(--accent-green-light) 100%);
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.sidebar-toggle {
+    background: none;
+    border: none;
+    font-size: 16px;
+    color: var(--accent-green);
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.sidebar-toggle:hover {
+    background: var(--accent-green-light);
+    transform: scale(1.1);
+}
+
+.breadcrumb {
+    font-size: 14px;
+    color: var(--accent-green);
+    font-weight: 500;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.header-search {
+    position: relative;
+    width: 200px;
+}
+
+.header-search i {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--accent-green);
+    font-size: 14px;
+}
+
+.header-search input {
+    width: 100%;
+    padding: 8px 12px 8px 32px;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    font-size: 14px;
+    background: var(--white);
+    transition: all 0.2s ease;
+}
+
+.header-search input:focus {
+    outline: none;
+    border-color: var(--accent-green);
+    box-shadow: 0 0 0 2px rgba(0, 128, 96, 0.1);
+}
+
+.user-menu {
+    display: flex;
+    align-items: center;
+}
+
+.user-avatar {
+    width: 32px;
+    height: 32px;
+    background: linear-gradient(135deg, var(--accent-green) 0%, var(--success-dark) 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    font-weight: 600;
+    font-size: 14px;
+    box-shadow: 0 2px 4px rgba(0, 128, 96, 0.3);
+}
+
+/* ========================================
+   ADMIN CONTENT SECTIONS
+======================================== */
+.admin-content {
+    padding: 24px;
+}
+
+.content-section {
+    display: none;
+}
+
+.content-section.active {
+    display: block;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.section-header {
+    margin-bottom: 24px;
+    border-left: 4px solid var(--accent-green);
+    padding-left: 16px;
+}
+
+.section-header h1 {
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--accent-green);
+    margin-bottom: 4px;
+}
+
+/* ========================================
+   WELCOME CARD - WITH GREEN ACCENT
+======================================== */
+.welcome-card {
+    background: linear-gradient(135deg, var(--white) 0%, var(--accent-green-light) 100%);
+    border: 1px solid var(--accent-green);
+    border-radius: 8px;
+    padding: 32px;
+    text-align: center;
+    max-width: 600px;
+    box-shadow: 0 4px 12px rgba(0, 128, 96, 0.1);
+}
+
+.welcome-card h2 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--accent-green);
+}
+
+.welcome-card p {
+    color: var(--text-light);
+    font-size: 14px;
+}
+
+/* ========================================
+   STATS CARDS - WITH GREEN HIGHLIGHTS
+======================================== */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.stat-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 20px;
+    transition: all 0.3s ease;
+    border-top: 3px solid var(--accent-green);
+}
+
+.stat-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 128, 96, 0.15);
+    border-top-color: var(--success-dark);
+}
+
+.stat-title {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: var(--accent-green);
+}
+
+.stat-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.stat-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.stat-label {
+    font-size: 14px;
+    color: var(--text-light);
+}
+
+.stat-value {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--accent-green);
+}
+
+.stat-value-large {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--accent-green);
+    margin-top: 8px;
+}
+
+.inventory-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin-top: 24px;
+}
+
+.inventory-stats .stat-card {
+    text-align: center;
+}
+
+.inventory-stats .stat-card h3 {
+    font-size: 14px;
+    color: var(--text-light);
+    margin-bottom: 8px;
+}
+
+/* ========================================
+   CONTENT CARDS - WITH GREEN BORDERS
+======================================== */
+.content-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    margin-bottom: 24px;
+    overflow: hidden;
+    border-left: 3px solid var(--accent-green);
+}
+
+.card-header {
+    padding: 20px;
+    border-bottom: 1px solid var(--border-light);
+    background: var(--accent-green-light);
+}
+
+.card-header h2 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--accent-green);
+}
+
+.card-header h3 {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--accent-green);
+}
+
+.card-header p {
+    color: var(--text-light);
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card-actions {
+    padding: 20px;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.card-footer {
+    padding: 16px 20px;
+    border-top: 1px solid var(--border-light);
+    background: var(--accent-green-light);
+}
+
+.card-footer small {
+    color: var(--text-light);
+    font-size: 12px;
+}
+
+/* ========================================
+   BUTTONS - GREEN PRIMARY BUTTONS
+======================================== */
+.btn-primary {
+    background: linear-gradient(135deg, var(--accent-green) 0%, var(--success-dark) 100%);
+    color: var(--white);
+    border: 1px solid var(--accent-green);
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 14px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 2px 4px rgba(0, 128, 96, 0.3);
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, var(--success-dark) 0%, var(--accent-green) 100%);
+    border-color: var(--success-dark);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0, 128, 96, 0.4);
+}
+
+.btn-secondary {
+    background: var(--white);
+    color: var(--accent-green);
+    border: 1px solid var(--accent-green);
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 14px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-secondary:hover {
+    background: var(--accent-green-light);
+    border-color: var(--success-dark);
+    color: var(--success-dark);
+}
+
+/* ========================================
+   EMPTY STATE - WITH GREEN TOUCH
+======================================== */
+.empty-state {
+    background: var(--white);
+    border: 2px dashed var(--accent-green);
+    border-radius: 8px;
+    padding: 40px;
+    text-align: center;
+    background: linear-gradient(135deg, var(--white) 0%, var(--accent-green-light) 100%);
+}
+
+.empty-state h3 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--accent-green);
+}
+
+.empty-state p {
+    color: var(--text-light);
+    font-size: 14px;
+}
+
+/* ========================================
+   CONTENT TABS - GREEN ACTIVE STATE
+======================================== */
+.content-tabs {
+    display: flex;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 24px;
+    background: var(--white);
+}
+
+.tab-btn {
+    background: none;
+    border: none;
+    padding: 12px 20px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-light);
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+.tab-btn:hover {
+    color: var(--accent-green);
+    background: var(--accent-green-light);
+}
+
+.tab-btn.active {
+    color: var(--accent-green);
+    border-bottom-color: var(--accent-green);
+    font-weight: 600;
+    background: var(--accent-green-light);
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+    animation: fadeIn 0.3s ease;
+}
+
+/* ========================================
+   COLLECTIONS - GREEN CHECKBOXES
+======================================== */
+.collections-list {
+    padding: 20px;
+}
+
+.collection-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 0;
+    transition: all 0.2s ease;
+}
+
+.collection-item:hover {
+    background: var(--accent-green-light);
+    padding-left: 8px;
+    border-radius: 4px;
+}
+
+.collection-item input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    accent-color: var(--accent-green);
+}
+
+.collection-title {
+    font-size: 14px;
+    color: var(--text);
+    font-weight: 500;
+}
+
+.collection-count {
+    margin-left: auto;
+    font-size: 12px;
+    color: var(--accent-green);
+    background: var(--accent-green-light);
+    padding: 2px 8px;
+    border-radius: 12px;
+}
+
+/* ========================================
+   CHART PLACEHOLDER - GREEN ACCENT
+======================================== */
+.chart-placeholder {
+    background: var(--accent-green-light);
+    border: 2px dashed var(--accent-green);
+    border-radius: 4px;
+    padding: 60px 20px;
+    text-align: center;
+    color: var(--accent-green);
+    font-weight: 500;
+}
+
+/* ========================================
+   NOTIFICATION STYLES - GREEN THEME
+======================================== */
+.admin-notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: white;
+    padding: 15px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    border-left: 4px solid var(--accent-green);
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    z-index: 10000;
+    max-width: 300px;
+    border: 1px solid var(--border);
+}
+
+.admin-notification.show {
+    transform: translateX(0);
+}
+
+.notification-content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.notification-success { 
+    border-color: var(--accent-green);
+    background: linear-gradient(135deg, var(--white) 0%, var(--accent-green-light) 100%);
+}
+
+.notification-error { 
+    border-color: var(--error);
+}
+
+.notification-warning { 
+    border-color: var(--warning);
+}
+
+.notification-info { 
+    border-color: var(--info);
+}
+
+/* ========================================
+   SEARCH RESULTS - GREEN HIGHLIGHTS
+======================================== */
+.search-results {
+    background: white;
+    border: 1px solid var(--accent-green);
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(0, 128, 96, 0.1);
+}
+
+.search-results-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    border-bottom: 1px solid var(--accent-green);
+    background: var(--accent-green-light);
+}
+
+.search-results-header h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--accent-green);
+}
+
+.close-search {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: var(--accent-green);
+}
+
+.search-results-list {
+    padding: 10px 0;
+}
+
+.search-result-item {
+    padding: 10px 20px;
+    border-bottom: 1px solid var(--border-light);
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.search-result-item:hover {
+    background-color: var(--accent-green-light);
+}
+
+.search-result-item h4 {
+    margin: 0 0 5px 0;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--accent-green);
+}
+
+.search-result-item p {
+    margin: 0 0 5px 0;
+    color: var(--text-light);
+    font-size: 13px;
+}
+
+.search-result-item small {
+    color: var(--accent-green);
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.no-results {
+    padding: 20px;
+    text-align: center;
+    color: var(--accent-green);
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+======================================== */
+
+/* Tablet: 1024px and below */
+@media (max-width: 1024px) {
+    .admin-sidebar {
+        width: 200px;
+    }
+    
+    .admin-main {
+        margin-left: 200px;
+    }
+    
+    .stats-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
+
+/* Mobile: 768px and below */
+@media (max-width: 768px) {
+    .admin-sidebar {
+        transform: translateX(-100%);
+        width: 280px;
+        transition: transform 0.3s ease;
+    }
+    
+    .admin-sidebar.mobile-open {
+        transform: translateX(0);
+    }
+    
+    .admin-main {
+        margin-left: 0;
+    }
+    
+    .admin-header {
+        padding: 0 16px;
+    }
+    
+    .header-content {
+        flex-direction: column;
+        height: auto;
+        padding: 12px 0;
+        gap: 12px;
+    }
+    
+    .header-left {
+        width: 100%;
+    }
+    
+    .header-search {
+        width: 100%;
+    }
+    
+    .admin-content {
+        padding: 16px;
+    }
+    
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .content-tabs {
+        flex-direction: column;
+    }
+    
+    .tab-btn {
+        text-align: left;
+        border-bottom: 1px solid var(--border-light);
+        border-left: 2px solid transparent;
+    }
+    
+    .tab-btn.active {
+        border-left-color: var(--accent-green);
+        border-bottom-color: var(--border-light);
+    }
+}
+
+/* Small Mobile: 480px and below */
+@media (max-width: 480px) {
+    .admin-content {
+        padding: 12px;
+    }
+    
+    .section-header h1 {
+        font-size: 24px;
+    }
+    
+    .card-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .card-actions .btn-primary,
+    .card-actions .btn-secondary {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .welcome-card {
+        padding: 20px;
+    }
+}
