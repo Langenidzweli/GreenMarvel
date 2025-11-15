@@ -30,7 +30,8 @@ const products = [
                 <li><strong>Argan Oil:</strong> Vitamin E for shine and strength</li>
                 <li><strong>Peppermint Oil:</strong> Cooling effect that stimulates follicles</li>
             </ul>
-        `
+        `,
+        category: 'growth-oil'
     },
     {
         id: 2,
@@ -60,7 +61,8 @@ const products = [
                 <li><strong>Tea Tree Oil:</strong> Cleanses follicles</li>
                 <li><strong>Lavender Oil:</strong> Calms irritation</li>
             </ul>
-        `
+        `,
+        category: 'hair-spray'
     },
     {
         id: 3,
@@ -90,7 +92,8 @@ const products = [
                 <li><strong>Aloe Vera:</strong> Hydrates</li>
                 <li><strong>Honey:</strong> Conditions</li>
             </ul>
-        `
+        `,
+        category: 'hair-food'
     },
     {
         id: 4,
@@ -120,7 +123,8 @@ const products = [
                 <li><strong>Silk Protein:</strong> Smooths</li>
                 <li><strong>Vitamin C:</strong> Protects</li>
             </ul>
-        `
+        `,
+        category: 'serum'
     },
     {
         id: 5,
@@ -143,7 +147,8 @@ const products = [
         `,
         ingredients: `
             <p>Kit ingredients vary by product.</p>
-        `
+        `,
+        category: 'combo'
     },
     {
         id: 6,
@@ -173,7 +178,8 @@ const products = [
                 <li><strong>Chamomile:</strong> Soothes</li>
                 <li><strong>Lavender:</strong> Relaxes</li>
             </ul>
-        `
+        `,
+        category: 'treatment'
     },
     {
         id: 7,
@@ -196,7 +202,8 @@ const products = [
         `,
         ingredients: `
             <p>Combined ingredients from both products.</p>
-        `
+        `,
+        category: 'combo'
     },
     {
         id: 8,
@@ -219,7 +226,8 @@ const products = [
         `,
         ingredients: `
             <p>Ingredients from bundle products.</p>
-        `
+        `,
+        category: 'combo'
     },
     {
         id: 9,
@@ -242,7 +250,8 @@ const products = [
         `,
         ingredients: `
             <p>Travel versions of main products.</p>
-        `
+        `,
+        category: 'combo'
     }
 ];
 
@@ -250,16 +259,16 @@ const products = [
 document.addEventListener('DOMContentLoaded', function() {
     loadProductDetails();
     initializeEventListeners();
+    loadRelatedProducts();
 });
 
 // Load product details based on URL id
 function loadProductDetails() {
     const urlParams = new URLSearchParams(window.location.search);
-    const productId = parseInt(urlParams.get('id')) || 1; // Default to 1 if no id
+    const productId = parseInt(urlParams.get('id')) || 1;
 
     const product = products.find(p => p.id === productId);
     if (!product) {
-        // Fallback if product not found
         document.getElementById('productTitle').textContent = 'Product Not Found';
         return;
     }
@@ -298,6 +307,82 @@ function loadProductDetails() {
     document.getElementById('ingredientsContent').innerHTML = product.ingredients;
 }
 
+// Load related products (You May Also Like)
+function loadRelatedProducts() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const currentProductId = parseInt(urlParams.get('id')) || 1;
+    
+    // Get current product
+    const currentProduct = products.find(p => p.id === currentProductId);
+    if (!currentProduct) return;
+    
+    // Filter related products (exclude current product and get products from same category or similar price range)
+    const relatedProducts = products
+        .filter(p => p.id !== currentProductId)
+        .sort((a, b) => {
+            // Prioritize same category
+            if (a.category === currentProduct.category && b.category !== currentProduct.category) return -1;
+            if (b.category === currentProduct.category && a.category !== currentProduct.category) return 1;
+            
+            // Then prioritize similar price range (±30%)
+            const aPriceDiff = Math.abs(a.price - currentProduct.price) / currentProduct.price;
+            const bPriceDiff = Math.abs(b.price - currentProduct.price) / currentProduct.price;
+            
+            return aPriceDiff - bPriceDiff;
+        })
+        .slice(0, 3); // Get only 3 related products
+    
+    const relatedGrid = document.querySelector('.related-products-grid');
+    relatedGrid.innerHTML = '';
+    
+    if (relatedProducts.length === 0) {
+        relatedGrid.innerHTML = '<p class="no-related-products">No related products found.</p>';
+        return;
+    }
+    
+    relatedProducts.forEach(product => {
+        const productElement = createRelatedProductElement(product);
+        relatedGrid.appendChild(productElement);
+    });
+}
+
+// Create HTML element for related product
+function createRelatedProductElement(product) {
+    const productDiv = document.createElement('div');
+    productDiv.className = 'related-product';
+    
+    productDiv.innerHTML = `
+        <a href="product-detail.html?id=${product.id}" class="related-product-link">
+            <img src="${product.image}" alt="${product.name}" class="related-product-image">
+            <div class="related-product-details">
+                <h3 class="related-product-name">${product.name}</h3>
+                <p class="related-product-description">${product.description}</p>
+                <div class="related-product-size">${product.size}</div>
+                <div class="related-product-price">
+                    R ${product.price}.00
+                    ${product.originalPrice ? `<span class="original-price">R ${product.originalPrice}.00</span>` : ''}
+                </div>
+            </div>
+        </a>
+        <div class="related-product-actions">
+            <button class="related-add-to-cart-btn" 
+                    data-product-id="${product.id}" 
+                    data-product-name="${product.name}" 
+                    data-product-price="${product.price}" 
+                    data-product-size="${product.size}" 
+                    data-product-image="${product.image}">
+                <i class="fas fa-shopping-bag"></i>
+                Add to Bag
+            </button>
+            <button class="related-wishlist-btn" title="Add to Wishlist">
+                <i class="far fa-heart"></i>
+            </button>
+        </div>
+    `;
+    
+    return productDiv;
+}
+
 function initializeEventListeners() {
     // Quantity selector
     const decreaseBtn = document.querySelector('.decrease');
@@ -320,8 +405,6 @@ function initializeEventListeners() {
                 quantity++;
                 quantityDisplay.textContent = quantity;
                 updateAddToCartButton(quantity);
-            } else {
-                showNotification('Maximum quantity reached (10 items)', 'warning');
             }
         });
     }
@@ -334,16 +417,19 @@ function initializeEventListeners() {
             const productTitle = document.getElementById('productTitle').textContent;
             const currentPrice = parseInt(document.getElementById('currentPrice').textContent.replace('R ', '').replace('.00', ''));
             const productSize = document.getElementById('productSize').textContent;
+            const productImage = document.getElementById('mainProductImage').src;
+            const productId = getCurrentProductId();
             
             const productDetails = {
+                id: productId,
                 name: productTitle,
                 size: productSize,
                 price: currentPrice,
-                quantity: quantity
+                quantity: quantity,
+                image: productImage
             };
             
             addToCart(productDetails);
-            showAddToCartConfirmation(productDetails);
         });
     }
     
@@ -355,12 +441,6 @@ function initializeEventListeners() {
             const heartIcon = this.querySelector('i');
             heartIcon.classList.toggle('far');
             heartIcon.classList.toggle('fas');
-            
-            if (this.classList.contains('active')) {
-                showNotification('Added to wishlist!', 'success');
-            } else {
-                showNotification('Removed from wishlist', 'success');
-            }
         });
     }
     
@@ -371,10 +451,47 @@ function initializeEventListeners() {
         const header = card.querySelector('.info-card-header');
         
         header.addEventListener('click', function() {
-            // Toggle current card
             card.classList.toggle('active');
         });
     });
+    
+    // Related products add to cart buttons (delegated event listener)
+    document.addEventListener('click', function(e) {
+        if (e.target.closest('.related-add-to-cart-btn')) {
+            e.preventDefault();
+            const button = e.target.closest('.related-add-to-cart-btn');
+            
+            const productDetails = {
+                id: parseInt(button.getAttribute('data-product-id')),
+                name: button.getAttribute('data-product-name'),
+                size: button.getAttribute('data-product-size'),
+                price: parseInt(button.getAttribute('data-product-price')),
+                quantity: 1,
+                image: button.getAttribute('data-product-image')
+            };
+            
+            addToCart(productDetails);
+            
+            // Update button state temporarily
+            updateRelatedButtonState(button);
+        }
+        
+        // Related products wishlist buttons
+        if (e.target.closest('.related-wishlist-btn')) {
+            e.preventDefault();
+            const button = e.target.closest('.related-wishlist-btn');
+            
+            button.classList.toggle('active');
+            const heartIcon = button.querySelector('i');
+            heartIcon.classList.toggle('far');
+            heartIcon.classList.toggle('fas');
+        }
+    });
+}
+
+function getCurrentProductId() {
+    const urlParams = new URLSearchParams(window.location.search);
+    return parseInt(urlParams.get('id')) || 1;
 }
 
 function updateAddToCartButton(quantity) {
@@ -386,99 +503,52 @@ function updateAddToCartButton(quantity) {
     }
 }
 
-function addToCart(product) {
-    let cart = JSON.parse(localStorage.getItem('shoppingCart') || '[]');
+function updateRelatedButtonState(button) {
+    const originalText = button.innerHTML;
+    button.innerHTML = '<i class="fas fa-check"></i> Added!';
+    button.style.background = '#46853c';
     
+    setTimeout(() => {
+        button.innerHTML = originalText;
+        button.style.background = '#1a1a1a';
+    }, 1000);
+}
+
+// Cart functions - COMPATIBLE WITH SHOP.JS
+function addToCart(product) {
+    let cart = JSON.parse(localStorage.getItem('greenMarvelCart') || '[]');
+    
+    // Check if product already exists in cart (by id ONLY)
     const existingItemIndex = cart.findIndex(item => 
-        item.name === product.name && item.size === product.size
+        item.id === product.id
     );
     
     if (existingItemIndex > -1) {
+        // Update quantity if product already exists
         cart[existingItemIndex].quantity += product.quantity;
     } else {
+        // Add new product to cart
         cart.push(product);
     }
     
-    localStorage.setItem('shoppingCart', JSON.stringify(cart));
+    localStorage.setItem('greenMarvelCart', JSON.stringify(cart));
     updateCartCount();
     
     return cart;
 }
 
 function updateCartCount() {
-    const cart = JSON.parse(localStorage.getItem('shoppingCart') || '[]');
-    const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+    const cart = JSON.parse(localStorage.getItem('greenMarvelCart') || '[]');
+    const totalItems = cart.reduce((total, item) => total + (item.quantity || 1), 0);
     
     // Update cart count in header if exists
-    const cartCountElements = document.querySelectorAll('.cart-count');
-    cartCountElements.forEach(element => {
-        if (element) {
-            element.textContent = totalItems;
-            element.style.display = totalItems > 0 ? 'flex' : 'none';
+    const cartCounts = document.querySelectorAll('.cart-count');
+    cartCounts.forEach(cartCount => {
+        if (cartCount) {
+            cartCount.textContent = totalItems;
+            cartCount.style.display = totalItems > 0 ? 'flex' : 'none';
         }
     });
-}
-
-function showAddToCartConfirmation(product) {
-    const confirmation = document.createElement('div');
-    confirmation.className = 'add-to-cart-confirmation';
-    confirmation.innerHTML = `
-        <div class="confirmation-content">
-            <i class="fas fa-check-circle"></i>
-            <div class="confirmation-details">
-                <strong>Added to Bag!</strong>
-                <p>${product.quantity}x ${product.name} - ${product.size}</p>
-                <p class="confirmation-price">R ${(product.price * product.quantity).toFixed(2)}</p>
-            </div>
-            <button class="view-bag-btn">View Bag</button>
-        </div>
-    `;
-    
-    document.body.appendChild(confirmation);
-    
-    // Show with animation
-    setTimeout(() => {
-        confirmation.style.transform = 'translateX(0)';
-    }, 10);
-    
-    // Add event listener to View Bag button
-    const viewBagBtn = confirmation.querySelector('.view-bag-btn');
-    if (viewBagBtn) {
-        viewBagBtn.addEventListener('click', function() {
-            window.location.href = 'cart.html';
-        });
-    }
-    
-    // Hide after delay
-    setTimeout(() => {
-        confirmation.style.transform = 'translateX(150%)';
-        setTimeout(() => {
-            if (confirmation.parentNode) {
-                confirmation.parentNode.removeChild(confirmation);
-            }
-        }, 300);
-    }, 4000);
-}
-
-function showNotification(message, type = 'success') {
-    const notification = document.createElement('div');
-    notification.className = `notification ${type}`;
-    notification.textContent = message;
-    
-    document.body.appendChild(notification);
-    
-    setTimeout(() => {
-        notification.style.transform = 'translateX(0)';
-    }, 10);
-    
-    setTimeout(() => {
-        notification.style.transform = 'translateX(150%)';
-        setTimeout(() => {
-            if (notification.parentNode) {
-                notification.parentNode.removeChild(notification);
-            }
-        }, 300);
-    }, 3000);
 }
 
 // Initialize cart count on page load

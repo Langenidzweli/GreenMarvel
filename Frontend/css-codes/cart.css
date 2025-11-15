@@ -611,11 +611,6 @@
     transform: translateY(-1px);
 }
 
-.btn-checkout:active {
-    transform: translateY(1px);
-    box-shadow: 0 4px 12px rgba(70, 133, 60, 0.25);
-}
-
 .btn-continue-shopping {
     width: 100%;
     padding: 14px 24px;

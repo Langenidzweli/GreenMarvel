@@ -15,212 +15,260 @@
 
 <body>
 
-<div class="page-wrapper">
-    <div class="top-header-placeholder"></div>
-    <div class="semi-top-bar-placeholder"></div>
-    <div class="main-nav-placeholder"></div>
+   <div class="sticky-nav-placeholder"></div>
+    <div class="page-wrapper">
+        <!-- Component Placeholders -->
+        <div class="top-header-placeholder"></div>
+        <div class="semi-top-bar-placeholder"></div>
+        <div class="main-nav-placeholder"></div>
+
+
+    <!-- Breadcrumb Navigation -->
+    <section class="breadcrumb-section">
+        <div class="container">
+            <nav class="breadcrumb">
+                <a href="index.html">Home</a>
+                <span>/</span>
+                <a href="shop.html">Shop</a>
+                <span>/</span>
+                <a href="cart.html">Cart</a>
+                <span>/</span>
+                <span class="current">Checkout</span>
+            </nav>
+        </div>
+    </section>
 
     <main class="checkout-wrapper">
-        <div class="checkout-container">
-
-            <!-- ================= LEFT SIDE — FORM ================= -->
-            <div class="checkout-left">
-
-                <h1 class="checkout-title">Checkout</h1>
-
-                <!-- CUSTOMER INFO -->
-                <section class="checkout-section">
-                    <h2>Customer Information</h2>
-
-                    <div class="form-group">
-                        <label>Email</label>
-                        <input type="email" placeholder="you@example.com" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label>Phone</label>
-                        <input type="text" placeholder="071 234 5678" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label>Delivery Instructions (Optional)</label>
-                        <textarea placeholder="e.g. Leave at the front gate"></textarea>
-                    </div>
-                </section>
-
-                <!-- SHIPPING ADDRESS -->
-                <section class="checkout-section">
-                    <h2>Shipping Address</h2>
-
-                    <div class="double-row">
-                        <div class="form-group">
-                            <label>First Name</label>
-                            <input type="text" placeholder="John" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label>Last Name</label>
-                            <input type="text" placeholder="Doe" required>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label>Address</label>
-                        <input type="text" placeholder="123 Main Street" required>
-                    </div>
-
-                    <div class="double-row">
-                        <div class="form-group">
-                            <label>Country</label>
-                            <input type="text" placeholder="Enter your country" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label>Province</label>
-                            <select required>
-                                <option value="">Select a Province</option>
-                                <option value="eastern-cape">Eastern Cape</option>
-                                <option value="free-state">Free State</option>
-                                <option value="gauteng">Gauteng</option>
-                                <option value="kwazulu-natal">KwaZulu-Natal</option>
-                                <option value="limpopo">Limpopo</option>
-                                <option value="mpumalanga">Mpumalanga</option>
-                                <option value="northern-cape">Northern Cape</option>
-                                <option value="north-west">North West</option>
-                                <option value="western-cape">Western Cape</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="double-row">
-                        <div class="form-group">
-                            <label>City</label>
-                            <input type="text" placeholder="Cape Town" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label>Suburb</label>
-                            <input type="text" placeholder="e.g. Camps Bay" required>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label>Postal Code</label>
-                        <input type="text" placeholder="8001" required>
-                    </div>
-
-                    <div class="checkbox-row">
-                        <input type="checkbox" id="saveAddress">
-                        <label for="saveAddress">Save this address for future orders</label>
-                    </div>
-                </section>
-
-                <!-- SHIPPING METHOD -->
-                <section class="checkout-section">
-                    <h2>Shipping Method</h2>
-
-                    <label class="shipping-option">
-                        <input type="radio" name="shipping" checked>
-                        <div>
-                            <strong>Standard Delivery</strong> — R59  
-                            <p>3–5 business days</p>
-                        </div>
-                    </label>
-
-                    <label class="shipping-option">
-                        <input type="radio" name="shipping">
-                        <div>
-                            <strong>Express Delivery</strong> — R129  
-                            <p>1–2 business days</p>
-                        </div>
-                    </label>
-
-                    <label class="shipping-option">
-                        <input type="radio" name="shipping">
-                        <div>
-                            <strong>Pickup Point</strong> — Free  
-                            <p>Collect at nearest location</p>
-                        </div>
-                    </label>
-                </section>
-
-                <!-- PAYMENT SECTION -->
-                <section class="checkout-section">
-                    <h2>Payment</h2>
-
-                    <label class="payment-option">
-                        <input type="radio" name="payment" checked>
-                        <span><i class="fa-solid fa-credit-card"></i> Credit / Debit Card</span>
-                    </label>
-
-                    <label class="payment-option">
-                        <input type="radio" name="payment">
-                        <span><i class="fa-solid fa-wallet"></i> Cash on Delivery</span>
-                    </label>
-
-                    <label class="payment-option">
-                        <input type="radio" name="payment">
-                        <span><i class="fa-brands fa-paypal"></i> PayPal</span>
-                    </label>
-                </section>
-
-                <!-- PLACE ORDER BUTTON -->
-                <button class="btn-primary checkout-btn">Place Order</button>
-
-                <!-- TRUST BADGES -->
-                <div class="trust-box">
-                    <i class="fa-solid fa-shield-halved"></i>
-                    Secure checkout — SSL encrypted
-                </div>
-
+        <div class="container">
+            <div class="checkout-header">
+                <h1>Checkout</h1>
+                <p class="checkout-subtitle">Complete your order with secure payment</p>
             </div>
 
-            <!-- ================= RIGHT SIDE — ORDER SUMMARY ================= -->
-            <div class="checkout-right">
+            <div class="checkout-container">
+                <!-- ================= LEFT SIDE — FORM ================= -->
+                <div class="checkout-left">
+                    <!-- SHIPPING METHOD -->
+                    <section class="checkout-section">
+                        <h2>Delivery Method</h2>
+                        <div class="shipping-options">
+                            <label class="shipping-option">
+                                <input type="radio" name="shipping" value="courier" checked>
+                                <div class="shipping-content">
+                                    <div class="shipping-header">
+                                        <strong>Courier Delivery</strong>
+                                        <span class="shipping-price">R59</span>
+                                    </div>
+                                    <p>3–5 business days - Direct to your door</p>
+                                </div>
+                            </label>
 
-                <div class="order-summary">
-
-                    <h2>Order Summary</h2>
-
-                    <div class="order-item">
-                        <img src="../img/sample-product.jpg">
-                        <div>
-                            <p class="item-name">Product Name</p>
-                            <p class="item-qty">Qty: 1</p>
+                            <label class="shipping-option">
+                                <input type="radio" name="shipping" value="paxi">
+                                <div class="shipping-content">
+                                    <div class="shipping-header">
+                                        <strong>Paxi Point Delivery</strong>
+                                        <span class="shipping-price">R49</span>
+                                    </div>
+                                    <p>Collect at nearest Paxi location</p>
+                                </div>
+                            </label>
                         </div>
-                        <p class="item-price">R499</p>
-                    </div>
+                    </section>
 
-                    <div class="discount-row">
-                        <input type="text" placeholder="Discount code">
-                        <button class="apply-btn">Apply</button>
-                    </div>
+                    <!-- CUSTOMER INFO (Visible for both methods) -->
+                    <section class="checkout-section">
+                        <h2>Customer Information</h2>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label>First Name</label>
+                                <input type="text" id="firstName" placeholder="John" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Last Name</label>
+                                <input type="text" id="lastName" placeholder="Doe" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Email Address</label>
+                                <input type="email" id="email" placeholder="you@example.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Phone Number</label>
+                                <input type="tel" id="phone" placeholder="071 234 5678" required>
+                            </div>
+                        </div>
+                    </section>
 
-                    <div class="price-row">
-                        <span>Subtotal</span>
-                        <span>R499</span>
-                    </div>
+                    <!-- COURIER SHIPPING ADDRESS (Visible when courier selected) -->
+                    <section class="checkout-section courier-section" id="courierSection">
+                        <h2>Shipping Address</h2>
+                        <div class="form-grid">
+                            <div class="form-group full-width">
+                                <label>Street Address</label>
+                                <input type="text" id="address" placeholder="123 Main Street" required>
+                            </div>
+                            <div class="form-group">
+                                <label>City</label>
+                                <input type="text" id="city" placeholder="Cape Town" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Suburb</label>
+                                <input type="text" id="suburb" placeholder="e.g. Camps Bay" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Province</label>
+                                <select id="province" required>
+                                    <option value="">Select a Province</option>
+                                    <option value="eastern-cape">Eastern Cape</option>
+                                    <option value="free-state">Free State</option>
+                                    <option value="gauteng">Gauteng</option>
+                                    <option value="kwazulu-natal">KwaZulu-Natal</option>
+                                    <option value="limpopo">Limpopo</option>
+                                    <option value="mpumalanga">Mpumalanga</option>
+                                    <option value="northern-cape">Northern Cape</option>
+                                    <option value="north-west">North West</option>
+                                    <option value="western-cape">Western Cape</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Postal Code</label>
+                                <input type="text" id="postalCode" placeholder="8001" required>
+                            </div>
+                        </div>
 
-                    <div class="price-row">
-                        <span>Shipping</span>
-                        <span>R59</span>
-                    </div>
+                        <!-- Delivery Instructions (Only for courier) -->
+                        <div class="form-group full-width">
+                            <label>Special Delivery Instructions (Optional)</label>
+                            <textarea id="deliveryInstructions" placeholder="e.g. Leave at the front gate, call when arriving, etc." rows="3"></textarea>
+                        </div>
+                    </section>
 
-                    <div class="price-row total">
-                        <strong>Total</strong>
-                        <strong>R558</strong>
-                    </div>
+             <!-- PAXI INFORMATION (Visible when Paxi selected) -->
+<section class="checkout-section paxi-section" id="paxiSection" style="display: none;">
+    <h2>Paxi Point Information</h2>
+    <div class="form-grid">
+        <div class="form-group">
+            <label>Paxi Number</label>
+            <input type="text" id="paxiNumber" placeholder="PAXI12345678" required>
+            <small class="input-help">Your unique Paxi reference number</small>
+        </div>
+        <div class="form-group">
+            <label>ID Number</label>
+            <input type="text" id="paxiIdNumber" placeholder="860101 1234 567" required>
+            <small class="input-help">Required for package collection</small>
+        </div>
+        <div class="form-group">
+            <label>City/Town</label>
+            <input type="text" id="paxiCity" placeholder="Cape Town" required>
+        </div>
+        <div class="form-group full-width">
+            <label>Shopping Center/Town Name</label>
+            <input type="text" id="paxiLocation" placeholder="e.g. Canal Walk Shopping Centre" required>
+            <small class="input-help">Full name of the Paxi point location</small>
+        </div>
+    </div>
+</section>
 
+                    <!-- PAYMENT SECTION -->
+                    <section class="checkout-section">
+                        <h2>Payment Method</h2>
+                        <div class="payment-options">
+                            <label class="payment-option">
+                                <input type="radio" name="payment" value="payfast" checked>
+                                <div class="payment-content">
+                                    <i class="fa-solid fa-lock"></i>
+                                    <span>Pay with PayFast</span>
+                                    <div class="payment-icons">
+                                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEyIDIyQzE3LjUyMjggMjIgMjIgMTcuNTIyOCAyMiAxMkMyMiA2LjQ3NzE1IDE3LjUyMjggMiAxMiAyQzYuNDc3MTUgMiAyIDYuNDc3MTUgMiAxMkMyIDE3LjUyMjggNi40NzcxNSAyMiAxMiAyMloiIGZpbGw9IiMzMzk4RDMiLz4KPHBhdGggZD0iTTEyIDZDNy41ODU3OSA2IDQgOS41ODU3OSA0IDE0QzQgMTguNDE0MiA3LjU4NTc5IDIyIDEyIDIyQzE2LjQxNDIgMjIgMjAgMTguNDE0MiAyMCAxNEMyMCA5LjU4NTc5IDE2LjQxNDIgNiAxMiA2WiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTEyIDEwQzE0LjIwOTEgMTAgMTYgMTEuNzkwOSAxNiAxNEMxNiAxNi4yMDkxIDE0LjIwOTEgMTggMTIgMThDOS43OTA4NiAxOCA4IDE2LjIwOTEgOCAxNEM4IDExLjc5MDkgOS43OTA4NiAxMCAxMiAxMFoiIGZpbGw9IiMzMzk4RDMiLz4KPC9zdmc+" alt="PayFast" class="payfast-icon">
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+                        
+                        <div class="secure-payment-info">
+                            <i class="fa-solid fa-shield-halved"></i>
+                            <div>
+                                <strong>Secure Payment</strong>
+                                <p>Your payment information is encrypted and secure</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- PLACE ORDER BUTTON -->
+                    <button class="btn-primary checkout-btn" id="placeOrderBtn">
+                        <i class="fa-solid fa-lock"></i>
+                        Complete Order Securely
+                    </button>
+
+                    <!-- TRUST BADGES -->
+                    <div class="trust-box">
+                        <div class="trust-icons">
+                            <i class="fa-solid fa-shield-halved"></i>
+                            <i class="fa-solid fa-lock"></i>
+                            <i class="fa-solid fa-truck"></i>
+                        </div>
+                        <p>Secure checkout — SSL encrypted • 256-bit security • Trusted by thousands</p>
+                    </div>
                 </div>
 
-            </div>
+                <!-- ================= RIGHT SIDE — ORDER SUMMARY ================= -->
+                <div class="checkout-right">
+                    <div class="order-summary">
+                        <h2>Order Summary</h2>
+                        
+                        <div class="order-items" id="orderItems">
+                            <!-- Cart items will be dynamically inserted here -->
+                        </div>
 
+                        <div class="summary-divider"></div>
+
+                        <div class="price-breakdown">
+                            <div class="price-row">
+                                <span>Subtotal</span>
+                                <span id="subtotal">R 0.00</span>
+                            </div>
+                            <div class="price-row">
+                                <span>Shipping</span>
+                                <span id="shippingCost">R 0.00</span>
+                            </div>
+                            <div class="price-row discount-row" id="discountRow" style="display: none;">
+                                <span>Discount</span>
+                                <span class="discount-amount" id="discountAmount">-R 0.00</span>
+                            </div>
+                            <div class="summary-divider"></div>
+                            <div class="price-row total">
+                                <strong>Total</strong>
+                                <strong id="totalAmount">R 0.00</strong>
+                            </div>
+                        </div>
+
+                        <!-- Free Shipping Progress -->
+                        <div class="shipping-progress" id="shippingProgress" style="display: none;">
+                            <div class="progress-bar">
+                                <div class="progress-fill" id="progressFill"></div>
+                            </div>
+                            <p>Add <span id="remainingAmount">R 0.00</span> for free shipping!</p>
+                        </div>
+                    </div>
+
+                    <!-- Support Info -->
+                    <div class="support-card">
+                        <i class="fa-solid fa-headset"></i>
+                        <div>
+                            <strong>Need Help?</strong>
+                            <p>Contact our support team for assistance</p>
+                            <a href="mailto:support@greenmarvel.com">support@greenmarvel.com</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
-
-    <div class="footer-placeholder"></div>
+  <div class="features-section-placeholder"></div>
+        <div class="footer-placeholder"></div>
 </div>
 
 <script src="../js-codes/components.js"></script>
+<script src="../js-codes/checkout.js"></script>
 </body>
 </html>

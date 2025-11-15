@@ -1,6 +1,12 @@
-// shop.js - Complete JavaScript for the redesigned shop page
+// shop.js - Complete JavaScript for the redesigned shop page (No Pop-ups)
 
-// (Filter and Sort UI removed) - related initialization and helper functions were removed
+// Initialize all functionality when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    initProductCarousels();
+    initAddToCartButtons();
+    initWishlistButtons();
+    initCartCount();
+});
 
 // Initialize product carousels
 function initProductCarousels() {
@@ -86,10 +92,8 @@ function updateCarousel(carousel, slideIndex) {
     }
 }
 
-// View options removed (UI removed from page)
-
-// Initialize add to cart functionality
-function initAddToCart() {
+// Initialize add to cart buttons
+function initAddToCartButtons() {
     const addToCartBtns = document.querySelectorAll('.add-to-cart-btn');
     
     addToCartBtns.forEach(btn => {
@@ -97,53 +101,98 @@ function initAddToCart() {
             e.preventDefault();
             e.stopPropagation();
             
-            const productContainer = this.closest('.product-container');
-            const productName = productContainer.querySelector('.product-name').textContent;
-            const productPrice = productContainer.querySelector('.product-price').textContent;
+            const productId = parseInt(this.getAttribute('data-product-id'));
+            const productName = this.getAttribute('data-product-name');
+            const productPrice = parseFloat(this.getAttribute('data-product-price'));
+            const productSize = this.getAttribute('data-product-size');
+            const productImage = this.getAttribute('data-product-image');
             
-            // Add to cart logic here
+            // Add to cart
             addToCart({
+                id: productId,
                 name: productName,
                 price: productPrice,
-                // Add other product details as needed
+                size: productSize,
+                image: productImage,
+                quantity: 1
             });
             
-            // Show confirmation
-            showCartConfirmation(productName);
+            // Update button state temporarily
+            updateButtonState(this);
         });
     });
 }
 
-// Add product to cart
+// Initialize wishlist buttons
+function initWishlistButtons() {
+    const wishlistBtns = document.querySelectorAll('.wishlist-btn');
+    
+    wishlistBtns.forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            this.classList.toggle('active');
+            const heartIcon = this.querySelector('i');
+            heartIcon.classList.toggle('far');
+            heartIcon.classList.toggle('fas');
+        });
+    });
+}
+
+// Add product to cart - COMPATIBLE WITH PRODUCT DETAIL PAGE
 function addToCart(product) {
     // Get existing cart or initialize empty array
-    let cart = JSON.parse(localStorage.getItem('shoppingCart') || '[]');
+    let cart = JSON.parse(localStorage.getItem('greenMarvelCart') || '[]');
     
-    // Check if product already exists in cart
-    const existingProductIndex = cart.findIndex(item => item.name === product.name);
+    // Check if product already exists in cart (by id ONLY)
+    const existingProductIndex = cart.findIndex(item => 
+        item.id === product.id
+    );
     
     if (existingProductIndex > -1) {
         // Increment quantity if product already in cart
-        cart[existingProductIndex].quantity = (cart[existingProductIndex].quantity || 1) + 1;
+        cart[existingProductIndex].quantity += product.quantity;
     } else {
         // Add new product to cart
-        product.quantity = 1;
-        cart.push(product);
+        cart.push({
+            id: product.id,
+            name: product.name,
+            price: product.price,
+            size: product.size,
+            image: product.image,
+            quantity: product.quantity || 1
+        });
     }
     
     // Save updated cart to localStorage
-    localStorage.setItem('shoppingCart', JSON.stringify(cart));
+    localStorage.setItem('greenMarvelCart', JSON.stringify(cart));
     
     // Update cart count in header
     updateCartCount();
+    
+    return cart;
+}
+
+// Update button state after adding to cart
+function updateButtonState(button) {
+    const originalText = button.innerHTML;
+    button.innerHTML = '<i class="fas fa-check"></i> Added!';
+    button.classList.add('added');
+    
+    setTimeout(() => {
+        button.innerHTML = originalText;
+        button.classList.remove('added');
+    }, 1000);
 }
 
 // Update cart count in header
 function updateCartCount() {
-    const cartCounts = document.querySelectorAll('.cart-count');
-    const cart = JSON.parse(localStorage.getItem('shoppingCart') || '[]');
+    const cart = JSON.parse(localStorage.getItem('greenMarvelCart') || '[]');
     const totalItems = cart.reduce((total, item) => total + (item.quantity || 1), 0);
     
+    // Update cart count in header
+    const cartCounts = document.querySelectorAll('.cart-count');
     cartCounts.forEach(cartCount => {
         if (cartCount) {
             cartCount.textContent = totalItems;
@@ -152,40 +201,12 @@ function updateCartCount() {
     });
 }
 
-// Show cart confirmation
-function showCartConfirmation(productName) {
-    // Create and show a confirmation message
-    const confirmation = document.createElement('div');
-    confirmation.className = 'cart-confirmation';
-    confirmation.innerHTML = `
-        <i class="fas fa-check-circle"></i>
-        <span>${productName} added to cart</span>
-    `;
-    
-    document.body.appendChild(confirmation);
-    
-    // Show with animation
-    setTimeout(() => {
-        confirmation.classList.add('show');
-    }, 10);
-    
-    // Hide after delay
-    setTimeout(() => {
-        confirmation.classList.remove('show');
-        setTimeout(() => {
-            if (confirmation.parentNode) {
-                confirmation.parentNode.removeChild(confirmation);
-            }
-        }, 300);
-    }, 3000);
-}
-
 // Initialize cart count on page load
 function initCartCount() {
     updateCartCount();
 }
 
-// Product search functionality
+// Product search functionality (if search input exists)
 function initProductSearch() {
     const searchInput = document.querySelector('.search-input');
     if (searchInput) {
@@ -210,22 +231,4 @@ function filterProductsBySearch(searchTerm) {
             product.style.display = 'none';
         }
     });
-}
-
-// Initialize all functionality when DOM is loaded
-document.addEventListener('DOMContentLoaded', function() {
-    initProductCarousels();
-    initAddToCart();
-    initCartCount();
-    initProductSearch();
-});
-
-// Export functions for use in other modules if needed
-if (typeof module !== 'undefined' && module.exports) {
-    module.exports = {
-        initProductCarousels,
-        initAddToCart,
-        initCartCount,
-        initProductSearch
-    };
 }

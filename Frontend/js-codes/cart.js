@@ -267,27 +267,6 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // ========================================
-// CHECKOUT BUTTON
-// ========================================
-document.addEventListener('DOMContentLoaded', function() {
-    const checkoutBtn = document.getElementById('checkoutBtn');
-    if (checkoutBtn) {
-        checkoutBtn.addEventListener('click', function() {
-            if (cart.length === 0) {
-                alert('Your cart is empty!');
-                return;
-            }
-
-            // Here you would redirect to checkout page
-            // For now, we'll show an alert
-            alert('Proceeding to checkout with ' + cart.length + ' item(s).');
-            // Uncomment the line below to redirect to checkout page
-            // window.location.href = 'checkout.html';
-        });
-    }
-});
-
-// ========================================
 // SETUP EVENT LISTENERS
 // ========================================
 function setupEventListeners() {

@@ -1,4 +1,4 @@
-// components.js - Dynamic component loader with active navigation
+// components.js - Dynamic component loader with active navigation and cart functionality
 class ComponentLoader {
     constructor() {
         this.components = {
@@ -231,6 +231,9 @@ class ComponentLoader {
         // Mobile menu toggle (if needed)
         this.initializeMobileMenu();
         
+        // Initialize cart count
+        this.updateCartCount();
+        
         // ACTIVE NAVIGATION - Initialize after all components loaded
         this.initializeActiveNavigation();
     }
@@ -327,6 +330,53 @@ class ComponentLoader {
                 menuToggle.classList.toggle('active');
             });
         }
+    }
+
+    // ========================================
+    // CART COUNT FUNCTIONALITY
+    // ========================================
+
+    updateCartCount() {
+        const cart = JSON.parse(localStorage.getItem('greenMarvelCart') || '[]');
+        const totalItems = cart.reduce((total, item) => total + (item.quantity || 1), 0);
+        
+        // Update cart count in all cart icons
+        const cartIcons = document.querySelectorAll('.cart-icon');
+        cartIcons.forEach(cartIcon => {
+            // Remove existing badge if any
+            const existingBadge = cartIcon.querySelector('.cart-count');
+            if (existingBadge) {
+                existingBadge.remove();
+            }
+            
+            // Add new badge if there are items
+            if (totalItems > 0) {
+                const badge = document.createElement('span');
+                badge.className = 'cart-count';
+                badge.textContent = totalItems;
+                badge.style.cssText = `
+                    position: absolute;
+                    top: -8px;
+                    right: -8px;
+                    background: #e74c3c;
+                    color: white;
+                    border-radius: 50%;
+                    width: 20px;
+                    height: 20px;
+                    font-size: 0.7rem;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-weight: bold;
+                    border: 2px solid white;
+                `;
+                
+                cartIcon.style.position = 'relative';
+                cartIcon.appendChild(badge);
+            }
+        });
+        
+        console.log(`🛒 Cart updated: ${totalItems} items`);
     }
 
     // ========================================

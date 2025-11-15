@@ -1,4 +1,3 @@
-<!-- product-detail.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,12 +11,14 @@
     <link rel="stylesheet" href="../css-codes/index.css">
 </head>
 <body>
+    <!-- Navigation Components -->
     <div class="sticky-nav-placeholder"></div>
-    <div class="page-wrapper">
-        <div class="top-header-placeholder"></div>
-        <div class="semi-top-bar-placeholder"></div>
-        <div class="main-nav-placeholder"></div>
+    <div class="top-header-placeholder"></div>
+    <div class="semi-top-bar-placeholder"></div>
+    <div class="main-nav-placeholder"></div>
 
+    <!-- Main Content -->
+    <div class="page-wrapper">
         <!-- Product Hero with Breadcrumbs -->
         <section class="product-hero">
             <div class="container">
@@ -100,14 +101,28 @@
                 </div>
             </div>
         </div>
+
+
+<!-- You May Also Like Section -->
+<section class="you-may-also-like">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">You May Also Like</h2>
+            <p class="section-subtitle">Discover more products that complement your choice</p>
+        </div>
         
+        <div class="related-products-grid">
+            <!-- Related products will be dynamically loaded here -->
+        </div>
+    </div>
+</section>
+        
+        <!-- Footer Components -->
         <div class="features-section-placeholder"></div>
         <div class="footer-placeholder"></div>
     </div>
 
     <!-- JavaScript -->
-    <script src="../js-codes/index.js"></script>
-    <script src="../js-codes/header.js"></script>
     <script src="../js-codes/components.js"></script>
     <script src="../js-codes/product-detail.js"></script>
 </body>
