@@ -1349,6 +1349,18 @@ body {
     }
 }
 
+/* Empty state message */
+.empty-message {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 40px 20px;
+    color: #999;
+    font-size: 16px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    border: 1px dashed #ddd;
+}
+
 @media (max-width: 480px) {
     body {
         padding: 0 15px;
