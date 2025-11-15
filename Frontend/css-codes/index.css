@@ -468,15 +468,15 @@ body {
 /* Reset and Base Styles */
 .hero {
     position: relative;
-    width: 100%;
+    /* make the hero background full-bleed by offsetting the site's horizontal gutter (body padding: 0 200px) */
+    width: calc(100% + 400px);
+    margin: 0 -200px; /* pull the hero outside the page padding so background spans edge-to-edge */
     height: 75vh;
     min-height: 700px;
     display: flex;
     align-items: center;
     overflow: hidden;
     background: #000;
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -540,8 +540,9 @@ body {
     z-index: 4;
     text-align: left;
     color: white;
-    max-width: 600px;
-    padding: 0 0 0 5%;
+    max-width: 1200px; /* match main content width */
+    margin: 0 auto;
+    padding: 0 200px; /* align inner content with site gutter */
     animation: fadeInLeft 1s ease-out 0.5s both;
     margin-right: auto;
 }
