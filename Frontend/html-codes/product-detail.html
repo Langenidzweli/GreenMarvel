@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Product Details - Green Marvel">
+    <title>Product Details - Green Marvel</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css-codes/product-detail.css">
+    <link rel="stylesheet" href="../css-codes/header.css">
+    <link rel="stylesheet" href="../css-codes/index.css">
+</head>
+
+<body>
+    <div class="sticky-nav-placeholder"></div>
+    <div class="page-wrapper">
+        <!-- Component Placeholders -->
+
+        <div class="top-header-placeholder"></div>
+        <div class="semi-top-bar-placeholder"></div>
+        <div class="main-nav-placeholder"></div>
+
+        <!-- Loading State -->
+        <div class="loading-state" id="loadingState">
+            <div class="loading-spinner"></div>
+            <p>Loading product details...</p>
+        </div>
+
+        <!-- Main Content -->
+        <main class="product-detail-page" id="productDetailPage" style="display: none;">
+            <!-- Breadcrumb -->
+            <section class="breadcrumb-section">
+                <div class="container">
+                    <nav class="breadcrumb" id="breadcrumb">
+                        <a href="../index.html" class="breadcrumb-link">Home</a>
+                        <span class="breadcrumb-separator">/</span>
+                        <a href="../pages/shop.html" class="breadcrumb-link">Shop</a>
+                        <span class="breadcrumb-separator">/</span>
+                        <span class="breadcrumb-current" id="breadcrumbProductName">Product</span>
+                    </nav>
+                </div>
+            </section>
+
+            <!-- Product Main Section -->
+            <section class="product-main-section">
+                <div class="container">
+                    <div class="product-layout">
+                        <!-- Product Images -->
+                        <div class="product-images">
+                            <div class="main-image">
+                                <img src="" alt="" id="mainProductImage">
+                            </div>
+                            <div class="image-thumbnails" id="imageThumbnails">
+                                <!-- Dynamic thumbnails will be inserted here -->
+                            </div>
+                        </div>
+
+                        <!-- Product Details -->
+                        <div class="product-details">
+                            <div class="product-badge" id="productBadge"></div>
+                            <h1 class="product-title" id="productTitle">Product Name</h1>
+                            
+                            <div class="product-rating">
+                                <div class="stars" id="productStars">
+                                    <!-- Stars will be dynamically inserted -->
+                                </div>
+                                <span class="rating-text" id="ratingText">0/5</span>
+                            </div>
+
+                            <div class="product-features" id="productFeatures">
+                                <!-- Features will be dynamically inserted -->
+                            </div>
+
+                            <div class="product-description-short">
+                                <p id="productShortDescription">Loading product description...</p>
+                            </div>
+
+                            <div class="product-size">
+                                <label>Size:</label>
+                                <div class="size-options" id="sizeOptions">
+                                    <!-- Size options will be dynamically inserted -->
+                                </div>
+                            </div>
+
+                            <div class="product-price">
+                                <span class="current-price" id="currentPrice">R 0.00</span>
+                                <span class="original-price" id="originalPrice" style="display: none;"></span>
+                            </div>
+
+                            <div class="product-code">
+                                Product Code: <span id="productCode">Loading...</span>
+                            </div>
+
+                            <div class="product-actions">
+                                <div class="quantity-selector">
+                                    <button class="quantity-btn decrease">-</button>
+                                    <span class="quantity">1</span>
+                                    <button class="quantity-btn increase">+</button>
+                                </div>
+                                <button class="add-to-bag-btn" id="addToBagBtn">
+                                    <i class="fas fa-shopping-bag"></i>
+                                    Add to Bag
+                                </button>
+                            </div>
+
+                            <div class="delivery-info">
+                                <div class="delivery-option">
+                                    <i class="fas fa-store"></i>
+                                    <div>
+                                        <strong>In-store collection</strong>
+                                        <p>R35 or free for orders over R200</p>
+                                    </div>
+                                </div>
+                                <div class="delivery-option">
+                                    <i class="fas fa-truck"></i>
+                                    <div>
+                                        <strong>Delivery</strong>
+                                        <p>R80 or free for orders over R600 in 2-4 working days</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="product-highlights">
+                                <div class="highlight">
+                                    <i class="fas fa-leaf"></i>
+                                    <span>100% Natural Ingredients</span>
+                                </div>
+                                <div class="highlight">
+                                    <i class="fas fa-recycle"></i>
+                                    <span>Cruelty Free</span>
+                                </div>
+                                <div class="highlight">
+                                    <i class="fas fa-shield-alt"></i>
+                                    <span>Quality Guaranteed</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Product Information Tabs -->
+            <section class="product-info-section">
+                <div class="container">
+                    <div class="info-tabs">
+                        <button class="tab-button active" data-tab="description">What does it do for you?</button>
+                        <button class="tab-button" data-tab="usage">How do I use it?</button>
+                        <button class="tab-button" data-tab="ingredients">Ingredients</button>
+                    </div>
+
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="description">
+                            <h3 id="descriptionTitle">Product Benefits</h3>
+                            <div id="descriptionContent">
+                                <p>Loading product description...</p>
+                            </div>
+                        </div>
+
+                        <div class="tab-pane" id="usage">
+                            <h3 id="usageTitle">How to Use</h3>
+                            <div id="usageContent">
+                                <p>Loading usage instructions...</p>
+                            </div>
+                        </div>
+
+                        <div class="tab-pane" id="ingredients">
+                            <h3 id="ingredientsTitle">Ingredients</h3>
+                            <div id="ingredientsContent">
+                                <p>Loading ingredients list...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Related Products -->
+            <section class="related-products">
+                <div class="container">
+                    <h2 class="section-title">You Might Also Like</h2>
+                    <div class="related-products-grid" id="relatedProductsGrid">
+                        <!-- Related products will be dynamically inserted -->
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Error State -->
+        <div class="error-state" id="errorState" style="display: none;">
+            <div class="container">
+                <div class="error-content">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <h2>Product Not Found</h2>
+                    <p>Sorry, the product you're looking for doesn't exist or has been removed.</p>
+                    <a href="../pages/shop.html" class="back-to-shop-btn">Back to Shop</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Component Placeholders -->
+        <div class="reviews-component-placeholder"></div>
+        <div class="features-section-placeholder"></div>
+        <div class="footer-placeholder"></div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="../js-codes/components.js"></script>
+    <script src="../js-codes/product-detail.js"></script>
+</body>
+</html>
