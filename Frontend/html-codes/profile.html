@@ -1,498 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Manage your Green Marvel user profile, view orders, and preferences">
-  <title>My Profile - Green Marvel</title>
-
-  <!-- Fonts & icons -->
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/jpeg" href="../img/logo.jpeg">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-  <!-- Core styles (your file) -->
-  <link rel="stylesheet" href="../css-codes/index.css">
-  <link rel="stylesheet" href="../css-codes/header.css">
-  <link rel="stylesheet" href="../css-codes/profile.css">
-
-  <!-- small inline style to preserve your header/footer layout if needed -->
-  <style>
-    /* Keep header/footer from flashing during dark mode toggle */
-    .page-wrapper { transition: background-color .25s ease; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - Green Marvel</title>
+    
+    <!-- Same styles as your About page -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/jpeg" href="../img/logo.jpeg">
+    <link rel="stylesheet" href="../css-codes/index.css">
+    <link rel="stylesheet" href="../css-codes/header.css">
+    <link rel="stylesheet" href="../css-codes/profile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-  <!-- ========================================
-       STICKY NAVIGATION (HIDDEN BY DEFAULT)
-  ======================================== -->
-  <nav class="sticky-nav" id="stickyNav">
-    <div class="sticky-nav-container">
-      <!-- Logo -->
-      <div class="sticky-nav-logo">
-        <a href="index.html">
-          <img src="../img/logo.jpeg" alt="Green Marvel Logo">
-        </a>
-      </div>
+    <div class="sticky-nav-placeholder"></div>
+    <div class="page-wrapper">
+        <!-- Component Placeholders -->
+        <div class="top-header-placeholder"></div>
+        <div class="semi-top-bar-placeholder"></div>
+        <div class="main-nav-placeholder"></div>
 
-      <!-- Navigation Menu -->
-      <ul class="sticky-nav-menu">
-        <li class="nav-item"><a href="shop.html">Shop</a></li>
-        <li class="nav-item"><a href="about.html">About Us</a></li>
-        <li class="nav-item"><a href="faq.html">FAQ</a></li>
-        <li class="nav-item"><a href="contact.html">Contact</a></li>
-      </ul>
-
-      <!-- Right Section Icons -->
-      <div class="sticky-nav-icons">
-        <div class="cart-icon icon">
-          <img src="../img/shopping-bag-svgrepo-com.svg" alt="shopping bag">
-        </div>
-        <div class="account-icon icon">
-          <img src="../img/compare-svgrepo-com.svg" alt="account">
-        </div>
-        <div class="whishlist-icon icon">
-          <img src="../img/whichlist-svgrepo-com.svg" alt="wishlist">
-        </div>
-        <a href="profile.html" class="account-icon icon" aria-label="Profile">
-          <img src="../img/account-svgrepo-com.svg" alt="account">
-        </a>
-        <div class="notification-icon icon">
-          <img src="../img/Notifications-svgrepo-com.svg" alt="notification">
-        </div>
-      </div>
-    </div>
-  </nav>
-
-  <div class="page-wrapper">
-    <!-- ========================================
-         TOP HEADER SECTION
-    ========================================= -->
-    <div class="top-header">
-      <div class="top-left">
-        <a href="ordertracking.html">Order Tracking</a>
-        <a href="find-us.html">Find Us</a>
-        <a href="register.html">Register</a>
-        <a href="login.html">Login</a>
-      </div>
-      <div class="top-center">
-        FREE SHIPPING ON ALL ORDERS OVER R600
-      </div>
-    </div>
-
-    <!-- ========================================
-         SEMI-TOP BAR SECTION
-    ========================================= -->
-    <div class="Semi-top-bar">
-      <div class="left-section">
-        <!-- Logo -->
-        <div class="semi-top-image">
-          <a href="index.html"><img src="../img/logo.jpeg" alt="Green Marvel Logo"></a>
-        </div>
-        
-        <!-- Search Container -->
-        <div class="search-container">
-          <input type="text" placeholder="Search products" class="search-input">
-          <div class="category-dropdown">
-            <p>ALL</p>
-            <span class="arrow">▾</span>
-            <ul class="search-category-menu">
-              <li><a href="#">Hair Spray</a></li>
-              <li><a href="#">Growth Oil</a></li>
-              <li><a href="#">Hair Food</a></li>
-              <li><a href="#">Combo Deals</a></li>
-              <li><a href="#">Specials</a></li>
-              <li><a href="#">All Categories</a></li>
-            </ul>
-          </div>
-          <button type="submit" class="search-button">
-            <i class="fas fa-search search-icon"></i>
-          </button>
-        </div>
-      </div>
-
-      <!-- Right Section Icons -->
-      <div class="right-section">
-        <div class="cart-icon">
-          <img src="../img/shopping-bag-svgrepo-com.svg" alt="shopping bag">
-        </div>
-        <div class="Account icon">
-          <img src="../img/compare-svgrepo-com.svg" alt="account">
-        </div>
-        <div class="whishlist icon">
-          <img src="../img/whichlist-svgrepo-com.svg" alt="whishlist">
-        </div>
-        <a href="profile.html" class="Account icon" aria-label="Profile">
-          <img src="../img/account-svgrepo-com.svg" alt="account">
-        </a>
-        <div class="notification icon">
-          <img src="../img/Notifications-svgrepo-com.svg" alt="notification">
-        </div>
-      </div>     
-    </div>
- 
-    <!-- ========================================
-         MAIN NAVIGATION
-    ========================================= -->
-    <header>
-      <nav class="navbar">
-        <ul class="nav-list">
-          <!-- Categories Dropdown -->
-          <li class="categories-btn">
-            <a href="#">
-              <span class="category-text">CATEGORIES</span>
-              <span class="arrow">▾</span>
-            </a>
-            <ul class="dropdown-menu">
-              <li>
-                <a href="#">
-                  <i class="fas fa-spray-can"></i>
-                  <span>Hair Spray</span>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <i class="fas fa-oil-can"></i>
-                  <span>Growth Oil</span>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <i class="fas fa-leaf"></i>
-                  <span>Hair Food</span>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <i class="fas fa-gift"></i>
-                  <span>Combo Deals</span>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <i class="fas fa-star"></i>
-                  <span>Specials</span>
-                </a>
-              </li>
-            </ul>
-          </li>
-
-          <!-- Navigation Links -->
-          <li class="nav-item"><a href="shop.html">Shop</a></li>
-          <li class="nav-item"><a href="about.html">About Us</a></li>
-          <li class="nav-item"><a href="faq.html">FAQ</a></li>
-          <li class="nav-item"><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
-    </header>
-
-    <!-- ====== PROFILE SECTION ====== -->
-    <main class="profile-main container">
-      <div class="profile-grid">
-        <!-- Left column: Profile summary & settings -->
-        <aside class="profile-aside">
-          <div class="card profile-card-aside">
-            <div class="avatar-wrapper">
-              <div id="avatarPreview" class="avatar-preview" title="Click to change avatar">
-                <!-- default icon if no photo -->
-                <i class="fas fa-user"></i>
-              </div>
-              <input id="avatarInput" type="file" accept="image/*" style="display:none" />
-              <button id="uploadAvatarBtn" class="btn small ghost">Change Photo</button>
-            </div>
-
-            <div class="user-meta">
-              <h3 id="displayName">Welcome User</h3>
-              <p id="membershipBadge" class="badge">Member</p>
-              <div class="verification">
-                <span class="verify email unverified"><i class="fas fa-envelope"></i> Email not verified</span>
-                <span class="verify phone unverified"><i class="fas fa-phone"></i> Phone not verified</span>
-              </div>
-            </div>
-
-            <div class="profile-actions">
-              <button id="editProfileBtn" class="btn primary full"><i class="fas fa-edit"></i> Edit Profile</button>
-              <button id="darkModeToggle" class="btn outline full"><i class="fas fa-moon"></i> Toggle Dark</button>
-              <button id="deleteAccountBtn" class="btn danger full"><i class="fas fa-user-slash"></i> Delete Account</button>
-            </div>
-          </div>
-
-          <div class="card small-card">
-            <h4>Notifications</h4>
-            <div class="toggle-row">
-              <label>Order updates</label>
-              <input type="checkbox" id="notifOrders" checked>
-            </div>
-            <div class="toggle-row">
-              <label>Promotions</label>
-              <input type="checkbox" id="notifPromos">
-            </div>
-            <div class="toggle-row">
-              <label>Back-in-stock</label>
-              <input type="checkbox" id="notifStock" checked>
-            </div>
-          </div>
-
-          <div class="card small-card">
-            <h4>Security</h4>
-            <div class="toggle-row">
-              <label>Two-factor authentication</label>
-              <input type="checkbox" id="twoFactorToggle">
-            </div>
-            <button class="btn outline full change-password" id="changePasswordBtn"><i class="fas fa-key"></i> Change Password</button>
-          </div>
-        </aside>
-
-        <!-- Right column: Tabs + content -->
-        <section class="profile-content">
-          <div class="card">
-            <div class="profile-header">
-              <div>
-                <h1><i class="fas fa-user-circle"></i> My Profile</h1>
-                <p>Manage your account information, orders and preferences</p>
-              </div>
-
-              <div class="tabs">
-                <button class="tab-btn active" data-tab="tab-personal">Personal Info</button>
-                <button class="tab-btn" data-tab="tab-orders">Orders</button>
-                <button class="tab-btn" data-tab="tab-addresses">Addresses</button>
-                <button class="tab-btn" data-tab="tab-security">Account</button>
-              </div>
-            </div>
-
-            <!-- Tab Panels -->
-            <div class="tab-panels">
-              <!-- PERSONAL INFO -->
-              <div class="tab-panel active" id="tab-personal">
-                <form id="profileForm" class="profile-form">
-                  <div class="grid-2">
-                    <div class="form-group">
-                      <label for="firstName">First name</label>
-                      <input id="firstName" type="text" placeholder="Enter your first name" readonly>
-                    </div>
-                    <div class="form-group">
-                      <label for="lastName">Last name</label>
-                      <input id="lastName" type="text" placeholder="Enter your last name" readonly>
-                    </div>
-                  </div>
-
-                  <div class="grid-2">
-                    <div class="form-group">
-                      <label for="email">Email</label>
-                      <div class="input-with-badge">
-                        <input id="email" type="email" placeholder="your@email.com" readonly>
-                        <span id="emailBadge" class="small-badge unverified"><i class="fas fa-times"></i> Verify</span>
-                      </div>
-                    </div>
-                    <div class="form-group">
-                      <label for="phone">Phone</label>
-                      <div class="input-with-badge">
-                        <input id="phone" type="tel" placeholder="071 234 5678" readonly>
-                        <span id="phoneBadge" class="small-badge unverified"><i class="fas fa-times"></i> Verify</span>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="grid-2">
-                    <div class="form-group">
-                      <label for="gender">Gender</label>
-                      <select id="gender" disabled>
-                        <option value="">Select your gender</option>
-                        <option>Female</option>
-                        <option>Male</option>
-                        <option>Other</option>
-                      </select>
-                    </div>
-                    <div class="form-group">
-                      <label for="dob">Date of birth</label>
-                      <input id="dob" type="date" readonly>
-                    </div>
-                  </div>
-
-                  <div class="form-actions">
-                    <button id="saveProfile" type="button" class="btn primary" style="display:none;"><i class="fas fa-save"></i> Save</button>
-                    <button id="cancelEdit" type="button" class="btn outline" style="display:none;">Cancel</button>
-                  </div>
-                </form>
-              </div>
-
-              <!-- ORDERS -->
-              <div class="tab-panel" id="tab-orders">
-                <div id="ordersGrid" class="orders-grid">
-                  <article class="order-card empty" id="ordersEmpty">
-                    <p class="empty-message">You have no orders yet. Start shopping to see your orders here.</p>
-                  </article>
-                </div>
-              </div>
-
-              <!-- ADDRESSES -->
-              <div class="tab-panel" id="tab-addresses">
-                <div class="addresses-actions">
-                  <button id="addAddressBtn" class="btn primary"><i class="fas fa-plus"></i> Add New Address</button>
+        <!-- Profile Page Content -->
+        <main class="profile-main-container">
+            <div class="profile-container">
+                <!-- Header Section -->
+                <div class="profile-header">
+                    <h1 id="welcomeMessage">Hi, User!</h1>
                 </div>
 
-                <div id="addressesGrid" class="addresses-grid">
-                  <!-- existing addresses inserted by JS -->
-                  <div class="address-card empty" id="addressesEmpty">
-                    <p class="empty-message">No saved addresses yet. Click "Add New Address" to save one.</p>
-                  </div>
-                </div>
-              </div>
-
-              <!-- SECURITY / ACCOUNT -->
-              <div class="tab-panel" id="tab-security">
-                <div class="security-grid">
-                  <div class="security-card">
-                    <h4>Change Password</h4>
-                    <p class="muted">Change your account password regularly to keep your account safe.</p>
-                    <button id="openChangePassword" class="btn outline">Change Password</button>
-                  </div>
-
-                  <div class="security-card">
-                    <h4>Two-factor Authentication</h4>
-                    <p class="muted">Add an extra layer of security with 2FA.</p>
-                    <div class="toggle-row">
-                      <label>Enable 2FA</label>
-                      <input type="checkbox" id="twoFactorInPanel">
+                <!-- Main Content -->
+                <div class="profile-content-wrapper">
+                    <!-- Sidebar Navigation -->
+                    <div class="sidebar">
+                        <div class="nav-section">
+                            <h3>Profile details</h3>
+                            <ul class="nav-menu">
+                                <li class="nav-item active" data-section="profile">
+                                    <a href="#" class="nav-link">
+                                        <i class="fas fa-user"></i>
+                                        <span>Profiles</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item" data-section="orders">
+                                    <a href="#" class="nav-link">
+                                        <i class="fas fa-shopping-bag"></i>
+                                        <span>Orders</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item" data-section="wishlist">
+                                    <a href="#" class="nav-link">
+                                        <i class="fas fa-heart"></i>
+                                        <span>Wishlist</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item logout" data-section="logout">
+                                    <a href="#" class="nav-link">
+                                        <i class="fas fa-sign-out-alt"></i>
+                                        <span>Logout</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-                  </div>
 
-                  <div class="security-card">
-                    <h4>Account Actions</h4>
-                    <button id="logoutBtn" class="btn outline full">Log out</button>
-                    <button id="dangerDelete" class="btn danger full">Delete my account</button>
-                  </div>
+                    <!-- Content Area -->
+                    <div class="content-area">
+                        <!-- Profile Section -->
+                        <div class="content-section active" id="profile-section">
+                            <h2>Profile details</h2>
+                            
+                            <div class="profile-form">
+                                <div class="form-group">
+                                    <label for="name">Name</label>
+                                    <input type="text" id="name" class="form-input" placeholder="Enter your name">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="surname">Surname</label>
+                                    <input type="text" id="surname" class="form-input" placeholder="Enter your surname">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <input type="email" id="email" class="form-input" placeholder="Enter your email">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="mobile">Mobile number</label>
+                                    <input type="tel" id="mobile" class="form-input" placeholder="Enter your mobile number">
+                                </div>
+
+                                <div class="form-actions">
+                                    <button type="button" class="btn-save" id="saveProfile">Save Changes</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Orders Section -->
+                        <div class="content-section" id="orders-section">
+                            <div class="section-header">
+                                <h2>Orders</h2>
+                                <a href="shop.html#all-products" class="btn-back-shopping" id="backToShoppingOrders">
+                                    <i class="fas fa-arrow-left"></i>
+                                    Back to Shopping
+                                </a>
+                            </div>
+                            <div class="section-content">
+                                <div class="empty-state">
+                                    <i class="fas fa-shopping-bag"></i>
+                                    <h3>No orders yet</h3>
+                                    <p>Your order history and tracking information will appear here</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Wishlist Section -->
+                        <div class="content-section" id="wishlist-section">
+                            <div class="section-header">
+                                <h2>Wishlist</h2>
+                                <a href="shop.html#all-products" class="btn-back-shopping" id="backToShoppingWishlist">
+                                    <i class="fas fa-arrow-left"></i>
+                                    Back to Shopping
+                                </a>
+                            </div>
+                            <div class="section-content">
+                                <div class="empty-state">
+                                    <i class="fas fa-heart"></i>
+                                    <h3>Wishlist is empty</h3>
+                                    <p>Your saved items and favorite products will appear here</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
-            </div> <!-- /.tab-panels -->
-          </div> <!-- /.card -->
-        </section>
-      </div> <!-- /.profile-grid -->
-    </main>
-
-    <!-- Footer -->
-    <footer class="site-footer">
-      <div class="footer-container">
-        <!-- Brand Section -->
-        <div class="footer-brand">
-          <div class="footer-logo">
-            <img src="../img/logo.jpeg" alt="Green Marvel" class="logo">
-            <h3>Green Marvel</h3>
-          </div>
-          <p class="brand-description">Premium organic hair care solutions for healthy, beautiful hair. Trusted by thousands of customers worldwide.</p>
-          <div class="delivery-partners">
-            <h4>Delivery Partners</h4>
-            <div class="partners-list">
-              <span>DPD</span>
-              <span>Aramex</span>
-              <span>Postnet</span>
             </div>
-          </div>
-        </div>
+        </main>
 
-        <!-- Shop Links -->
-        <div class="footer-column">
-          <h4 class="footer-title">Shop</h4>
-          <ul class="footer-links">
-            <li><a href="shop.html" class="footer-link">All Products</a></li>
-            <li><a href="#" class="footer-link">Hair Spray</a></li>
-            <li><a href="#" class="footer-link">Growth Oil</a></li>
-            <li><a href="#" class="footer-link">Hair Food</a></li>
-            <li><a href="#" class="footer-link">Combo Deals</a></li>
-            <li><a href="#" class="footer-link">Specials</a></li>
-          </ul>
-        </div>
-
-        <!-- Support Links -->
-        <div class="footer-column">
-          <h4 class="footer-title">Support</h4>
-          <ul class="footer-links">
-            <li><a href="contact.html" class="footer-link">Contact Us</a></li>
-            <li><a href="faq.html" class="footer-link">FAQ</a></li>
-            <li><a href="ordertracking.html" class="footer-link">Track Order</a></li>
-            <li><a href="about.html" class="footer-link">About Us</a></li>
-            <li><a href="#" class="footer-link">Returns & Exchanges</a></li>
-          </ul>
-        </div>
-
-        <!-- Contact & Social -->
-        <div class="footer-column">
-          <h4 class="footer-title">Get In Touch</h4>
-          <div class="contact-info">
-            <div class="contact-item">
-              <i class="fas fa-envelope"></i>
-              <a href="mailto:info@greenmarvel.com">info@greenmarvel.com</a>
-            </div>
-            <div class="contact-item">
-              <i class="fas fa-phone"></i>
-              <a href="tel:+27123456789">+27 (0)12 345 6789</a>
-            </div>
-            <div class="contact-item">
-              <i class="fas fa-map-marker-alt"></i>
-              <span>Johannesburg, South Africa</span>
-            </div>
-          </div>
-          <div class="social-section">
-            <h4 class="footer-title" style="font-size: 0.9rem;">Follow Us</h4>
-            <div class="social-links">
-              <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-              <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-              <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-              <a href="#" class="social-link" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-            </div>
-          </div>
-          <div class="newsletter-section">
-            <h4 class="footer-title" style="font-size: 0.9rem;">Newsletter</h4>
-            <div class="subscribe-form">
-              <div class="input-group">
-                <input type="email" class="newsletter-input" placeholder="Your email">
-                <button class="newsletter-btn"><i class="fas fa-paper-plane"></i></button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Footer Bottom -->
-      <div class="footer-bottom">
-        <div class="footer-bottom-content">
-          <p class="copyright">&copy; 2025 Green Marvel. All rights reserved.</p>
-          <div class="legal-links">
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms of Service</a>
-            <a href="#">Cookie Policy</a>
-          </div>
-        </div>
-      </div>
-    </footer>
-  </div>
-
-  <!-- Modals & inline templates -->
-  <template id="addressTemplate">
-    <div class="address-card">
-      <p class="addr-name"></p>
-      <p class="addr-line"></p>
-      <div class="addr-actions">
-        <button class="btn small outline edit-address">Edit</button>
-        <button class="btn small danger delete-address">Delete</button>
-      </div>
+        <div class="features-section-placeholder"></div>
+        <div class="footer-placeholder"></div>
     </div>
-  </template>
 
-  <!-- Confirmation modal (simple) -->
-  <div id="confirmModal" class="modal" aria-hidden="true">
-    <div class="modal-panel">
-      <h3 id="confirmTitle">Confirm</h3>
-      <p id="confirmMessage">Are you sure?</p>
-      <div class="modal-actions">
-        <button id="confirmCancel" class="btn outline">Cancel</button>
-        <button id="confirmOk" class="btn danger">Yes, delete</button>
-      </div>
-    </div>
-  </div>
-
-  <!-- Profile Page JavaScript -->
-  <script src="../js-codes/profile.js"></script>
-
+    <!-- Component Loader -->
+    <script src="../js-codes/components.js"></script>
+    <!-- Profile Page JavaScript -->
+    <script src="../js-codes/profile.js"></script>
 </body>
 </html>
