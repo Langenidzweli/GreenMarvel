@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Shopping Cart - Green Marvel">
+    <title>Shopping Cart - Green Marvel</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/jpeg" href="../img/logo.jpeg">
+    <link rel="stylesheet" href="../css-codes/index.css">
+    <link rel="stylesheet" href="../css-codes/cart.css">
+    <link rel="stylesheet" href="../css-codes/header.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="sticky-nav-placeholder"></div>
+    <div class="page-wrapper">
+        <!-- Component Placeholders -->
+        <div class="top-header-placeholder"></div>
+        <div class="semi-top-bar-placeholder"></div>
+        <div class="main-nav-placeholder"></div>
+
+        <!-- Main Cart Content -->
+        <main class="cart-main">
+            <!-- Breadcrumb Navigation -->
+            <section class="breadcrumb-section">
+                <div class="container">
+                    <nav class="breadcrumb">
+                        <a href="index.html">Home</a>
+                        <span>/</span>
+                        <a href="shop.html">Shop</a>
+                        <span>/</span>
+                        <span class="current">Shopping Cart</span>
+                    </nav>
+                </div>
+            </section>
+
+            <!-- Cart Header -->
+            <section class="cart-header">
+                <div class="container">
+                    <h1>Shopping Cart</h1>
+                    <p class="cart-subtitle">Review your items and proceed to checkout</p>
+                </div>
+            </section>
+
+            <!-- Empty Cart Message (Hidden by default) -->
+            <section class="empty-cart" id="emptyCart" style="display: none;">
+                <div class="container">
+                    <div class="empty-cart-content">
+                        <div class="empty-cart-icon">
+                            <i class="fas fa-shopping-bag"></i>
+                        </div>
+                        <h2>Your cart is empty</h2>
+                        <p>Looks like you haven't added anything yet.</p>
+                        <a href="shop.html" class="btn-primary">Continue Shopping</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Cart Content -->
+            <section class="cart-content" id="cartContent">
+                <div class="container">
+                    <div class="cart-layout">
+                        <!-- Cart Items Section -->
+                        <div class="cart-items-section">
+                            <div class="cart-items-header">
+                                <h2>Cart Items (<span id="itemCount">0</span>)</h2>
+                                <a href="shop.html" class="continue-shopping-link">
+                                    <i class="fas fa-arrow-left"></i>
+                                    Continue Shopping
+                                </a>
+                            </div>
+
+                            <!-- Cart Items Cards -->
+                            <div class="cart-items-list" id="cartItemsList">
+                                <!-- Cart items will be inserted here dynamically -->
+                            </div>
+
+                            <!-- Cart Actions -->
+                            <div class="cart-actions">
+                                <a href="shop.html" class="btn-secondary">
+                                    <i class="fas fa-arrow-left"></i>
+                                    Back to Shop
+                                </a>
+                                <button class="btn-danger" id="clearCartBtn">
+                                    <i class="fas fa-trash"></i>
+                                    Clear Cart
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Cart Summary Section -->
+                        <aside class="cart-summary">
+                            <div class="summary-card">
+                                <h3>Order Summary</h3>
+
+                                <!-- Subtotal -->
+                                <div class="summary-row">
+                                    <span>Subtotal:</span>
+                                    <span class="amount" id="subtotal">R 0.00</span>
+                                </div>
+
+                                <!-- Shipping -->
+                                <div class="summary-row">
+                                    <span>Shipping:</span>
+                                    <span class="amount" id="shippingCost">
+                                        <span class="shipping-status">Calculated at checkout</span>
+                                    </span>
+                                </div>
+
+                                <!-- Discount Code (Optional) -->
+                                <div class="summary-row discount-row">
+                                    <div class="discount-input-group">
+                                        <input 
+                                            type="text" 
+                                            id="discountCode" 
+                                            placeholder="Enter promo code" 
+                                            class="discount-input"
+                                            aria-label="Discount code"
+                                        >
+                                        <button class="btn-apply-code" id="applyCodeBtn">
+                                            Apply
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <!-- Discount Applied Message -->
+                                <div class="summary-row discount-applied" id="discountApplied" style="display: none;">
+                                    <span>Discount:</span>
+                                    <span class="amount discount-amount" id="discountAmount">-R 0.00</span>
+                                </div>
+
+                                <!-- Divider -->
+                                <div class="summary-divider"></div>
+
+                                <!-- Total -->
+                                <div class="summary-row total-row">
+                                    <span>Total:</span>
+                                    <span class="amount total-amount" id="totalAmount">R 0.00</span>
+                                </div>
+
+                                <!-- Free Shipping Threshold Message -->
+                                <div class="shipping-threshold" id="shippingThreshold" style="display: none;">
+                                    <i class="fas fa-info-circle"></i>
+                                    <p>Add <span id="remainingAmount">R 0.00</span> for free shipping!</p>
+                                </div>
+
+                                <!-- Checkout Buttons -->
+                                <button class="btn-checkout" id="checkoutBtn">
+                                    Proceed to Checkout
+                                </button>
+                                <button class="btn-continue-shopping">
+                                    <a href="shop.html" style="text-decoration: none; color: inherit;">Continue Shopping</a>
+                                </button>
+
+                                <!-- Secure Checkout Info -->
+                                <div class="secure-checkout-info">
+                                    <i class="fas fa-lock"></i>
+                                    <p>Secure checkout powered by trusted payment providers</p>
+                                </div>
+                            </div>
+
+                            <!-- Recommended Products -->
+                            <div class="recommended-section" id="recommendedSection" style="display: none;">
+                                <h3>Recommended for You</h3>
+                                <div class="recommended-products" id="recommendedProducts">
+                                    <!-- Recommended products will be inserted here -->
+                                </div>
+                            </div>
+                        </aside>
+                    </div>
+                </div>
+            </section>
+
+ <div class="features-section-placeholder"></div>
+        
+        <!-- Footer Placeholder -->
+        <div class="footer-placeholder"></div>
+    </div>
+
+    <!-- Script to load components -->
+    <script src="../js-codes/components.js"></script>
+    <script src="../js-codes/cart.js"></script>
+</body>
+
+</html>

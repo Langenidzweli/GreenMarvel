@@ -393,3 +393,37 @@ function loadReviewsComponent() {
 document.addEventListener('DOMContentLoaded', function() {
     loadReviewsComponent();
 });
+
+// Add this function to display admin notifications on the website
+function displayWebsiteNotifications() {
+    const notifications = JSON.parse(localStorage.getItem('greenMarvel_websiteNotifications')) || [];
+    const notificationIcon = document.querySelector('.notification-icon');
+    
+    if (notificationIcon && notifications.length > 0) {
+        // Update notification badge
+        const badge = notificationIcon.querySelector('.notification-badge') || document.createElement('span');
+        badge.className = 'notification-badge';
+        badge.textContent = notifications.length;
+        badge.style.cssText = 'position: absolute; top: -5px; right: -5px; background: #e74c3c; color: white; border-radius: 50%; width: 18px; height: 18px; font-size: 0.7rem; display: flex; align-items: center; justify-content: center; font-weight: bold;';
+        notificationIcon.style.position = 'relative';
+        notificationIcon.appendChild(badge);
+    }
+}
+
+// Add this function to display promotional banners
+function displayPromotionalBanners() {
+    const banners = JSON.parse(localStorage.getItem('greenMarvel_websiteBanners')) || [];
+    
+    banners.forEach(banner => {
+        if (banner.active) {
+            // Create and display banner based on position
+            // You can implement this based on your website structure
+        }
+    });
+}
+
+// Call these functions when the website loads
+document.addEventListener('DOMContentLoaded', function() {
+    displayWebsiteNotifications();
+    displayPromotionalBanners();
+});
