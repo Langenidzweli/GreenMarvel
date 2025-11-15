@@ -1,0 +1,287 @@
+/* =========================================================
+   CHECKOUT PAGE — CLEAN SHOPIFY STYLE FOR GREEN MARVEL
+   Theme color: #46853c
+   Fonts & spacing aligned with existing design system
+========================================================= */
+
+body {
+    background: #f7f7f7;
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+}
+
+.checkout-wrapper {
+    padding: 40px 20px;
+}
+
+.checkout-container {
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 400px;
+    gap: 40px;
+}
+
+/* ================================
+   LEFT SIDE
+================================ */
+
+.checkout-title {
+    font-size: 28px;
+    color: #183611;
+    margin-bottom: 25px;
+    font-weight: 700;
+}
+
+.checkout-section {
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+}
+
+.checkout-section h2 {
+    font-size: 20px;
+    margin-bottom: 16px;
+    color: #183611;
+}
+
+/* FORM FIELDS */
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 16px;
+}
+
+.form-group label {
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #183611;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+    font-family: 'Roboto', sans-serif;
+    background: #fff;
+    color: #333;
+    cursor: pointer;
+}
+
+.form-group select {
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23333' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 20px;
+    padding-right: 36px;
+}
+
+textarea {
+    min-height: 90px;
+}
+
+.double-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.checkbox-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 6px;
+    margin-bottom: 10px;
+}
+
+/* SHIPPING OPTIONS */
+
+.shipping-option,
+.payment-option {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 14px;
+    border-radius: 8px;
+    border: 1px solid #e5e5e5;
+    margin-bottom: 12px;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.shipping-option:hover,
+.payment-option:hover {
+    border-color: #46853c;
+    background: #f5faf4;
+}
+
+.shipping-option input,
+.payment-option input {
+    margin-top: 4px;
+}
+
+/* ===============================
+   PRIMARY BUTTON
+================================ */
+
+.btn-primary,
+.checkout-btn {
+    width: 100%;
+    padding: 14px;
+    border-radius: 8px;
+    border: none;
+    font-size: 16px;
+    font-weight: 600;
+    background: #46853c;
+    color: #fff;
+    cursor: pointer;
+    transition: .25s ease;
+    margin-top: 10px;
+}
+
+.btn-primary:hover,
+.checkout-btn:hover {
+    background: #3a6f32;
+}
+
+/* TRUST BOX */
+
+.trust-box {
+    margin-top: 16px;
+    padding: 14px;
+    text-align: center;
+    font-size: 14px;
+    color: #46853c;
+    border-radius: 8px;
+    border: 1px solid #cde8c8;
+    background: #f6fff4;
+}
+
+.trust-box i {
+    margin-right: 6px;
+}
+
+/* ===============================
+   RIGHT SIDE — ORDER SUMMARY
+================================ */
+
+.checkout-right {
+    position: sticky;
+    top: 20px;
+    height: fit-content;
+}
+
+.order-summary {
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+}
+
+.order-summary h2 {
+    color: #183611;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+/* ORDER ITEMS */
+
+.order-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.order-item img {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.item-name {
+    font-weight: 600;
+    color: #183611;
+}
+
+.item-qty {
+    font-size: 13px;
+    color: #666;
+}
+
+.item-price {
+    margin-left: auto;
+    font-weight: 700;
+    color: #46853c;
+}
+
+/* DISCOUNT CODE */
+
+.discount-row {
+    display: flex;
+    gap: 10px;
+    margin: 16px 0;
+}
+
+.discount-row input {
+    flex: 1;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+.apply-btn {
+    padding: 10px 16px;
+    background: #46853c;
+    color: #fff;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+/* PRICE ROWS */
+
+.price-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.total strong {
+    font-size: 18px;
+    color: #183611;
+}
+
+/* =================================
+   RESPONSIVE DESIGN
+================================= */
+
+@media (max-width: 900px) {
+    .checkout-container {
+        grid-template-columns: 1fr;
+    }
+
+    .checkout-right {
+        position: relative;
+        top: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .double-row {
+        grid-template-columns: 1fr;
+    }
+
+    .checkout-wrapper {
+        padding: 20px 10px;
+    }
+}
