@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Green Marvel - Admin Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <div class="admin-wrapper">
+        <!-- Sidebar Navigation -->
+        <nav class="admin-sidebar">
+            <div class="sidebar-brand">
+                <div class="brand-logo">
+                    <span>GM</span>
+                </div>
+                <div class="brand-text">
+                    <h2>Green Marvel</h2>
+                    <p>Admin Dashboard</p>
+                </div>
+            </div>
+
+            <div class="sidebar-menu">
+                <div class="menu-section">
+                    <a href="#home" class="menu-item active" data-section="home">
+                        <i class="fas fa-home"></i>
+                        <span class="menu-text">Home</span>
+                    </a>
+                </div>
+
+                <div class="menu-section">
+                    <div class="menu-label">SALES CHANNELS</div>
+                    <a href="#online-store" class="menu-item" data-section="online-store">
+                        <i class="fas fa-store"></i>
+                        <span class="menu-text">Online Store</span>
+                        <i class="fas fa-chevron-right"></i>
+                    </a>
+                </div>
+
+                <div class="menu-section">
+                    <div class="menu-label">ORDERS</div>
+                    <a href="#orders" class="menu-item" data-section="orders">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span class="menu-text">Orders</span>
+                    </a>
+                </div>
+
+                <div class="menu-section">
+                    <div class="menu-label">PRODUCTS</div>
+                    <a href="#products" class="menu-item" data-section="products">
+                        <i class="fas fa-box"></i>
+                        <span class="menu-text">Products</span>
+                    </a>
+                    <a href="#collections" class="menu-item" data-section="collections">
+                        <i class="fas fa-folder"></i>
+                        <span class="menu-text">Collections</span>
+                    </a>
+                    <a href="#inventory" class="menu-item" data-section="inventory">
+                        <i class="fas fa-warehouse"></i>
+                        <span class="menu-text">Inventory</span>
+                    </a>
+                    <a href="#purchase-orders" class="menu-item" data-section="purchase-orders">
+                        <i class="fas fa-file-invoice"></i>
+                        <span class="menu-text">Purchase orders</span>
+                    </a>
+                    <a href="#transfers" class="menu-item" data-section="transfers">
+                        <i class="fas fa-truck"></i>
+                        <span class="menu-text">Transfers</span>
+                    </a>
+                    <a href="#gift-cards" class="menu-item" data-section="gift-cards">
+                        <i class="fas fa-gift"></i>
+                        <span class="menu-text">Gift cards</span>
+                    </a>
+                </div>
+
+                <div class="menu-section">
+                    <div class="menu-label">CUSTOMERS</div>
+                    <a href="#customers" class="menu-item" data-section="customers">
+                        <i class="fas fa-users"></i>
+                        <span class="menu-text">Customers</span>
+                    </a>
+                    <a href="#segments" class="menu-item" data-section="segments">
+                        <i class="fas fa-chart-pie"></i>
+                        <span class="menu-text">Segments</span>
+                    </a>
+                </div>
+
+                <div class="menu-section">
+                    <div class="menu-label">MARKETING</div>
+                    <a href="#marketing" class="menu-item" data-section="marketing">
+                        <i class="fas fa-bullhorn"></i>
+                        <span class="menu-text">Marketing</span>
+                    </a>
+                    <a href="#campaigns" class="menu-item" data-section="campaigns">
+                        <i class="fas fa-rocket"></i>
+                        <span class="menu-text">Campaigns</span>
+                    </a>
+                    <a href="#attribution" class="menu-item" data-section="attribution">
+                        <i class="fas fa-search"></i>
+                        <span class="menu-text">Attribution</span>
+                    </a>
+                    <a href="#automations" class="menu-item" data-section="automations">
+                        <i class="fas fa-robot"></i>
+                        <span class="menu-text">Automations</span>
+                    </a>
+                </div>
+
+                <div class="menu-section">
+                    <div class="menu-label">ANALYTICS</div>
+                    <a href="#analytics" class="menu-item" data-section="analytics">
+                        <i class="fas fa-chart-bar"></i>
+                        <span class="menu-text">Analytics</span>
+                    </a>
+                    <a href="#reports" class="menu-item" data-section="reports">
+                        <i class="fas fa-file-alt"></i>
+                        <span class="menu-text">Reports</span>
+                    </a>
+                    <a href="#live-view" class="menu-item" data-section="live-view">
+                        <i class="fas fa-eye"></i>
+                        <span class="menu-text">Live View</span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main class="admin-main">
+            <!-- Top Header Bar -->
+            <header class="admin-header">
+                <div class="header-content">
+                    <div class="header-left">
+                        <button class="sidebar-toggle">
+                            <i class="fas fa-bars"></i>
+                        </button>
+                        <div class="breadcrumb">
+                            <span>Home</span>
+                        </div>
+                    </div>
+
+                    <div class="header-right">
+                        <div class="header-search">
+                            <i class="fas fa-search"></i>
+                            <input type="text" placeholder="Search...">
+                        </div>
+                        <div class="user-menu">
+                            <div class="user-avatar">
+                                <span>A</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dashboard Content Sections -->
+            <div class="admin-content">
+                <!-- Home Section -->
+                <section class="content-section active" id="home-section">
+                    <div class="section-header">
+                        <h1>Home</h1>
+                    </div>
+                    <div class="welcome-card">
+                        <h2>Welcome to Green Marvel Admin Dashboard</h2>
+                        <p>Manage your store, products, orders, and customers from one place.</p>
+                    </div>
+                </section>
+
+                <!-- Orders Section -->
+                <section class="content-section" id="orders-section">
+                    <div class="section-header">
+                        <h1>Orders</h1>
+                    </div>
+
+                    <!-- Orders Tabs -->
+                    <div class="content-tabs">
+                        <button class="tab-btn active" data-tab="orders">Orders</button>
+                        <button class="tab-btn" data-tab="drafts">Drafts</button>
+                        <button class="tab-btn" data-tab="abandoned">Abandoned checkouts</button>
+                    </div>
+
+                    <!-- Orders Tab Content -->
+                    <div class="tab-content active" id="orders-tab">
+                        <div class="stats-grid">
+                            <div class="stat-card">
+                                <div class="stat-group">
+                                    <div class="stat-item">
+                                        <div class="stat-label">Orders</div>
+                                        <div class="stat-value">0</div>
+                                    </div>
+                                    <div class="stat-item">
+                                        <div class="stat-label">Items ordered</div>
+                                        <div class="stat-value">0</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="stat-card">
+                                <div class="stat-group">
+                                    <div class="stat-item">
+                                        <div class="stat-label">Returns</div>
+                                        <div class="stat-value">ZAR 0</div>
+                                    </div>
+                                    <div class="stat-item">
+                                        <div class="stat-label">Orders fulfilled</div>
+                                        <div class="stat-value">0</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="stat-card">
+                                <div class="stat-group">
+                                    <div class="stat-item">
+                                        <div class="stat-label">Orders delivered</div>
+                                        <div class="stat-value">0</div>
+                                    </div>
+                                    <div class="stat-item">
+                                        <div class="stat-label">Order to fulfillment time</div>
+                                        <div class="stat-value">0</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="empty-state">
+                            <h3>Your orders will show here</h3>
+                            <p>When customers place orders, they'll appear in this section.</p>
+                        </div>
+                    </div>
+
+                    <!-- Drafts Tab Content -->
+                    <div class="tab-content" id="drafts-tab">
+                        <div class="empty-state">
+                            <h3>Drafts will show here</h3>
+                            <p>Draft orders created by you or your staff will appear here.</p>
+                        </div>
+                    </div>
+
+                    <!-- Abandoned Checkouts Tab Content -->
+                    <div class="tab-content" id="abandoned-tab">
+                        <div class="empty-state">
+                            <h3>Abandoned checkouts will show here</h3>
+                            <p>See when customers put an item in their cart but don't check out. You can also email customers a link to their cart.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Products Section -->
+                <section class="content-section" id="products-section">
+                    <div class="section-header">
+                        <h1>Products</h1>
+                    </div>
+
+                    <div class="content-card">
+                        <div class="card-header">
+                            <h2>Add your products</h2>
+                            <p>Start by stocking your store with products your customers will love. Not ready yet? Add a sample product</p>
+                        </div>
+                        <div class="card-actions">
+                            <button class="btn-primary">
+                                <i class="fas fa-plus"></i>
+                                Add product
+                            </button>
+                            <button class="btn-secondary">Import</button>
+                        </div>
+                    </div>
+
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-title">Total Products</div>
+                            <div class="stat-value-large">0</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-title">Active Products</div>
+                            <div class="stat-value-large">0</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-title">Out of Stock</div>
+                            <div class="stat-value-large">0</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Collections Section -->
+                <section class="content-section" id="collections-section">
+                    <div class="section-header">
+                        <h1>Collections</h1>
+                    </div>
+
+                    <div class="content-card">
+                        <div class="card-header">
+                            <h2>All Collections</h2>
+                        </div>
+                        <div class="collections-list">
+                            <div class="collection-item">
+                                <input type="checkbox">
+                                <span class="collection-title">Home page</span>
+                            </div>
+                            <div class="collection-item">
+                                <input type="checkbox">
+                                <span class="collection-title">Products</span>
+                            </div>
+                            <div class="collection-item">
+                                <input type="checkbox">
+                                <span class="collection-title">Product conditions</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <p>Learn more about collections</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Inventory Section -->
+                <section class="content-section" id="inventory-section">
+                    <div class="section-header">
+                        <h1>Inventory</h1>
+                    </div>
+
+                    <div class="content-card">
+                        <div class="card-header">
+                            <h2>Keep track of your inventory</h2>
+                            <p>When you enable inventory tracking on your products, you can view and adjust their inventory counts here.</p>
+                        </div>
+                        <div class="card-actions">
+                            <button class="btn-secondary">GO TO PROBLEM</button>
+                        </div>
+                    </div>
+
+                    <div class="inventory-stats">
+                        <div class="stat-card">
+                            <h3>Low Stock Items</h3>
+                            <div class="stat-value">0</div>
+                        </div>
+                        <div class="stat-card">
+                            <h3>Out of Stock</h3>
+                            <div class="stat-value">0</div>
+                        </div>
+                        <div class="stat-card">
+                            <h3>Total Inventory Value</h3>
+                            <div class="stat-value">ZAR 0</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Purchase Orders Section -->
+                <section class="content-section" id="purchase-orders-section">
+                    <div class="section-header">
+                        <h1>Purchase Orders</h1>
+                    </div>
+                    <div class="empty-state">
+                        <h3>Purchase orders will show here</h3>
+                        <p>Manage your purchase orders from suppliers and vendors.</p>
+                    </div>
+                </section>
+
+                <!-- Transfers Section -->
+                <section class="content-section" id="transfers-section">
+                    <div class="section-header">
+                        <h1>Transfers</h1>
+                    </div>
+                    <div class="empty-state">
+                        <h3>Transfers will show here</h3>
+                        <p>Track inventory transfers between locations.</p>
+                    </div>
+                </section>
+
+                <!-- Gift Cards Section -->
+                <section class="content-section" id="gift-cards-section">
+                    <div class="section-header">
+                        <h1>Gift Cards</h1>
+                    </div>
+
+                    <div class="content-card">
+                        <div class="card-header">
+                            <h2>Start selling gift cards</h2>
+                            <p>Add gift card products to sell or create gift cards and send them directly to your customers.</p>
+                        </div>
+                        <div class="card-actions">
+                            <button class="btn-primary">Create gift card</button>
+                            <button class="btn-secondary">Add gift card products</button>
+                        </div>
+                        <div class="card-footer">
+                            <small>By using gift cards, you agree to our Terms of Service</small>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Customers Section -->
+                <section class="content-section" id="customers-section">
+                    <div class="section-header">
+                        <h1>Customers</h1>
+                    </div>
+
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-title">Total Customers</div>
+                            <div class="stat-value-large">0</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-title">New This Month</div>
+                            <div class="stat-value-large">0</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-title">Active Customers</div>
+                            <div class="stat-value-large">0</div>
+                        </div>
+                    </div>
+
+                    <div class="empty-state">
+                        <h3>Customer list will show here</h3>
+                        <p>View and manage your customer database.</p>
+                    </div>
+                </section>
+
+                <!-- Segments Section -->
+                <section class="content-section" id="segments-section">
+                    <div class="section-header">
+                        <h1>Segments</h1>
+                    </div>
+                    <div class="empty-state">
+                        <h3>Customer segments will show here</h3>
+                        <p>Create and manage customer segments for targeted marketing.</p>
+                    </div>
+                </section>
+
+                <!-- Marketing Section -->
+                <section class="content-section" id="marketing-section">
+                    <div class="section-header">
+                        <h1>Marketing</h1>
+                    </div>
+
+                    <div class="content-card">
+                        <div class="card-header">
+                            <h2>Centralize your campaign tracking</h2>
+                            <p>Create campaigns to evaluate how marketing initiatives drive business goals. Capture online and offline touchpoints, add campaign activities from multiple marketing channels, and monitor results.</p>
+                        </div>
+                        <div class="card-actions">
+                            <button class="btn-primary">Create campaign</button>
+                            <button class="btn-secondary">Learn more</button>
+                        </div>
+                    </div>
+
+                    <div class="content-card">
+                        <div class="card-header">
+                            <h3>Generate traffic with marketing apps</h3>
+                            <p>Grow your audience on social platforms, capture new leads with newsletter sign-ups, increase conversion with chat, and more.</p>
+                        </div>
+                        <div class="card-actions">
+                            <button class="btn-secondary">Browse marketing apps</button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Campaigns Section -->
+                <section class="content-section" id="campaigns-section">
+                    <div class="section-header">
+                        <h1>Campaigns</h1>
+                    </div>
+                    <div class="empty-state">
+                        <h3>Marketing campaigns will show here</h3>
+                        <p>Create and track your marketing campaigns.</p>
+                    </div>
+                </section>
+
+                <!-- Attribution Section -->
+                <section class="content-section" id="attribution-section">
+                    <div class="section-header">
+                        <h1>Attribution</h1>
+                    </div>
+                    <div class="empty-state">
+                        <h3>Attribution data will show here</h3>
+                        <p>Track which marketing channels are driving conversions.</p>
+                    </div>
+                </section>
+
+                <!-- Automations Section -->
+                <section class="content-section" id="automations-section">
+                    <div class="section-header">
+                        <h1>Automations</h1>
+                    </div>
+                    <div class="empty-state">
+                        <h3>Automation workflows will show here</h3>
+                        <p>Set up automated marketing and customer communication workflows.</p>
+                    </div>
+                </section>
+
+                <!-- Analytics Section -->
+                <section class="content-section" id="analytics-section">
+                    <div class="section-header">
+                        <h1>Analytics</h1>
+                    </div>
+
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-title">Total Sales</div>
+                            <div class="stat-value-large">ZAR 0</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-title">Conversion Rate</div>
+                            <div class="stat-value-large">0%</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-title">Average Order Value</div>
+                            <div class="stat-value-large">ZAR 0</div>
+                        </div>
+                    </div>
+
+                    <div class="content-card">
+                        <div class="card-header">
+                            <h3>Sales Overview</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="chart-placeholder">
+                                <p>Sales chart will appear here</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Reports Section -->
+                <section class="content-section" id="reports-section">
+                    <div class="section-header">
+                        <h1>Reports</h1>
+                    </div>
+                    <div class="empty-state">
+                        <h3>Reports will show here</h3>
+                        <p>Generate and view detailed business reports.</p>
+                    </div>
+                </section>
+
+                <!-- Live View Section -->
+                <section class="content-section" id="live-view-section">
+                    <div class="section-header">
+                        <h1>Live View</h1>
+                    </div>
+                    <div class="empty-state">
+                        <h3>Live store activity will show here</h3>
+                        <p>Monitor real-time customer activity on your store.</p>
+                    </div>
+                </section>
+
+                <!-- Online Store Section -->
+                <section class="content-section" id="online-store-section">
+                    <div class="section-header">
+                        <h1>Online Store</h1>
+                    </div>
+                    <div class="empty-state">
+                        <h3>Online store management</h3>
+                        <p>Manage your online store settings and preferences.</p>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+</html>
